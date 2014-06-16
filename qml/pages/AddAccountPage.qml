@@ -4,7 +4,14 @@ Dialog {
     id: page
     anchors.fill: parent
     DialogHeader {  id: header; title: qsTr("Add Account") }
-    property string title
+    property string _md5: ""
+
+
+    onAccepted: {
+        var cat = modelCategorys.get(comboCategory.currentIndex).category
+        var typ = modelCurrentTypes.get(comboType.currentIndex).title
+        modelBanks.addOrChange(cat, entryTitle.text, typ, Number.fromLocaleString(Qt.locale(), entrySum.text), _md5)
+    }
 
     ListModel {
         id: modelCurrentTypes
@@ -27,6 +34,7 @@ Dialog {
         anchors.right: parent.right
 
         TextField {
+            id: entryTitle
             text: title
             label: qsTr("Name")
             placeholderText: qsTr("Type name here")
@@ -35,6 +43,7 @@ Dialog {
 
         ComboBox
         {
+            id: comboCategory
             label: qsTr("Category")
             menu:ContextMenu{
                                 Repeater {
@@ -47,6 +56,7 @@ Dialog {
 
         ComboBox
         {
+            id: comboType
             label: qsTr("Type")
             menu:ContextMenu{
                                 Repeater {
@@ -57,6 +67,7 @@ Dialog {
         }
 
         TextField {
+            id: entrySum
             label: qsTr("Starting Balance")
             placeholderText: qsTr("Enter start saldo")
             inputMethodHints: Qt.ImhFormattedNumbersOnly

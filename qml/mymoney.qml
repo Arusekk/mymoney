@@ -69,14 +69,14 @@ ApplicationWindow
 
         function lookupIndex(cat)
         {
-            var index = -1;
+            var index = 0;
             for (;index < modelCategorys.count; index++)
             {
                 var str = modelCategorys.get(index).category;
                 if (str.substr(1, str.length) == cat)
                     return index;
             }
-            return index;
+            return -1;
         }
     }
 
@@ -86,15 +86,15 @@ ApplicationWindow
 
         function load()
         {
-            modelBanks.addBank(modelCategorys.get(0).category, "Jobb", "Lön", 0.0)
-            modelBanks.addBank(modelCategorys.get(1).category, "Ica", "Mastercard", 4321.56);
-            modelBanks.addBank(modelCategorys.get(1).category, "Sparbanken", "Mastecard", 0.0);
-            modelBanks.addBank(modelCategorys.get(1).category, "Coop", "Medlemskort", 0.0);
-            modelBanks.addBank(modelCategorys.get(2).category, "Hyra", "Hem", 0.0)
-            modelBanks.addBank(modelCategorys.get(0).category, "Jobb2", "Lön", 0.0)
+            modelBanks.add(modelCategorys.get(0).category, "Jobb", "Lön", 0.0)
+            modelBanks.add(modelCategorys.get(1).category, "Ica", "Mastercard", 4321.56);
+            modelBanks.add(modelCategorys.get(1).category, "Sparbanken", "Mastecard", 0.0);
+            modelBanks.add(modelCategorys.get(1).category, "Coop", "Medlemskort", 0.0);
+            modelBanks.add(modelCategorys.get(2).category, "Hyra", "Hem", 0.0)
+            modelBanks.add(modelCategorys.get(0).category, "Jobb2", "Lön", 0.0)
         }
 
-        function addBank(cat, title, typ, sum)
+        function add(cat, title, typ, sum)
         {
             var d = new Date()
             for (var i = 0; i < modelBanks.count; i++)
@@ -107,6 +107,38 @@ ApplicationWindow
                 }
             }
             modelBanks.append({"md5" : Qt.md5(d.toString()), "category": cat, "banktype" : typ, "title" : title, "sum" : sum})
+        }
+
+        function lookupByMd5(_md5)
+        {
+            if (_md5 == "")
+                return undefined
+
+            var index = 0;
+            for (;index < modelBanks.count; index++)
+            {
+                var o = modelBanks.get(index)
+                if (o.md5 == _md5)
+                    return o;
+            }
+
+            return undefined;
+        }
+
+        function addOrChange(cat, title, typ, sum, _md5)
+        {
+            var o = lookupByMd5(_md5);
+            if (o == undefined)
+            {
+                add(cat, title, typ, sum);
+            }
+            else
+            {
+                o.category = cat
+                o.title = title
+                o.banktype = typ
+                o.sum = sum
+            }
         }
     }
 
