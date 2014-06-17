@@ -43,13 +43,17 @@ QString JsonLoader::load()
 void JsonLoader::save()
 {
     QFile file(appinfo->getConfigPath()+"/mymoney.json");
+    qDebug() << "save";
     if (file.open(QFile::ReadWrite))
     {
+        qDebug() << "save";
         file.write(json.toJson());
         file.close();
+        emit error("SAVE");
     }
     else
     {
+        qDebug() << "savefail";
         emit error("Could not save file");
     }
 }
@@ -61,10 +65,9 @@ void JsonLoader::addAccount(QString name, QString category, QString type, double
     n["category"] = category;
     n["banktype"] = type;
     n["sum"] = sum;
-    n["md5"] = md5;
-    QJsonObject obj = json.object();//.value("accounts").toArray();
-    QJsonArray arr = obj.value("accounts").toArray();
-    arr.append(n);  // insert new account
+    QJsonObject obj = json.object();
+    QJsonObject arr = obj.value("accounts").toObject();
+    arr[md5] = n;  // insert new account
     obj.insert("accounts", arr); // update obj
     json.setObject(obj); // and feed it
 

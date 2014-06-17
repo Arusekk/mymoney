@@ -21,6 +21,6 @@
         {"banktype" : "Rent" , "category" : "Outgoing"},
         {"banktype" : "Internet" , "category" : "Outgoing"}
   ],
-  "accounts" : [],
+  "accounts" : {},
   "transactions" : []
 }

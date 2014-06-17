@@ -29,6 +29,7 @@ Dialog {
             }
         }
     }
+
     Column{
         anchors.top: header.bottom
         anchors.bottom: page.bottom

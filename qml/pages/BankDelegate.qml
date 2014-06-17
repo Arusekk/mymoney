@@ -36,6 +36,7 @@ BackgroundItem  {
             Label {
                 id: authorLabel
                 font.pixelSize: Theme.fontSizeSmall
+                font.italic: true
                 text: banktype
             }
 

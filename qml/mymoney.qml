@@ -43,7 +43,7 @@ ApplicationWindow
     Timer {
         id: timerHot
         repeat: false
-        interval: 6000
+        interval: 3000
         running: false
         onTriggered: hot.opacity = 0.0
     }
@@ -110,10 +110,9 @@ ApplicationWindow
         function load(jsonObject)
         {
             console.log(jsonObject)
-            for (var i = 0;i < jsonObject.length;i++)
+            for (var key in jsonObject)
             {
-                var arr = jsonObject[i]
-                console.log(arr)
+                var arr = jsonObject[key]
                 add(arr["category"], arr["title"], arr["banktype"], arr["sum"], arr["md5"])
             }
         }
@@ -126,17 +125,22 @@ ApplicationWindow
             {
                 fromfile = false;
                 md = Qt.md5(d.toString())
+                console.log("new md "+md)
             }
+
+            var o = {"md5" : md, "category": cat, "banktype" : typ, "title" : title, "sum" : sum}
             for (var i = 0; i < modelBanks.count; i++)
             {
                 if (modelBanks.get(i).category.localeCompare(cat) >= 0)
                 {
-                    modelBanks.insert(i, {"md5" : md, "category": cat, "banktype" : typ, "title" : title, "sum" : sum})
-                    return  ;
+                    modelBanks.insert(i, o)
+                    break;
                 }
             }
-            var o = {"md5" : md, "category": cat, "banktype" : typ, "title" : title, "sum" : sum}
-            modelBanks.append(o)
+
+            if (i == modelBanks.count)
+                modelBanks.append(o)
+
             if (!fromfile)
                 jsonloader.addAccount(title, cat, typ, sum, md)
         }

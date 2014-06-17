@@ -9,32 +9,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="42"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="43"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="43"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="44"/>
         <source>Type name here</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="51"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="52"/>
         <source>Category</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="65"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="66"/>
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="76"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="77"/>
         <source>Starting Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="77"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="78"/>
         <source>Enter start saldo</source>
         <translation type="unfinished"></translation>
     </message>
