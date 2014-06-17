@@ -37,33 +37,56 @@ ApplicationWindow
     initialPage: Component { FirstPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
-    property var modelCategorysTr:
-    [
-        { category: qsTr("0Inkomster")  },
-        { category: qsTr("1Bank")       },
-        { category: qsTr("2Utgifter")   }
-    ]
+    property string errorText: ""
+    onErrorTextChanged: { timerHot.start(); hot.opacity = 1.0; }
 
-    property var modelTypes:
-    [
-        { category: qsTr("0Inkomster"), banktype: qsTr("Arbete")},
-        { category: qsTr("0Inkomster"), banktype: qsTr("A-Kassa")},
-        { category: qsTr("0Inkomster"), banktype: qsTr("Bidrag")},
-        { category: qsTr("0Inkomster"), banktype: qsTr("Lån")},
-        { category: qsTr("1Bank"), banktype: qsTr("Mastercard")},
-        { category: qsTr("1Bank"), banktype: qsTr("VisaCard")},
-        { category: qsTr("1Bank"), banktype: qsTr("Sparkonto")},
-        { category: qsTr("1Bank"), banktype: qsTr("Lån")},
-        { category: qsTr("2Utgifter"), banktype: qsTr("Hem")}
-    ]
+    Timer {
+        id: timerHot
+        repeat: false
+        interval: 6000
+        running: false
+        onTriggered: hot.opacity = 0.0
+    }
+
+    Rectangle {
+        id: hot
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        height: Theme.itemSizeLarge
+        color: Theme.highlightColor
+        opacity: 0.0
+
+        Label {
+            anchors.centerIn: parent
+            text: errorText
+        }
+    }
+
+    Connections{
+        target: jsonloader
+        onError: error
+    }
+
+    ListModel
+    {
+        id: modelTypes
+        function load(jsonCat)
+        {
+            for (var key in jsonCat)
+            {
+                modelTypes.append({"category" : jsonCat[key].category, "banktype" : jsonCat[key].banktype})
+            }
+        }
+    }
 
     ListModel {
         id: modelCategorys
-        function load()
+        function load(jsonCat)
         {
-            for (var i = 0; i < modelCategorysTr.length; i++)
+            for (var key in jsonCat)
             {
-                modelCategorys.append({"category" : modelCategorysTr[i].category})
+                modelCategorys.append({"category" : key})
             }
         }
 
@@ -84,29 +107,38 @@ ApplicationWindow
     {
         id: modelBanks
 
-        function load()
+        function load(jsonObject)
         {
-            modelBanks.add(modelCategorys.get(0).category, "Jobb", "Lön", 0.0)
-            modelBanks.add(modelCategorys.get(1).category, "Ica", "Mastercard", 4321.56);
-            modelBanks.add(modelCategorys.get(1).category, "Sparbanken", "Mastecard", 0.0);
-            modelBanks.add(modelCategorys.get(1).category, "Coop", "Medlemskort", 0.0);
-            modelBanks.add(modelCategorys.get(2).category, "Hyra", "Hem", 0.0)
-            modelBanks.add(modelCategorys.get(0).category, "Jobb2", "Lön", 0.0)
+            console.log(jsonObject)
+            for (var i = 0;i < jsonObject.length;i++)
+            {
+                var arr = jsonObject[i]
+                console.log(arr)
+                add(arr["category"], arr["title"], arr["banktype"], arr["sum"], arr["md5"])
+            }
         }
 
-        function add(cat, title, typ, sum)
+        function add(cat, title, typ, sum, md)
         {
+            var fromfile = true
             var d = new Date()
+            if (md == "")
+            {
+                fromfile = false;
+                md = Qt.md5(d.toString())
+            }
             for (var i = 0; i < modelBanks.count; i++)
             {
                 if (modelBanks.get(i).category.localeCompare(cat) >= 0)
                 {
-                    modelBanks.insert(i, {"md5" : Qt.md5(d.toString()), "category": cat, "banktype" : typ, "title" : title, "sum" : sum})
-                    console.log(i)
+                    modelBanks.insert(i, {"md5" : md, "category": cat, "banktype" : typ, "title" : title, "sum" : sum})
                     return  ;
                 }
             }
-            modelBanks.append({"md5" : Qt.md5(d.toString()), "category": cat, "banktype" : typ, "title" : title, "sum" : sum})
+            var o = {"md5" : md, "category": cat, "banktype" : typ, "title" : title, "sum" : sum}
+            modelBanks.append(o)
+            if (!fromfile)
+                jsonloader.addAccount(title, cat, typ, sum, md)
         }
 
         function lookupByMd5(_md5)
@@ -130,7 +162,7 @@ ApplicationWindow
             var o = lookupByMd5(_md5);
             if (o == undefined)
             {
-                add(cat, title, typ, sum);
+                add(cat, title, typ, sum, "");
             }
             else
             {
@@ -139,12 +171,19 @@ ApplicationWindow
                 o.banktype = typ
                 o.sum = sum
             }
+
+
         }
     }
 
     Component.onCompleted: {
-        modelCategorys.load()
-        modelBanks.load()
+        var txt = jsonloader.load()
+        console.log(txt)
+        var jsonObject = JSON.parse(txt)
+        console.log(jsonObject.categorys)
+        modelCategorys.load(jsonObject.categorys)
+        modelTypes.load(jsonObject.types)
+        modelBanks.load(jsonObject.accounts)
     }
 }
 

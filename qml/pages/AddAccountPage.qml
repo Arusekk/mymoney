@@ -3,10 +3,10 @@ import Sailfish.Silica 1.0
 Dialog {
     id: page
     anchors.fill: parent
-    DialogHeader {  id: header; title: qsTr("Add Account") }
+    DialogHeader {  id: header; title: qsTr("%1 account").arg(_md5 == "" ? "Add" : "Change") }
     property string _md5: ""
 
-
+    canAccept: (entrySum.text != "" && entryTitle != "")
     onAccepted: {
         var cat = modelCategorys.get(comboCategory.currentIndex).category
         var typ = modelCurrentTypes.get(comboType.currentIndex).title
@@ -17,12 +17,14 @@ Dialog {
         id: modelCurrentTypes
         function load(allowed)
         {
+            allowed = allowed.substr(1, allowed.length)
             modelCurrentTypes.clear()
-            for (var i = 0; i < modelTypes.length; i++)
+            for (var i = 0; i < modelTypes.count; i++)
             {
-                if (modelTypes[i].category == allowed)
+                console.log("== "+modelTypes.get(i).category+" "+i)
+                if (modelTypes.get(i).category == allowed)
                 {
-                    modelCurrentTypes.append({"title" : modelTypes[i].banktype})
+                    modelCurrentTypes.append({"title" : modelTypes.get(i).banktype})
                 }
             }
         }
@@ -35,23 +37,26 @@ Dialog {
 
         TextField {
             id: entryTitle
-            text: title
+            focus: true
+            text: ""
             label: qsTr("Name")
             placeholderText: qsTr("Type name here")
             width: parent.width
+            Keys.onReturnPressed: focus = text.length > 1
         }
 
         ComboBox
         {
             id: comboCategory
             label: qsTr("Category")
+            currentIndex: -1
             menu:ContextMenu{
                                 Repeater {
                                     model: modelCategorys;
                                     MenuItem { text: category.substr(1, category.length);}
                                 }
                             }
-            onCurrentIndexChanged: modelCurrentTypes.load(modelCategorys.get(currentIndex).category)
+            onCurrentIndexChanged: { modelCurrentTypes.load(modelCategorys.get(currentIndex).category); comboType._menuOpen(); }
         }
 
         ComboBox
@@ -75,4 +80,6 @@ Dialog {
             width: parent.width
         }
     }
+
+    Component.onCompleted: { comboCategory.currentIndex = 0; }
 }

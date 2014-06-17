@@ -1,20 +1,26 @@
 {
-  "categorys" : 
+  "categorys" :
   {
-	  "Incoming" : 0,
-	  "Banks" : 1,
-	  "Outgoing" : 2
+      "0Incoming" : 0,
+      "1Banks" : 1,
+      "2Outgoing" : 2
   },
   "types" :
-  {
-	  "Visa" : "Bank",
-	  "Mastercard" : "Bank",
-	  "Maestro" : "Bank",
-	  "Membercard" : "Bank",
-	  "Hyra" : "Outgoing",
-	  "Lön" : "Incoming",
-	  "Lån" : "Incoming"
-  },
+  [
+        {"banktype" : "Visa" , "category" : "Banks"},
+        {"banktype" : "Mastercard" , "category" : "Banks"},
+        {"banktype" : "Maestro" , "category" : "Banks"},
+        {"banktype" : "Paypal" , "category" : "Banks"},
+        {"banktype" : "Bitcoin" , "category" : "Banks"},
+        {"banktype" : "Other Card" , "category" : "Banks"},
+        {"banktype" : "Savings" , "category" : "Banks"},
+        {"banktype" : "Loan" , "category" : "Incoming"},
+        {"banktype" : "Salary" , "category" : "Incoming"},
+        {"banktype" : "Student grants" , "category" : "Incoming"},
+        {"banktype" : "Temporary disability" , "category" : "Incoming"},
+        {"banktype" : "Rent" , "category" : "Outgoing"},
+        {"banktype" : "Internet" , "category" : "Outgoing"}
+  ],
   "accounts" : [],
   "transactions" : []
 }

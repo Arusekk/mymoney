@@ -31,6 +31,7 @@
 #include <QtQuick>
 #include <sailfishapp.h>
 #include "appinfo.h"
+#include "jsonloader.h"
 
 int main(int argc, char *argv[])
 {
@@ -39,14 +40,16 @@ int main(int argc, char *argv[])
     app->setQuitOnLastWindowClosed(true);
 
     AppInfo appinfo(app);
+    JsonLoader json(app, &appinfo);
     QQuickView *view = SailfishApp::createView();
+    view->rootContext()->setContextProperty("jsonloader", &json);
     view->rootContext()->setContextProperty("appinfo", &appinfo);
     view->setSource(SailfishApp::pathTo("/qml/mymoney.qml"));
     view->showFullScreen();
 
     exitcode = app->exec();
-    delete view;
-    delete app;
+    //delete view;
+    //delete app;
     return exitcode;
 }
 
