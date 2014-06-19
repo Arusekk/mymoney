@@ -1,25 +1,28 @@
 {
-  "categorys" :
+  "accountgroups" :
   {
-      "0Incoming" : 0,
-      "1Banks" : 1,
-      "2Outgoing" : 2
+      "0" : "Income",
+      "1" : "Bank",
+      "2" : "Expense"
   },
-  "types" :
+  "accounttypes" :
   [
-        {"banktype" : "Visa" , "category" : "Banks"},
-        {"banktype" : "Mastercard" , "category" : "Banks"},
-        {"banktype" : "Maestro" , "category" : "Banks"},
-        {"banktype" : "Paypal" , "category" : "Banks"},
-        {"banktype" : "Bitcoin" , "category" : "Banks"},
-        {"banktype" : "Other Card" , "category" : "Banks"},
-        {"banktype" : "Savings" , "category" : "Banks"},
-        {"banktype" : "Loan" , "category" : "Incoming"},
-        {"banktype" : "Salary" , "category" : "Incoming"},
-        {"banktype" : "Student grants" , "category" : "Incoming"},
-        {"banktype" : "Temporary disability" , "category" : "Incoming"},
-        {"banktype" : "Rent" , "category" : "Outgoing"},
-        {"banktype" : "Internet" , "category" : "Outgoing"}
+        {"type" : "Visa" , "group" : "1"},
+        {"type" : "Mastercard" , "group" : "1"},
+        {"type" : "Maestro" , "group" : "1"},
+        {"type" : "Paypal" , "group" : "1"},
+        {"type" : "Bitcoin" , "group" : "1"},
+        {"type" : "Other Card" , "group" : "1"},
+        {"type" : "Savings" , "group" : "1"},
+        {"type" : "Loan" , "group" : "0"},
+        {"type" : "Salary" , "group" : "0"},
+        {"type" : "Student grants" , "group" : "0"},
+        {"type" : "Temporary disability" , "group" : "0"},
+        {"type" : "Rent" , "group" : "2"},
+        {"type" : "Internet" , "group" : "2"},
+        {"type" : "Food" , "group" : "2"},
+        {"type" : "Hobby" , "group" : "2"},
+        {"type" : "Other expend" , "group" : "2"}
   ],
   "accounts" : {},
   "transactions" : []

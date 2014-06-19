@@ -63,40 +63,59 @@ ApplicationWindow
         }
     }
 
-    Connections{
+    Connections
+    {
         target: jsonloader
+        onError: error
+    }
+
+    Connections
+    {
+        target: transactions
         onError: error
     }
 
     ListModel
     {
-        id: modelTypes
+        id: modelAccountTypes
         function load(jsonCat)
         {
             for (var key in jsonCat)
             {
-                modelTypes.append({"category" : jsonCat[key].category, "banktype" : jsonCat[key].banktype})
+                modelAccountTypes.append({"group" : jsonCat[key].group, "type" : jsonCat[key].type})
             }
+        }
+
+        function lookupIndex(typ)
+        {
+            var index = 0;
+            for (;index < modelAccountTypes.count; index++)
+            {
+                var str = modelAccountTypes.get(index).type;
+                if (str.substr(1, str.length) == typ)
+                    return index;
+            }
+            return -1;
         }
     }
 
     ListModel {
-        id: modelCategorys
+        id: modelAccountGroups
         function load(jsonCat)
         {
             for (var key in jsonCat)
             {
-                modelCategorys.append({"category" : key})
+                modelAccountGroups.append({"title" : jsonCat[key], "id" : key})
             }
         }
 
-        function lookupIndex(cat)
+        function lookupIndex(key)
         {
             var index = 0;
-            for (;index < modelCategorys.count; index++)
+            for (;index < modelAccountGroups.count; index++)
             {
-                var str = modelCategorys.get(index).category;
-                if (str.substr(1, str.length) == cat)
+                var o = modelAccountGroups.get(index);
+                if (o.id == key)
                     return index;
             }
             return -1;
@@ -105,19 +124,21 @@ ApplicationWindow
 
     ListModel
     {
-        id: modelBanks
+        id: modelAccounts
 
         function load(jsonObject)
         {
-            console.log(jsonObject)
             for (var key in jsonObject)
             {
                 var arr = jsonObject[key]
-                add(arr["category"], arr["title"], arr["banktype"], arr["sum"], arr["md5"])
+                if (arr["group"] != "0Balance")  // don't show balance account
+                {
+                    add(arr["group"], arr["title"], arr["type"], arr["sum"], key)
+                }
             }
         }
 
-        function add(cat, title, typ, sum, md)
+        function add(group, title, typ, sum, md)
         {
             var fromfile = true
             var d = new Date()
@@ -128,32 +149,34 @@ ApplicationWindow
                 console.log("new md "+md)
             }
 
-            var o = {"md5" : md, "category": cat, "banktype" : typ, "title" : title, "sum" : sum}
-            for (var i = 0; i < modelBanks.count; i++)
+            var o = {"md5" : md, "group": group, "type" : typ, "title" : title, "sum" : sum}
+            console.log(o.md5)
+            for (var i = 0; i < modelAccounts.count; i++)
             {
-                if (modelBanks.get(i).category.localeCompare(cat) >= 0)
+                if (modelAccounts.get(i).group.localeCompare(group) >= 0)
                 {
-                    modelBanks.insert(i, o)
+                    modelAccounts.insert(i, o)
                     break;
                 }
             }
 
-            if (i == modelBanks.count)
-                modelBanks.append(o)
+            if (i == modelAccounts.count)
+                modelAccounts.append(o)
 
             if (!fromfile)
-                jsonloader.addAccount(title, cat, typ, sum, md)
+                jsonloader.addAccount(title, group, typ, sum, md)
         }
+
 
         function lookupByMd5(_md5)
         {
             if (_md5 == "")
                 return undefined
 
-            var index = 0;
-            for (;index < modelBanks.count; index++)
+            for (var index = 0;index < modelAccounts.count; index++)
             {
-                var o = modelBanks.get(index)
+                var o = modelAccounts.get(index)
+                console.log(_md5+" == "+o.md5)
                 if (o.md5 == _md5)
                     return o;
             }
@@ -170,13 +193,11 @@ ApplicationWindow
             }
             else
             {
-                o.category = cat
+                o.group = cat
                 o.title = title
-                o.banktype = typ
+                o.type = typ
                 o.sum = sum
             }
-
-
         }
     }
 
@@ -184,10 +205,9 @@ ApplicationWindow
         var txt = jsonloader.load()
         console.log(txt)
         var jsonObject = JSON.parse(txt)
-        console.log(jsonObject.categorys)
-        modelCategorys.load(jsonObject.categorys)
-        modelTypes.load(jsonObject.types)
-        modelBanks.load(jsonObject.accounts)
+        modelAccountGroups.load(jsonObject.accountgroups)
+        modelAccountTypes.load(jsonObject.accounttypes)
+        modelAccounts.load(jsonObject.accounts)
     }
 }
 

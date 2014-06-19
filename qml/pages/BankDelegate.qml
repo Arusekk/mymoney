@@ -5,9 +5,11 @@ BackgroundItem  {
     id: background
     anchors.left: ListView.left
     anchors.right: ListView.right
-    height: Theme.itemSizeSmall
     contentHeight: Theme.itemSizeSmall
+    height: menuOpen ? contextMenu.height + Theme.itemSizeSmall : Theme.itemSizeSmall
 
+    property bool menuOpen: contextMenu != null && contextMenu.parent === background
+    property Item contextMenu
     onClicked: {
     }
 
@@ -20,8 +22,32 @@ BackgroundItem  {
         }
         return color
     }
+    onPressAndHold: {
+                   if (!contextMenu)
+                       contextMenu = contextMenuComponent.createObject(bankview)
+                   contextMenu.show(background)
+               }
+    Component
+    {
+        id: contextMenuComponent
+        ContextMenu {
+            MenuItem {
+                text: qsTr("Add transaktion")
+                onClicked: pageStack.push(Qt.resolvedUrl("TransactionPage.qml"), { transaction : undefined })
+            }
+            MenuItem {
+                text: qsTr("Edit account")
+                onClicked: pageStack.push(Qt.resolvedUrl("AddAccountPage.qml"), { account : modelAccounts.lookupByMd5(model.md5)})
+            }
+            MenuItem {
+                text: qsTr("Remove")
+                onClicked: console.log("Clicked Option 2")
+            }
+        }
+    }
 
     Column{
+        id: myListItem
         anchors.fill: parent
         anchors.leftMargin: Theme.paddingSmall
         anchors.rightMargin: Theme.paddingSmall
@@ -29,7 +55,7 @@ BackgroundItem  {
             font.pixelSize: Theme.fontSizeSmall
             //color: getTitleColor()
             //font.bold: model.title
-            text: model.title
+            text: title
         }
 
         Row {
@@ -37,7 +63,7 @@ BackgroundItem  {
                 id: authorLabel
                 font.pixelSize: Theme.fontSizeSmall
                 font.italic: true
-                text: banktype
+                text: type
             }
 
             // Fill some space before statics rectangles

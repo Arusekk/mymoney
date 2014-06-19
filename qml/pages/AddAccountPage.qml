@@ -3,30 +3,42 @@ import Sailfish.Silica 1.0
 Dialog {
     id: page
     anchors.fill: parent
-    DialogHeader {  id: header; title: qsTr("%1 account").arg(_md5 == "" ? "Add" : "Change") }
-    property string _md5: ""
+    property QtObject account
+    property bool block: false
+    DialogHeader {  id: header; title: qsTr("%1 account").arg((account && account.md5 != "") ? "Change" : "Add") }
 
-    canAccept: (entrySum.text != "" && entryTitle != "")
+    canAccept: (entrySum.text != "" && entryTitle != "" && comboAccountType.value != "" && comboAccountGroup.value != "")
     onAccepted: {
-        var cat = modelCategorys.get(comboCategory.currentIndex).category
-        var typ = modelCurrentTypes.get(comboType.currentIndex).title
-        modelBanks.addOrChange(cat, entryTitle.text, typ, Number.fromLocaleString(Qt.locale(), entrySum.text), _md5)
+        var md = account  ? account.md5 : ""
+        var group = modelAccountGroups.get(comboAccountGroup.currentIndex).id
+        var typ = modelCurrentAccountTypes.get(comboAccountType.currentIndex).title
+        modelAccounts.addOrChange(group, entryTitle.text, typ, Number.fromLocaleString(Qt.locale(), entrySum.text), md)
     }
 
     ListModel {
-        id: modelCurrentTypes
-        function load(allowed)
+        id: modelCurrentAccountTypes
+        function load(id)
         {
-            allowed = allowed.substr(1, allowed.length)
-            modelCurrentTypes.clear()
-            for (var i = 0; i < modelTypes.count; i++)
+            modelCurrentAccountTypes.clear()
+            for (var i = 0; i < modelAccountTypes.count; i++)
             {
-                console.log("== "+modelTypes.get(i).category+" "+i)
-                if (modelTypes.get(i).category == allowed)
+                var o = modelAccountTypes.get(i)
+                if (o.group == id)
                 {
-                    modelCurrentTypes.append({"title" : modelTypes.get(i).banktype})
+                    modelCurrentAccountTypes.append({"title" : o.type})
                 }
             }
+        }
+
+        function lookupIndex(id)
+        {
+            for (var index = 0;index < modelCurrentAccountTypes.count; index++)
+            {
+                var str = modelCurrentAccountTypes.get(index).title;
+                if (str == id)
+                    return index;
+            }
+            return -1;
         }
     }
 
@@ -39,7 +51,7 @@ Dialog {
         TextField {
             id: entryTitle
             focus: true
-            text: ""
+            text: account ? account.title : ""
             label: qsTr("Name")
             placeholderText: qsTr("Type name here")
             width: parent.width
@@ -48,25 +60,31 @@ Dialog {
 
         ComboBox
         {
-            id: comboCategory
-            label: qsTr("Category")
+            id: comboAccountGroup
+            label: qsTr("Group")
             currentIndex: -1
+            enabled: entrySum.text == "0"
             menu:ContextMenu{
                                 Repeater {
-                                    model: modelCategorys;
-                                    MenuItem { text: category.substr(1, category.length);}
+                                    model: modelAccountGroups;
+                                    MenuItem {
+                                        text: title;
+                                    }
                                 }
                             }
-            onCurrentIndexChanged: { modelCurrentTypes.load(modelCategorys.get(currentIndex).category); comboType._menuOpen(); }
+            onCurrentIndexChanged: {
+                    modelCurrentAccountTypes.load(modelAccountGroups.get(currentIndex).id);
+                }
         }
 
         ComboBox
         {
-            id: comboType
+            id: comboAccountType
             label: qsTr("Type")
+            currentIndex: -1
             menu:ContextMenu{
                                 Repeater {
-                                    model: modelCurrentTypes;
+                                    model: modelCurrentAccountTypes;
                                     MenuItem { text: title; }
                                 }
                             }
@@ -74,13 +92,24 @@ Dialog {
 
         TextField {
             id: entrySum
+            text: account ? account.sum.toLocaleCurrencyString() : "0"
+            opacity: (comboAccountGroup.currentIndex != 1 || (account && account.sum != 0)) ? 0.0 : 1.0 // bank only and not edited
             label: qsTr("Starting Balance")
             placeholderText: qsTr("Enter start saldo")
             inputMethodHints: Qt.ImhFormattedNumbersOnly
             validator: DoubleValidator { decimals: 2; }
             width: parent.width
         }
+        Label {
+            opacity: (comboAccountGroup.currentIndex != 1 || (account && account.sum != 0)) ? 1.0 : 0.0 // bank only and not edited
+            text: qsTr("Saldo %1").arg(account ? account.sum.toLocaleCurrencyString() : Number(0.0).toLocaleCurrencyString())
+            width: parent.width
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
     }
 
-    Component.onCompleted: { comboCategory.currentIndex = 0; }
+    Component.onCompleted: {
+        comboAccountGroup.currentIndex = account ? modelAccountGroups.lookupIndex(account.group) : -1
+        comboAccountType.currentIndex = account ? modelCurrentAccountTypes.lookupIndex(account.type) : -1
+    }
 }

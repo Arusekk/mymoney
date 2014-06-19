@@ -16,7 +16,8 @@ CONFIG += sailfishapp
 
 SOURCES += src/mymoney.cpp \
     src/appinfo.cpp \
-    src/jsonloader.cpp
+    src/jsonloader.cpp \
+    src/transactionsmanager.cpp
 
 OTHER_FILES += qml/mymoney.qml \
     qml/cover/CoverPage.qml \
@@ -34,7 +35,8 @@ OTHER_FILES += qml/mymoney.qml \
     harbour-mymoney.png \
     qml/pages/BankDelegate.qml \
     qml/pages/AddAccountPage.qml \
-    doc/mymoney.json
+    doc/mymoney.json \
+    qml/pages/TransactionPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -44,7 +46,8 @@ CONFIG += sailfishapp_i18n
 HEADERS += \
     src/gen_config.h \
     src/appinfo.h \
-    src/jsonloader.h
+    src/jsonloader.h \
+    src/transactionsmanager.h
 
 other.files = ChangeLog.txt LICENSE.txt
 other.path = /usr/share/harbour-mymoney/

@@ -4,21 +4,26 @@
 #include <QObject>
 #include <QJsonDocument>
 #include "appinfo.h"
+#include "transactionsmanager.h"
 
 class JsonLoader : public QObject
 {
     Q_OBJECT
     AppInfo *appinfo;
     QJsonDocument json;
+    TransactionsManager transactions;
 public:
     explicit JsonLoader(QObject *parent, AppInfo *appi);
-
+    QJsonDocument & getJson(){ return json; };
+    TransactionsManager & getTransactions() {return transactions;};
+    QString getBalanceAccountMd5();
 signals:
     void error(QString error);
 public slots:
     QString load();
     void save();
-    void addAccount(QString name, QString category, QString type, double sum, QString md5);
+    QString addAccount(QString name, QString group, QString type, double sum, QString md5);
+    void updateAccountSaldo(QString md5, double saldo, bool save);
 };
 
 #endif // JSONLOADER_H

@@ -32,7 +32,7 @@
 #include <sailfishapp.h>
 #include "appinfo.h"
 #include "jsonloader.h"
-
+#include "transactionsmanager.h"
 int main(int argc, char *argv[])
 {
     int exitcode = -1;
@@ -41,8 +41,10 @@ int main(int argc, char *argv[])
 
     AppInfo appinfo(app);
     JsonLoader json(app, &appinfo);
+
     QQuickView *view = SailfishApp::createView();
     view->rootContext()->setContextProperty("jsonloader", &json);
+    view->rootContext()->setContextProperty("transactions", &json.getTransactions());
     view->rootContext()->setContextProperty("appinfo", &appinfo);
     view->setSource(SailfishApp::pathTo("/qml/mymoney.qml"));
     view->showFullScreen();

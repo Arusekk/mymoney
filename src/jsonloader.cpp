@@ -3,17 +3,22 @@
 #include <QDebug>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QDateTime>
+#include <QCryptographicHash>
 #include "appinfo.h"
 #include "jsonloader.h"
+#include "transactionsmanager.h"
 JsonLoader::JsonLoader(QObject *parent, AppInfo *appi) :
     QObject(parent),
     appinfo(appi),
-    json()
+    json(),
+    transactions(appi, *this)
 {
 }
 
 QString JsonLoader::load()
 {
+    bool fromtemplate = false;
     QByteArray data;
     QFile file(appinfo->getConfigPath()+"/mymoney.json");
     if (file.open(QFile::ReadOnly))
@@ -28,6 +33,7 @@ QString JsonLoader::load()
         {
             data.append(file.readAll());
             file.close();
+            fromtemplate = true; // first time creation
         }
         else
             emit error("Could not load json file");
@@ -35,9 +41,23 @@ QString JsonLoader::load()
 
     QJsonParseError err;
     json = QJsonDocument::fromJson(data, &err);
-    qDebug() << err.errorString();
+    if (fromtemplate) // first time creation
+    {
+        QString md5 = addAccount("Balance", "0Balance", "Balance", 0.0, "");
+        QJsonObject obj = json.object();
+        obj.insert("balanceaccount_md5", md5);
+        obj.insert("version", 1);
+        json.setObject(obj); // and feed it
+        save();
+    }
 
     return QString(json.toJson());
+}
+
+QString JsonLoader::getBalanceAccountMd5()
+{
+    QJsonObject obj = json.object();
+    return obj["balanceaccount_md5"].toString();
 }
 
 void JsonLoader::save()
@@ -58,22 +78,44 @@ void JsonLoader::save()
     }
 }
 
-void JsonLoader::addAccount(QString name, QString category, QString type, double sum, QString md5)
+QString JsonLoader::addAccount(QString name, QString group, QString type, double sum, QString md5)
 {
     QJsonObject n;
     n["title"] = name;
-    n["category"] = category;
-    n["banktype"] = type;
-    n["sum"] = sum;
+    n["group"] = group;
+    n["type"] = type;
+    n["sum"] = 0.0;
     QJsonObject obj = json.object();
     QJsonObject arr = obj.value("accounts").toObject();
+    if (md5 == "")
+    {
+        md5 =  QString(QCryptographicHash::hash((QDateTime::currentDateTime().toString("hh:mm:ss.zzz dd.MM.yyyy").toUtf8()),QCryptographicHash::Md5).toHex());
+    }
+
     arr[md5] = n;  // insert new account
     obj.insert("accounts", arr); // update obj
     json.setObject(obj); // and feed it
 
-    qDebug() << obj;
+    transactions.add(getBalanceAccountMd5(), md5, "Income", sum, false);
+
     qDebug() << json.object();
     save();
+
+    return md5;
 }
 
+void JsonLoader::updateAccountSaldo(QString md5, double saldo, bool _save)
+{
+    QJsonObject obj = json.object();
+    QJsonObject accounts = obj.value("accounts").toObject(); // get copy of all accounts
+    QJsonObject account = accounts.value(md5).toObject(); // get copy of requested obj
+    account["sum"] = account["sum"].toDouble() + saldo; // update saldo
+    accounts.insert(md5, account); // feed back
+    obj.insert("accounts", accounts); // update accounts array with changes
+    json.setObject(obj); // and feed it
 
+    if (_save)
+    {
+        save();
+    }
+}

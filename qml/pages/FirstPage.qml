@@ -68,12 +68,12 @@ Page {
             anchors.leftMargin: Theme.paddingSmall
             anchors.rightMargin: Theme.paddingSmall
             clip: true //  to have the out of view items clipped nicely.
-            model: modelBanks
+            model: modelAccounts
 
             delegate: BankDelegate {}
             section.criteria: ViewSection.FullString
-            section.property: "category"
-            section.delegate: Label { text: section.substring(1, section.length); anchors.horizontalCenter: parent.horizontalCenter; }
+            section.property: "group"
+            section.delegate: Label { text: modelAccountGroups.get(section).title; anchors.horizontalCenter: parent.horizontalCenter; }
         }
     }
 }
