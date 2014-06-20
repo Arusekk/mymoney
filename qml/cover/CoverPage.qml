@@ -36,58 +36,56 @@ CoverBackground {
         anchors.fill: parent
         anchors.leftMargin: 16
         anchors.rightMargin: 16
-        spacing: 16
+        spacing: 2
+/*
         Label {
             text: appinfo.getName()
+            color: Theme.highlightColor
             anchors.horizontalCenter: parent.horizontalCenter
         }
+*/
+        Item {
+            width: parent.width
+            height: 12
+        }
 
-        Row {
-            width: parent.width
-            Label {
-                id: label1
-                text: modelAccountGroups.get(0).title
-                width: 110
-            }
-            Item {
-                width: parent.width - label1.width - sum1.width
-            }
-            Label {
-                id: sum1
-                width: 160
-                text: Number(saldoIncomes * -1).toLocaleCurrencyString()
-            }
+        Label {
+            id: label1
+            text: modelAccountGroups.get(0).title
+            color: Theme.highlightColor
+            font.family: Theme.fontFamilyHeading;
+            anchors.horizontalCenter: parent.horizontalCenter
         }
-        Row {
-            width: parent.width
-            Label {
-                id: label2
-                width: 110
-                text: modelAccountGroups.get(1).title
-            }
-            Item {
-                width: parent.width - label2.width - sum2.width
-            }
-            Label {
-                id: sum2
-                width: 160
-                text: Number(saldoBanks).toLocaleCurrencyString()
-            }
+        Label {
+            id: sum1
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: Number(saldoIncomes * -1).toLocaleCurrencyString(Qt.locale())
         }
-        Row {
-            Label {
-                id: label3
-                width: 110
-                text: modelAccountGroups.get(2).title
-            }
-            Item {
-                width: parent.width - label3.width - sum3.width
-            }
-            Label {
-                id: sum3
-                width: 160
-                text: Number(saldoExpenses).toLocaleCurrencyString()
-            }
+
+        Label {
+            id: label2
+            color: Theme.highlightColor
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: modelAccountGroups.get(1).title
+        }
+
+        Label {
+            id: sum2
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: Number(saldoBanks).toLocaleCurrencyString(Qt.locale())
+        }
+
+        Label {
+            id: label3
+            color: Theme.highlightColor
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: modelAccountGroups.get(2).title
+        }
+
+        Label {
+            id: sum3
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: Number(saldoExpenses).toLocaleCurrencyString(Qt.locale())
         }
     }
 
