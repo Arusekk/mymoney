@@ -21,7 +21,7 @@ bool TransactionsManager::add(QString fromaccount, QString toaccount, QString de
     n["sum"] = sum;
     n["date"] = QDateTime::currentDateTime().toString();
 
-    if (sum == 0.0)
+    if (sum == 0.0 && fromaccount != loader.getBalanceAccountMd5()) // only allow 0sum on balance account
     {
         return false;
     }

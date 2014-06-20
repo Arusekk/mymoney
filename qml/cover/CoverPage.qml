@@ -28,25 +28,76 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import QtQuick 2.0
+import QtQuick 2.1
 import Sailfish.Silica 1.0
 
 CoverBackground {
-    Label {
-        id: label
-        anchors.centerIn: parent
-        text: "My Cover"
+    Column {
+        anchors.fill: parent
+        anchors.leftMargin: 16
+        anchors.rightMargin: 16
+        spacing: 16
+        Label {
+            text: appinfo.getName()
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        Row {
+            width: parent.width
+            Label {
+                id: label1
+                text: modelAccountGroups.get(0).title
+                width: 110
+            }
+            Item {
+                width: parent.width - label1.width - sum1.width
+            }
+            Label {
+                id: sum1
+                width: 160
+                text: Number(saldoIncomes * -1).toLocaleCurrencyString()
+            }
+        }
+        Row {
+            width: parent.width
+            Label {
+                id: label2
+                width: 110
+                text: modelAccountGroups.get(1).title
+            }
+            Item {
+                width: parent.width - label2.width - sum2.width
+            }
+            Label {
+                id: sum2
+                width: 160
+                text: Number(saldoBanks).toLocaleCurrencyString()
+            }
+        }
+        Row {
+            Label {
+                id: label3
+                width: 110
+                text: modelAccountGroups.get(2).title
+            }
+            Item {
+                width: parent.width - label3.width - sum3.width
+            }
+            Label {
+                id: sum3
+                width: 160
+                text: Number(saldoExpenses).toLocaleCurrencyString()
+            }
+        }
     }
 
     CoverActionList {
         id: coverAction
+        enabled: pageStack.depth == 1
 
         CoverAction {
-            iconSource: "image://theme/icon-cover-next"
-        }
-
-        CoverAction {
-            iconSource: "image://theme/icon-cover-pause"
+            iconSource: "image://theme/icon-cover-new"
+            onTriggered: { pageStack.push(Qt.resolvedUrl("../pages/AddTransactionPage.qml"));  }
         }
     }
 }

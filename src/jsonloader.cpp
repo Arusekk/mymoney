@@ -96,7 +96,8 @@ QString JsonLoader::addAccount(QString name, QString group, QString type, double
     obj.insert("accounts", arr); // update obj
     json.setObject(obj); // and feed it
 
-    transactions.add(getBalanceAccountMd5(), md5, "Income", sum, false);
+    if (md5 == "")
+        transactions.add(getBalanceAccountMd5(), md5, "Income", sum, false);
 
     qDebug() << json.object();
     save();

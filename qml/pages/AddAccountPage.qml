@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.1
 import Sailfish.Silica 1.0
 Dialog {
     id: page
@@ -93,7 +93,7 @@ Dialog {
         TextField {
             id: entrySum
             text: account ? account.sum.toLocaleCurrencyString() : "0"
-            opacity: (comboAccountGroup.currentIndex != 1 || (account && account.sum != 0)) ? 0.0 : 1.0 // bank only and not edited
+            opacity: (comboAccountGroup.currentIndex != 1 || account) ? 0.0 : 1.0 // bank only and not edited
             label: qsTr("Starting Balance")
             placeholderText: qsTr("Enter start saldo")
             inputMethodHints: Qt.ImhFormattedNumbersOnly
@@ -102,9 +102,15 @@ Dialog {
         }
         Label {
             opacity: (comboAccountGroup.currentIndex != 1 || (account && account.sum != 0)) ? 1.0 : 0.0 // bank only and not edited
-            text: qsTr("Saldo %1").arg(account ? account.sum.toLocaleCurrencyString() : Number(0.0).toLocaleCurrencyString())
-            width: parent.width
+            text: qsTr("Saldo %1").arg(getSaldo())
             anchors.horizontalCenter: parent.horizontalCenter
+            function getSaldo()
+            {
+                if (account)
+                    return account.group == "0" ? (account.sum * -1).toLocaleCurrencyString() : account.sum.toLocaleCurrencyString()
+
+                return Number(0.0).toLocaleCurrencyString()
+            }
         }
     }
 

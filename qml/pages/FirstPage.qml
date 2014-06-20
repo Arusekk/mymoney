@@ -42,12 +42,17 @@ Page {
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
             MenuItem {
-                text: qsTr("Add Account")
+                text: qsTr("About "+appinfo.getName())
+                onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
+            }
+            MenuItem {
+                text: qsTr("Add account")
                 onClicked: pageStack.push(Qt.resolvedUrl("AddAccountPage.qml"))
             }
             MenuItem {
-                text: qsTr("About "+appinfo.getName())
-                onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
+                visible: modelAccounts.count > 1
+                text: qsTr("Add transaction")
+                onClicked: pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { transaction : undefined })
             }
         }
 
@@ -73,7 +78,7 @@ Page {
             delegate: BankDelegate {}
             section.criteria: ViewSection.FullString
             section.property: "group"
-            section.delegate: Label { text: modelAccountGroups.get(section).title; anchors.horizontalCenter: parent.horizontalCenter; }
+            section.delegate: Label { font.family: Theme.fontFamilyHeading; text: modelAccountGroups.get(section).title; anchors.horizontalCenter: parent.horizontalCenter; }
         }
     }
 }

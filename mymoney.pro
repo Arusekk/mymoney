@@ -36,7 +36,7 @@ OTHER_FILES += qml/mymoney.qml \
     qml/pages/BankDelegate.qml \
     qml/pages/AddAccountPage.qml \
     doc/mymoney.json \
-    qml/pages/TransactionPage.qml
+    qml/pages/AddTransactionPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

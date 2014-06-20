@@ -1,6 +1,5 @@
-import QtQuick 2.0
+import QtQuick 2.1
 import Sailfish.Silica 1.0
-
 BackgroundItem  {
     id: background
     anchors.left: ListView.left
@@ -32,17 +31,15 @@ BackgroundItem  {
         id: contextMenuComponent
         ContextMenu {
             MenuItem {
-                text: qsTr("Add transaktion")
-                onClicked: pageStack.push(Qt.resolvedUrl("TransactionPage.qml"), { transaction : undefined })
-            }
-            MenuItem {
                 text: qsTr("Edit account")
                 onClicked: pageStack.push(Qt.resolvedUrl("AddAccountPage.qml"), { account : modelAccounts.lookupByMd5(model.md5)})
             }
+            /*
             MenuItem {
                 text: qsTr("Remove")
                 onClicked: console.log("Clicked Option 2")
             }
+            */
         }
     }
 
@@ -51,26 +48,18 @@ BackgroundItem  {
         anchors.fill: parent
         anchors.leftMargin: Theme.paddingSmall
         anchors.rightMargin: Theme.paddingSmall
-        Label {
-            font.pixelSize: Theme.fontSizeSmall
-            //color: getTitleColor()
-            //font.bold: model.title
-            text: title
-        }
-
         Row {
             Label {
-                id: authorLabel
+                id: labelTitle
                 font.pixelSize: Theme.fontSizeSmall
-                font.italic: true
-                text: type
+                //color: getTitleColor()
+                //font.bold: model.title
+                text: title
             }
-
-            // Fill some space before statics rectangles
-            Rectangle {
+            Item {
                 id: fillRectangel
-                color: "transparent"
-                width: background.width - authorLabel.width - timesRectangle.width
+//                color: "transparent"
+                width: background.width - labelTitle.width - timesRectangle.width
                 height: 40
             }
 
@@ -83,9 +72,20 @@ BackgroundItem  {
                 Label {
                     font.pixelSize: Theme.fontSizeSmall
                     anchors.fill: parent
-                    text: Number(sum).toLocaleCurrencyString()
+                    text: Number(group != "0" ? sum : (sum * -1)).toLocaleCurrencyString(Qt.locale())
                 }
             }
+        }
+        Row {
+            Label {
+                id: labelType
+                font.pixelSize: Theme.fontSizeSmall
+                font.italic: true
+                color: Theme.secondaryColor
+                text: type
+            }
+
+            // Fill some space before statics rectangles
 
 
 

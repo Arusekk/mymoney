@@ -40,6 +40,10 @@ ApplicationWindow
     property string errorText: ""
     onErrorTextChanged: { timerHot.start(); hot.opacity = 1.0; }
 
+    property double saldoIncomes: 0.0
+    property double saldoBanks: 0.0
+    property double saldoExpenses: 0.0
+
     Timer {
         id: timerHot
         repeat: false
@@ -124,6 +128,21 @@ ApplicationWindow
 
     ListModel
     {
+        id: modelTransactions
+        function add(from, to, description, sum)
+        {
+            transactions.add(from, to, description, sum, true)
+            var o = modelAccounts.lookupByMd5(from)
+            o.sum = o.sum - sum
+            updateTotal(o.group, sum * -1)
+            o = modelAccounts.lookupByMd5(to)
+            o.sum = o.sum + sum
+            updateTotal(o.group, sum)
+        }
+    }
+
+    ListModel
+    {
         id: modelAccounts
 
         function load(jsonObject)
@@ -133,22 +152,32 @@ ApplicationWindow
                 var arr = jsonObject[key]
                 if (arr["group"] != "0Balance")  // don't show balance account
                 {
-                    add(arr["group"], arr["title"], arr["type"], arr["sum"], key)
+                    add(arr["group"], arr["title"], arr["type"], arr["sum"], key, true)
                 }
             }
         }
 
-        function add(group, title, typ, sum, md)
+        function updateTotal(group, sum)
         {
-            var fromfile = true
+            if (group == "0")
+                saldoIncomes = saldoIncomes + sum
+            else if (group == "1")
+                saldoBanks = saldoBanks + sum
+            else if (group == "2")
+                saldoExpenses = saldoExpenses + sum
+
+        }
+
+        function add(group, title, typ, sum, md, fromfile)
+        {
             var d = new Date()
             if (md == "")
             {
-                fromfile = false;
                 md = Qt.md5(d.toString())
                 console.log("new md "+md)
             }
 
+            updateTotal(group, sum)
             var o = {"md5" : md, "group": group, "type" : typ, "title" : title, "sum" : sum}
             console.log(o.md5)
             for (var i = 0; i < modelAccounts.count; i++)
@@ -184,19 +213,20 @@ ApplicationWindow
             return undefined;
         }
 
-        function addOrChange(cat, title, typ, sum, _md5)
+        function addOrChange(group, title, typ, sum, _md5)
         {
             var o = lookupByMd5(_md5);
             if (o == undefined)
             {
-                add(cat, title, typ, sum, "");
+                add(group, title, typ, sum, "", true);
             }
             else
             {
-                o.group = cat
+                o.group = group
                 o.title = title
                 o.type = typ
-                o.sum = sum
+//                o.sum = sum
+                jsonloader.addAccount(title, group, typ, sum, _md5)
             }
         }
     }
