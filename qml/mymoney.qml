@@ -60,7 +60,7 @@ ApplicationWindow
         height: Theme.itemSizeLarge
         color: Theme.highlightColor
         opacity: 0.0
-
+        z: 1
         Label {
             anchors.centerIn: parent
             text: errorText
@@ -134,10 +134,10 @@ ApplicationWindow
             transactions.add(from, to, description, sum, true)
             var o = modelAccounts.lookupByMd5(from)
             o.sum = o.sum - sum
-            updateTotal(o.group, sum * -1)
+            modelAccounts.updateTotal(o.group, (sum * -1))
             o = modelAccounts.lookupByMd5(to)
             o.sum = o.sum + sum
-            updateTotal(o.group, sum)
+            modelAccounts.updateTotal(o.group, sum)
         }
     }
 
@@ -150,9 +150,9 @@ ApplicationWindow
             for (var key in jsonObject)
             {
                 var arr = jsonObject[key]
-                if (arr["group"] != "0Balance")  // don't show balance account
+                if (arr["group"] != "SB")  // don't show balance account
                 {
-                    add(arr["group"], arr["title"], arr["type"], arr["sum"], key, true)
+                    add(arr["group"], arr["title"], arr["type"], arr["sum"], key)
                 }
             }
         }
@@ -168,15 +168,9 @@ ApplicationWindow
 
         }
 
-        function add(group, title, typ, sum, md, fromfile)
+        function add(group, title, typ, sum, md)
         {
             var d = new Date()
-            if (md == "")
-            {
-                md = Qt.md5(d.toString())
-                console.log("new md "+md)
-            }
-
             updateTotal(group, sum)
             var o = {"md5" : md, "group": group, "type" : typ, "title" : title, "sum" : sum}
             console.log(o.md5)
@@ -192,8 +186,6 @@ ApplicationWindow
             if (i == modelAccounts.count)
                 modelAccounts.append(o)
 
-            if (!fromfile)
-                jsonloader.addAccount(title, group, typ, sum, md)
         }
 
 
@@ -216,9 +208,10 @@ ApplicationWindow
         function addOrChange(group, title, typ, sum, _md5)
         {
             var o = lookupByMd5(_md5);
-            if (o == undefined)
+            if (!o)
             {
-                add(group, title, typ, sum, "", true);
+                _md5 = jsonloader.addAccount(title, group, typ, sum, "")
+                add(group, title, typ, sum, _md5);
             }
             else
             {

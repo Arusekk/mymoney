@@ -107,9 +107,9 @@ Dialog {
             function getSaldo()
             {
                 if (account)
-                    return account.group == "0" ? (account.sum * -1).toLocaleCurrencyString() : account.sum.toLocaleCurrencyString()
+                    return account.group == "0" ? (account.sum * -1).toLocaleCurrencyString(Qt.locale()) : account.sum.toLocaleCurrencyString(Qt.locale())
 
-                return Number(0.0).toLocaleCurrencyString()
+                return Number(0.0).toLocaleCurrencyString(Qt.locale())
             }
         }
     }

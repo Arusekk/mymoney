@@ -34,9 +34,10 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
-
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
+        interactive: !bankview.focus
+        pressDelay: 0
         anchors.fill: parent
 
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
@@ -57,11 +58,12 @@ Page {
         }
 
         // Tell SilicaFlickable the height of its content.
-        contentHeight: bankview.height
+       // contentHeight: bankview.height
 
         PageHeader {
             id: header
-            title: appinfo.getName()
+            height: Theme.itemSizeSmall
+            title: appinfo.getName()+" v"+appinfo.getVersion()
         }
 
         SilicaListView {
@@ -78,7 +80,8 @@ Page {
             delegate: BankDelegate {}
             section.criteria: ViewSection.FullString
             section.property: "group"
-            section.delegate: Label { font.family: Theme.fontFamilyHeading; text: modelAccountGroups.get(section).title; anchors.horizontalCenter: parent.horizontalCenter; }
+            section.delegate: Label { font.family: Theme.fontFamilyHeading; color: Theme.highlightColor; text: modelAccountGroups.get(section).title; anchors.horizontalCenter: parent.horizontalCenter; }
+            VerticalScrollDecorator { flickable:bankview }
         }
     }
 }

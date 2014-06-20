@@ -116,12 +116,12 @@
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="49"/>
+        <location filename="../qml/pages/FirstPage.qml" line="50"/>
         <source>Add account</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="54"/>
+        <location filename="../qml/pages/FirstPage.qml" line="55"/>
         <source>Add transaction</source>
         <translation type="unfinished"></translation>
     </message>

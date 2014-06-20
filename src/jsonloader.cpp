@@ -43,7 +43,7 @@ QString JsonLoader::load()
     json = QJsonDocument::fromJson(data, &err);
     if (fromtemplate) // first time creation
     {
-        QString md5 = addAccount("Balance", "0Balance", "Balance", 0.0, "");
+        QString md5 = addAccount("Starting balance", "SB", "Starting balance", 0.0, "");
         QJsonObject obj = json.object();
         obj.insert("balanceaccount_md5", md5);
         obj.insert("version", 1);
@@ -87,17 +87,25 @@ QString JsonLoader::addAccount(QString name, QString group, QString type, double
     n["sum"] = 0.0;
     QJsonObject obj = json.object();
     QJsonObject arr = obj.value("accounts").toObject();
-    if (md5 == "")
+    if (md5 == "") // new
     {
         md5 =  QString(QCryptographicHash::hash((QDateTime::currentDateTime().toString("hh:mm:ss.zzz dd.MM.yyyy").toUtf8()),QCryptographicHash::Md5).toHex());
+        arr[md5] = n;  // insert new account
+        obj.insert("accounts", arr); // update obj
+        json.setObject(obj); // and feed it
+        if (group != "SB") // are we creating balance account?
+        {
+            // nope
+            transactions.add(getBalanceAccountMd5(), md5, "Income", sum, false);
+        }
     }
-
-    arr[md5] = n;  // insert new account
-    obj.insert("accounts", arr); // update obj
-    json.setObject(obj); // and feed it
-
-    if (md5 == "")
-        transactions.add(getBalanceAccountMd5(), md5, "Income", sum, false);
+    else
+    {
+        n["sum"] = sum; // copy old sum
+        arr[md5] = n;  // insert changed account
+        obj.insert("accounts", arr); // update obj
+        json.setObject(obj); // and feed it
+    }
 
     qDebug() << json.object();
     save();
