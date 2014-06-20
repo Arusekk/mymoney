@@ -37,13 +37,7 @@ CoverBackground {
         anchors.leftMargin: 16
         anchors.rightMargin: 16
         spacing: 2
-/*
-        Label {
-            text: appinfo.getName()
-            color: Theme.highlightColor
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
-*/
+
         Item {
             width: parent.width
             height: 12
@@ -95,7 +89,7 @@ CoverBackground {
 
         CoverAction {
             iconSource: "image://theme/icon-cover-new"
-            onTriggered: { pageStack.push(Qt.resolvedUrl("../pages/AddTransactionPage.qml"));  }
+            onTriggered: { pageStack.push(Qt.resolvedUrl("../pages/AddTransactionPage.qml")); app.activate();  }
         }
     }
 }
