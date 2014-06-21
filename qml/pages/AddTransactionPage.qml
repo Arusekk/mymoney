@@ -4,14 +4,25 @@ Dialog
 {
     id: page
     anchors.fill: parent
-    property QtObject transaction
+    property var transaction
     property bool block: false
-    DialogHeader {  id: header; title: qsTr("%1 Transaction").arg(transaction == null ? "Add" : "Change") }
-    canAccept: (entryDescription.text != "" && entrySum.text != "" && comboFrom.value != "" && comboTo.value != "")
+    DialogHeader {  id: header; title: qsTr("Add transaction"); } //.arg(transaction.md5 == "" ? "Add" : "Change") }
+    canAccept: (entryDescription.text != "" && entrySum.text != "" && comboFrom.value != "" && comboTo.value != "" && entrySum.asDouble() > 0.0 && comboFrom.value != comboTo.value)
     onAccepted: {
         var from = modelFrom.get(comboFrom.currentIndex).md5
         var to = modelTo.get(comboTo.currentIndex).md5
-        modelTransactions.add(from, to, entryDescription.text, Number.fromLocaleString(Qt.locale(), entrySum.text))
+        modelTransactions.add(from, to, entryDescription.text, entrySum.asDouble())
+    }
+
+    function getAccountSaldoAsString(md5, addsum)
+    {
+        var o = modelAccounts.lookupByMd5(md5)
+        return o ?  (o.sum + addsum).toLocaleCurrencyString(Qt.locale()) : ""
+    }
+
+    function isToFromEqual()
+    {
+        return comboFrom.getCurrentMd5() == comboTo.getCurrentMd5()
     }
 
     Column{
@@ -33,23 +44,25 @@ Dialog
             id: modelFrom
             function load(group)
             {
+                comboFrom.currentIndex = -1
                 modelFrom.clear()
                 for (var i = 0; i < modelAccounts.count; i++)
                 {
                     var o = modelAccounts.get(i)
-                    console.log(o.id)
                     if (o.group == group)
                     {
                         modelFrom.append({"title" : o.title, "md5" : o.md5})
                     }
                 }
             }
+
         }
 
         ListModel {
             id: modelTo
             function load(group)
             {
+                comboTo.currentIndex = -1
                 modelTo.clear()
                 for (var i = 0; i < modelAccounts.count; i++)
                 {
@@ -64,7 +77,7 @@ Dialog
 
         ComboBox{
             id: comboFrom
-            label: qsTr("From account:")
+            label: qsTr("From:")
             currentIndex: -1
             menu:ContextMenu{
                                 Repeater {
@@ -72,11 +85,24 @@ Dialog
                                     MenuItem { text: title; }
                                 }
                             }
+
+            function getCurrentMd5()
+            {
+                var o = modelFrom.get(currentIndex)
+                return o ? o.md5 : ""
+            }
+        }
+
+        Label {
+            visible: comboFrom.currentIndex != -1
+            color: isToFromEqual() ? Theme.highlightColor : Theme.primaryColor
+            text: isToFromEqual() ? qsTr("To and from must be different") : qsTr("Saldo %1").arg(getAccountSaldoAsString(comboFrom.getCurrentMd5(), entrySum.asDouble() * -1))
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         ComboBox{
             id: comboTo
-            label: qsTr("To account:")
+            label: qsTr("To:")
             currentIndex: -1
             menu:ContextMenu{
                                 Repeater {
@@ -84,25 +110,62 @@ Dialog
                                     MenuItem { text: title; }
                                 }
                             }
+            function getCurrentMd5()
+            {
+                var o = modelTo.get(currentIndex)
+                return o ? o.md5 : ""
+            }
         }
+
+        Label {
+            visible: comboTo.currentIndex != -1
+            color: isToFromEqual() ? Theme.highlightColor : Theme.primaryColor
+            text: isToFromEqual() ? qsTr("To and from must be different") :  qsTr("Saldo %1").arg(getAccountSaldoAsString(comboTo.getCurrentMd5(), entrySum.asDouble()))
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
 
         TextField {
             id: entryDescription
-            text: transaction ? transaction.description : ""
+            text: transaction.description
             placeholderText: qsTr("Enter Description")
             label: qsTr("Description of transaction")
             width: parent.width
+            EnterKey.enabled: text != "" > 0
+            EnterKey.onClicked: { entrySum.focus = true; }
         }
 
         TextField
         {
             id: entrySum
-            text: transaction ? transaction.sum.toLocaleCurrencyString() : ""
+            text: transaction.sum != 0.0 ? transaction.sum.toLocaleCurrencyString() : ""
             label: qsTr("Amount")
             placeholderText: qsTr("Enter amount")
             inputMethodHints: Qt.ImhFormattedNumbersOnly
             validator: DoubleValidator { decimals: 2; }
             width: parent.width
+            EnterKey.enabled: asDouble() > 0
+            EnterKey.onClicked: { focus = false; }
+            function asDouble()
+            {
+                return text != "" ? Number.fromLocaleString(Qt.locale(), text) : 0.0
+            }
+        }
+    }
+
+    Component.onCompleted: {
+        switch (transaction.group)
+        {
+            case "0":
+                radioIncoming.clicked(false)
+                break;
+            case "1":
+                radioBank.clicked(false)
+                break;
+            case "2":
+                //radioOutgoing.checked = true
+                radioOutgoing.clicked(false)
+                break;
         }
     }
 }

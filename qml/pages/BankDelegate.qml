@@ -31,12 +31,12 @@ BackgroundItem  {
         id: contextMenuComponent
         ContextMenu {
             MenuItem {
-                text: qsTr("Edit account")
-                onClicked: pageStack.push(Qt.resolvedUrl("AddAccountPage.qml"), { account : modelAccounts.lookupByMd5(model.md5)})
-            }
-            MenuItem {
                 text: qsTr("Show transactions")
                 onClicked: pageStack.push(Qt.resolvedUrl("TransactionsPage.qml"), { md5 : model.md5})
+            }
+            MenuItem {
+                text: qsTr("Edit account")
+                onClicked: pageStack.push(Qt.resolvedUrl("AddAccountPage.qml"), { account : modelAccounts.lookupByMd5(model.md5)})
             }
         }
     }

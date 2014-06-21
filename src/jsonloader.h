@@ -15,7 +15,7 @@ class JsonLoader : public QObject
 public:
     explicit JsonLoader(QObject *parent, AppInfo *appi);
     QJsonDocument & getJson(){ return json; };
-    TransactionsManager & getTransactions() {return transactions;};
+    TransactionsManager & getTransactionManager() {return transactions;};
     QString getBalanceAccountMd5();
 signals:
     void error(QString error);

@@ -2,12 +2,12 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 Page {
     property string md5: ""
-    PageHeader { id: header; title: qsTr("Transactions %1").arg(modelAccounts.lookupByMd5(md5).title) }
-
+    property var account
     ListModel {
         id: modelCurrentTransactions
         function load()
         {
+            account = modelAccounts.lookupByMd5(md5)
             var tr = modelTransactions.transactions
             console.log(tr)
             for (var key in tr)
@@ -43,18 +43,32 @@ Page {
         }
     }
 
-    SilicaListView{
-        id: listView
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: header.bottom
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: Theme.paddingSmall
-        anchors.rightMargin: Theme.paddingSmall
-        clip: true
-        model: modelCurrentTransactions
-        delegate: TransactionDelegate {}
-    }
+    SilicaFlickable{
+        anchors.fill: parent
+        interactive: !listView.flicking
+        pressDelay: 0
+        PageHeader { id: header; title: qsTr("Transactions %1").arg(modelAccounts.lookupByMd5(md5).title) }
 
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Add transaction")
+                onClicked: pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { transaction:  { "md5" : md5, "group" : account.group, "sum" : 0.0 } })
+            }
+        }
+
+        SilicaListView{
+            id: listView
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: header.bottom
+            anchors.bottom: parent.bottom
+            anchors.leftMargin: Theme.paddingSmall
+            anchors.rightMargin: Theme.paddingSmall
+            clip: true
+            model: modelCurrentTransactions
+            delegate: TransactionDelegate {}
+            VerticalScrollDecorator { flickable:listView }
+        }
+    }
     Component.onCompleted: modelCurrentTransactions.load()
 }

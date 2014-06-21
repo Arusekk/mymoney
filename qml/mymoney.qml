@@ -76,7 +76,7 @@ ApplicationWindow
 
     Connections
     {
-        target: transactions
+        target: transactionmanager
         onError: error
     }
 
@@ -139,7 +139,7 @@ ApplicationWindow
 
         function add(from, to, description, sum)
         {
-            transactions.add(from, to, description, sum, true)
+            transactionmanager.add(from, to, description, sum, true)
             modelTransactions.transactions = JSON.parse(jsonloader.dump()).transactions
             var o = modelAccounts.lookupByMd5(from)
             o.sum = o.sum - sum
@@ -183,6 +183,12 @@ ApplicationWindow
             else if (group == "2")
                 saldoExpenses = saldoExpenses + sum
 
+        }
+
+        function getAccountSaldoAsString(md5)
+        {
+            var o = lookupByMd5(md5)
+            return o ?  o.sum.toLocaleCurrencyString(Qt.locale()) : ""
         }
 
         function add(group, title, typ, sum, md)

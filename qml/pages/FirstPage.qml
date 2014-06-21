@@ -53,7 +53,7 @@ Page {
             MenuItem {
                 visible: modelAccounts.count > 1
                 text: qsTr("Add transaction")
-                onClicked: pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { transaction : undefined })
+                onClicked: pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { "transaction":  { "md5" : "", "group" : "2", "description" : "", "sum" : 0.0 } })
             }
         }
 
