@@ -127,12 +127,20 @@ ApplicationWindow
         }
     }
 
-    ListModel
+    QtObject
     {
         id: modelTransactions
+
+        property var transactions
+        function load(jsonObject)
+        {
+            modelTransactions.transactions = jsonObject
+        }
+
         function add(from, to, description, sum)
         {
             transactions.add(from, to, description, sum, true)
+            modelTransactions.transactions = JSON.parse(jsonloader.dump()).transactions
             var o = modelAccounts.lookupByMd5(from)
             o.sum = o.sum - sum
             modelAccounts.updateTotal(o.group, (sum * -1))
@@ -142,10 +150,10 @@ ApplicationWindow
         }
     }
 
+    QtObject{ id: balanceAccount; property string md5; property string group; property string title; property string type; property double sum; }
     ListModel
     {
         id: modelAccounts
-
         function load(jsonObject)
         {
             for (var key in jsonObject)
@@ -154,6 +162,14 @@ ApplicationWindow
                 if (arr["group"] != "SB")  // don't show balance account
                 {
                     add(arr["group"], arr["title"], arr["type"], arr["sum"], key)
+                }
+                else
+                {
+                    balanceAccount.title = arr["title"]
+                    balanceAccount.sum = arr["sum"]
+                    balanceAccount.group = arr["group"]
+                    balanceAccount.type = arr["type"]
+                    balanceAccount.md5 = key
                 }
             }
         }
@@ -195,6 +211,9 @@ ApplicationWindow
             if (_md5 == "")
                 return undefined
 
+            if (_md5 == balanceAccount.md5)
+                return balanceAccount
+
             for (var index = 0;index < modelAccounts.count; index++)
             {
                 var o = modelAccounts.get(index)
@@ -232,6 +251,7 @@ ApplicationWindow
         modelAccountGroups.load(jsonObject.accountgroups)
         modelAccountTypes.load(jsonObject.accounttypes)
         modelAccounts.load(jsonObject.accounts)
+        modelTransactions.load(jsonObject.transactions)
     }
 }
 

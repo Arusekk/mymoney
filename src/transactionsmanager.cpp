@@ -15,8 +15,8 @@ bool TransactionsManager::add(QString fromaccount, QString toaccount, QString de
 {
     QString md5 = QString(QCryptographicHash::hash((QDateTime::currentDateTime().toString("hh:mm:ss.zzz dd.MM.yyyy").toUtf8()),QCryptographicHash::Md5).toHex());
     QJsonObject n;
-    n["accountFrom"] = fromaccount;
-    n["accountTo"] = toaccount;
+    n["from"] = fromaccount;
+    n["to"] = toaccount;
     n["description"] = description;
     n["sum"] = sum;
     n["date"] = QDateTime::currentDateTime().toString();

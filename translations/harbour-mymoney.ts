@@ -104,6 +104,11 @@
         <source>Edit account</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../qml/pages/BankDelegate.qml" line="38"/>
+        <source>Show transactions</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChangeLog</name>
@@ -131,6 +136,14 @@
     <message>
         <location filename="../qml/pages/LicensePage.qml" line="7"/>
         <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TransactionsPage</name>
+    <message>
+        <location filename="../qml/pages/TransactionsPage.qml" line="5"/>
+        <source>Transactions %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

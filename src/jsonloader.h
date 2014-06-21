@@ -20,6 +20,7 @@ public:
 signals:
     void error(QString error);
 public slots:
+    QString dump();
     QString load();
     void save();
     QString addAccount(QString name, QString group, QString type, double sum, QString md5);

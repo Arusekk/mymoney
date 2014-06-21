@@ -16,6 +16,11 @@ JsonLoader::JsonLoader(QObject *parent, AppInfo *appi) :
 {
 }
 
+QString JsonLoader::dump()
+{
+    return QString(json.toJson());
+}
+
 QString JsonLoader::load()
 {
     bool fromtemplate = false;
