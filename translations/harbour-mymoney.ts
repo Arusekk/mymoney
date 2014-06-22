@@ -142,6 +142,17 @@
         <source>Add transaction</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../qml/pages/FirstPage.qml" line="93"/>
+        <source>Add accounts from pulley menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FirstPage.qml" line="98"/>
+        <source>You should have atleast one of each
+group (Income, Bank and Expense).</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LicensePage</name>

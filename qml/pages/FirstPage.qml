@@ -83,6 +83,22 @@ Page {
             section.delegate: Label { font.family: Theme.fontFamilyHeading; color: Theme.highlightColor; text: modelAccountGroups.get(section).title; anchors.horizontalCenter: parent.horizontalCenter; }
             VerticalScrollDecorator { flickable:bankview }
         }
+
+        Column {
+            visible: modelAccounts.count < 3
+            anchors.centerIn: parent
+            Label {
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeLarge
+                text: qsTr("Add accounts from pulley menu")
+                height: Theme.itemSizeSmall
+            }
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("You should have atleast one of each\ngroup (Income, Bank and Expense).")
+                height: Theme.itemSizeMedium
+            }
+        }
     }
 }
 
