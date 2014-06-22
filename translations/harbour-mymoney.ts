@@ -154,12 +154,12 @@
 <context>
     <name>TransactionsPage</name>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="50"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="66"/>
         <source>Transactions %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="54"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="70"/>
         <source>Add transaction</source>
         <translation type="unfinished"></translation>
     </message>

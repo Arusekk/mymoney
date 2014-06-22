@@ -29,7 +29,7 @@ BackgroundItem  {
         anchors.rightMargin: Theme.paddingSmall
         Row {
             Label {
-                id: labelTitle
+                id: labelDate
                 font.pixelSize: Theme.fontSizeSmall
                 //color: getTitleColor()
                 //font.bold: model.title
@@ -38,7 +38,7 @@ BackgroundItem  {
             Item {
                 id: fillRectangel
 //                color: "transparent"
-                width: background.width - labelTitle.width - timesRectangle.width
+                width: background.width - labelDate.width - timesRectangle.width
                 height: 40
             }
 
@@ -55,13 +55,12 @@ BackgroundItem  {
                 }
             }
         }
+
         Label {
+            id: labelTitle
             text: getAccountTitle()
             function getAccountTitle()
             {
-                console.log("md5 is "+md5)
-                console.log("from is "+from)
-                console.log("to is "+to)
                 if (md5 == from)
                 {
                     var o = modelAccounts.lookupByMd5(to)
@@ -80,6 +79,7 @@ BackgroundItem  {
                 }
             }
         }
+
         Row {
             Label {
                 id: labelType
@@ -89,10 +89,21 @@ BackgroundItem  {
                 text: description
             }
 
-            // Fill some space before statics rectangles
+            Item {
+                id: fillRectangel2
+                width: background.width - labelType.width - labelSum2.width
+                height: 40
+            }
 
-
-
+            // Created and updated time strings
+            Label {
+                id: labelSum2
+                width: 160
+                height: 40
+                font.pixelSize: Theme.fontSizeSmall
+               // anchors.fill: parent
+                text: Number(sum2).toLocaleCurrencyString(Qt.locale())
+            }
         }
     }
 }

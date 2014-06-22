@@ -7,16 +7,17 @@ Page {
         id: modelCurrentTransactions
         function load()
         {
+            var isbank = modelAccounts.lookupByMd5(md5).group == "1"
             account = modelAccounts.lookupByMd5(md5)
             var tr = modelTransactions.transactions
             console.log(tr)
             for (var key in tr)
             {
                 var o = tr[key]
-                console.log(md5)
-                console.log(o.from)
                 if (o.from == md5)
                 {
+                    if (isbank)
+                        o.sum = o.sum * -1
                     modelCurrentTransactions.dirtyInsert(o)
                 }
                 else if(o.to == md5)
@@ -24,10 +25,24 @@ Page {
                     modelCurrentTransactions.dirtyInsert(o)
                 }
             }
+
+            updateSaldos()
+        }
+
+        function updateSaldos()
+        {
+            var total = 0.0
+            for (var i = 0; i < modelCurrentTransactions.count; i++)
+            {
+                var o = modelCurrentTransactions.get(i)
+                total = total + o.sum
+                o.sum2 = total
+            }
         }
 
         function dirtyInsert(n) // this probadly could be done better...
         {
+            n["sum2"] = 0.0
             for (var i = 0; i < modelCurrentTransactions.count; i++)
             {
                 var o = modelCurrentTransactions.get(i)
@@ -37,8 +52,9 @@ Page {
                     break;
                 }
             }
-            if (i == modelCurrentTransactions.count)
+            if (i == modelCurrentTransactions.count) {
                 modelCurrentTransactions.append(n)
+            }
 
         }
     }
