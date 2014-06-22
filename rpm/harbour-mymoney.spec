@@ -12,12 +12,12 @@ Name:       harbour-mymoney
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    My Money keep track of your money
+Summary:    MyMoney
 Version:    0.0.1
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
-URL:        http://example.org/
+License:    GPL 2.0
+URL:        http://7b4.se/sailfish
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-mymoney.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
@@ -28,7 +28,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my SailfishOS Application
+MyMoney Simple budget application
 
 
 %prep
@@ -63,6 +63,10 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
+/usr/share/%{name}/
+/usr/share/icons/hicolor/86x86/apps
+/usr/share/applications
+/usr/bin
 %{_bindir}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop

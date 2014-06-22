@@ -38,7 +38,8 @@ OTHER_FILES += qml/mymoney.qml \
     doc/mymoney.json \
     qml/pages/AddTransactionPage.qml \
     qml/pages/TransactionsPage.qml \
-    qml/pages/TransactionDelegate.qml
+    qml/pages/TransactionDelegate.qml \
+    rpm/harbour-mymoney.yaml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
