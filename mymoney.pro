@@ -39,7 +39,10 @@ OTHER_FILES += qml/mymoney.qml \
     qml/pages/AddTransactionPage.qml \
     qml/pages/TransactionsPage.qml \
     qml/pages/TransactionDelegate.qml \
-    rpm/harbour-mymoney.yaml
+    rpm/harbour-mymoney.yaml \
+    doc/mymoney_sv.json \
+    translations/harbour-mymoney-sv.ts \
+    translations/harbour-mymoney-fi.ts
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -56,7 +59,7 @@ other.files = ChangeLog.txt LICENSE.txt
 other.path = /usr/share/harbour-mymoney/
 INSTALLS += other
 
-other2.files =  doc/mymoney.json
+other2.files =  doc/mymoney*.json
 other2.path = /usr/share/harbour-mymoney/templates/
 INSTALLS += other2
 

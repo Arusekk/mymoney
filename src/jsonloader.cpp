@@ -5,6 +5,7 @@
 #include <QJsonArray>
 #include <QDateTime>
 #include <QCryptographicHash>
+#include <QLocale>
 #include "appinfo.h"
 #include "jsonloader.h"
 #include "transactionsmanager.h"
@@ -25,6 +26,7 @@ QString JsonLoader::load()
 {
     bool fromtemplate = false;
     QByteArray data;
+
     QFile file(appinfo->getConfigPath()+"/mymoney.json");
     if (file.open(QFile::ReadOnly))
     {
@@ -33,22 +35,33 @@ QString JsonLoader::load()
     }
     else
     {
-        file.setFileName("/usr/share/harbour-mymoney/templates/mymoney.json");
+        file.setFileName(("/usr/share/harbour-mymoney/templates/mymoney_"+QLocale::system().name().split("_")[0]+".json"));
         if (file.open(QFile::ReadOnly))
         {
             data.append(file.readAll());
             file.close();
             fromtemplate = true; // first time creation
         }
-        else
-            emit error("Could not load json file");
+        else // nor locale
+        {
+            qDebug() << "failed: " << file.fileName() << endl;
+            file.setFileName("/usr/share/harbour-mymoney/templates/mymoney.json");
+            if (file.open(QFile::ReadOnly))
+            {
+                data.append(file.readAll());
+                file.close();
+                fromtemplate = true; // first time creation
+            }
+            else
+                emit error("Could not load json file");
+        }
     }
 
     QJsonParseError err;
     json = QJsonDocument::fromJson(data, &err);
     if (fromtemplate) // first time creation
     {
-        QString md5 = addAccount("Starting balance", "SB", "Starting balance", 0.0, "");
+        QString md5 = addAccount(tr("Starting balance"), "SB", tr("Starting balance"), 0.0, "");
         QJsonObject obj = json.object();
         obj.insert("balanceaccount_md5", md5);
         obj.insert("version", 1);

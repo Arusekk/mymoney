@@ -23,7 +23,7 @@
         {"type" : "Entertainment" , "group" : "2"},
         {"type" : "Car" , "group" : "2"},
         {"type" : "Travel" , "group" : "2"},
-        {"type" : "Travel" , "group" : "2"},
+        {"type" : "Insurance" , "group" : "2"},
         {"type" : "Internet" , "group" : "2"},
         {"type" : "Food" , "group" : "2"},
         {"type" : "Hobby" , "group" : "2"},
