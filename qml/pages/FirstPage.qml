@@ -95,7 +95,7 @@ Page {
             }
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("You should have atleast one of each\ngroup (Income, Bank and Expense).")
+                text: qsTr("You should have at least one of each\ngroup (Income, Bank and Expense).")
                 height: Theme.itemSizeMedium
             }
         }

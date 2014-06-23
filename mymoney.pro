@@ -47,7 +47,9 @@ OTHER_FILES += qml/mymoney.qml \
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
-#TRANSLATIONS += translations/mymoney-de.ts
+TRANSLATIONS += translations/harbour-mymoney-de.ts
+TRANSLATIONS += translations/harbour-mymoney-fi.ts
+TRANSLATIONS += translations/harbour-mymoney-sv.ts
 
 HEADERS += \
     src/gen_config.h \

@@ -149,7 +149,7 @@
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="98"/>
-        <source>You should have atleast one of each
+        <source>You should have at least one of each
 group (Income, Bank and Expense).</source>
         <translation type="unfinished"></translation>
     </message>

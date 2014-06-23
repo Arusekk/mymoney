@@ -47,6 +47,12 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="123"/>
+        <source>Saldo %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="9"/>
         <source>Add transaction</source>
         <translation type="unfinished"></translation>
@@ -69,12 +75,6 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="80"/>
         <source>From:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="123"/>
-        <source>Saldo %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -112,13 +112,13 @@
 <context>
     <name>BankDelegate</name>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="38"/>
-        <source>Edit account</source>
+        <location filename="../qml/pages/BankDelegate.qml" line="34"/>
+        <source>Show transactions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="34"/>
-        <source>Show transactions</source>
+        <location filename="../qml/pages/BankDelegate.qml" line="38"/>
+        <source>Edit account</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -149,7 +149,7 @@
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="98"/>
-        <source>You should have atleast one of each
+        <source>You should have at least one of each
 group (Income, Bank and Expense).</source>
         <translation type="unfinished"></translation>
     </message>
