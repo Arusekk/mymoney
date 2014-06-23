@@ -4,7 +4,7 @@ Page {
     CreditsModel {id: credits}
 
     PageHeader {
-        title: "About"
+        title: qsTr("About")
     }
 
     Timer {

@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="sv_SE">
 <context>
+    <name>AboutPage</name>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="7"/>
+        <source>About</source>
+        <translation type="unfinished">Om</translation>
+    </message>
+</context>
+<context>
     <name>AddAccountPage</name>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="8"/>
@@ -131,7 +139,30 @@
     </message>
 </context>
 <context>
+    <name>CoverPage</name>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="48"/>
+        <source>Income</source>
+        <translation type="unfinished">Inkomster</translation>
+    </message>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="63"/>
+        <source>Bank</source>
+        <translation type="unfinished">Bank</translation>
+    </message>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="76"/>
+        <source>Expenses</source>
+        <translation type="unfinished">Utgifter</translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
+    <message>
+        <location filename="../qml/pages/FirstPage.qml" line="46"/>
+        <source>About %1</source>
+        <translation type="unfinished">Om %1</translation>
+    </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="50"/>
         <source>Add account</source>
@@ -151,7 +182,8 @@
         <location filename="../qml/pages/FirstPage.qml" line="98"/>
         <source>You should have at least one of each
 group (Income, Bank and Expense).</source>
-        <translation type="unfinished">Du bör ha minst ett konto från varje grupp (Inkomst, Bank och Utgift)</translation>
+        <translation type="unfinished">Du bör ha minst ett konto från varje
+grupp (Inkomst, Bank och Utgift)</translation>
     </message>
 </context>
 <context>

@@ -45,7 +45,7 @@ CoverBackground {
 
         Label {
             id: label1
-            text: modelAccountGroups.get(0).title
+            text: qsTr("Income")
             color: Theme.highlightColor
             font.family: Theme.fontFamilyHeading;
             anchors.horizontalCenter: parent.horizontalCenter
@@ -60,7 +60,7 @@ CoverBackground {
             id: label2
             color: Theme.highlightColor
             anchors.horizontalCenter: parent.horizontalCenter
-            text: modelAccountGroups.get(1).title
+            text: qsTr("Bank")
         }
 
         Label {
@@ -73,7 +73,7 @@ CoverBackground {
             id: label3
             color: Theme.highlightColor
             anchors.horizontalCenter: parent.horizontalCenter
-            text: modelAccountGroups.get(2).title
+            text: qsTr("Expenses")
         }
 
         Label {
