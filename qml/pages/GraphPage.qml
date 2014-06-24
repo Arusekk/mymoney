@@ -3,12 +3,13 @@ import Sailfish.Silica 1.0
 Page
 {
     id: page
-    PageHeader { id: header; title: qsTr("Graph"); }
+    onStatusChanged: { if (status == PageStatus.Active) items.load(); }
+    PageHeader { id: header; title: qsTr("Graph"); height: Theme.itemSizeSmall; }
     ComboBox {
         id: combo
         anchors.top: header.bottom
-//        height: Theme.itemSizeSmall
-        currentIndex: -1
+        height: Theme.itemSizeSmall
+        currentIndex: 0
         label: qsTr("Show")
         onCurrentIndexChanged: items.load()
         menu: ContextMenu {
@@ -18,16 +19,14 @@ Page
     }
     ListModel {
         id: items
-//        property var objects: []
         property double total: 0.0
         property int len: 0
-        property var colors: ["red", "green", "blue", "burlywood", "yellow", "magenta", "cyan","black", "white", "gray", "brown","darksalmon","darkviolet", "mintcream","pink"]
+        property var colors: ["red", "green", "blue", "burlywood", "yellow", "magenta", "cyan", "white", "gray", "brown","darksalmon","darkviolet", "mintcream","pink","red", "green", "blue", "burlywood", "yellow", "magenta", "cyan", "white", "gray", "brown","darksalmon","darkviolet", "mintcream","pink"]
         function load()
         {
             items.clear()
             len = 0
             total = 0.0
-            var len = 0
             for (var i = 0;i < modelAccounts.count; i++)
             {
                 var o = modelAccounts.get(i)
@@ -76,10 +75,10 @@ Page
         anchors.rightMargin: Theme.paddingLarge
         Grid {
             id: grid
-            rows: 7
+            rows: 10
             columns: 2
             spacing: 2
-            height: 340
+            height: Math.round(items.count/2) * 40 + 40
             width: parent.width
             Repeater {
                 model: items
@@ -107,13 +106,12 @@ Page
 
         Canvas {
             id: pie
+            width: 400
+            height: 400
             anchors.horizontalCenter: parent.horizontalCenter
-//            anchors.centerIn: parent
-            width: 300
-            height: 300
             property int centerX: height/2
             property int centerY: height/2
-            property int radius: 150
+            property int radius: 200
             onPaint: {
                 var percent = 0.0
                 var segment = 0.0
@@ -135,24 +133,22 @@ Page
                 for (var i = 0; i < items.count; i++)
                 {
                     ctx.beginPath();
-                    ctx.moveTo(centerX, centerY)
                     var o = items.get(i);
+                    ctx.fillStyle = o.color
+                    ctx.moveTo(centerX, centerY)
                     percent = ((o.sum/items.total) * Math.PI * 2)
                     console.log("paintsegstart "+segment)
                     console.log("paintsegend "+percent)
                     console.log(o.color)
-                    ctx.fillStyle = o.color
                     ctx.arc(centerX, centerY, radius, segment, segment + percent);
                     segment += percent
                     ctx.closePath()
                     ctx.fill();
-                    ctx.beginPath();
                     //break
                 }
-                ctx.fill()
             }
         }
     }
 
-    Component.onCompleted: combo.currentIndex = 0
+   // Component.onCompleted: combo.currentIndex = 0
 }
