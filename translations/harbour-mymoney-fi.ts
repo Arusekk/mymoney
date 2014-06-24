@@ -192,6 +192,11 @@ group (Income, Bank and Expense).</source>
         <source>Starting balance</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="64"/>
+        <source>Balance account</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LicensePage</name>

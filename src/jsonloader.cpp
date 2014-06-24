@@ -61,7 +61,7 @@ QString JsonLoader::load()
     json = QJsonDocument::fromJson(data, &err);
     if (fromtemplate) // first time creation
     {
-        QString md5 = addAccount(tr("Starting balance"), "SB", tr("Starting balance"), 0.0, "");
+        QString md5 = addAccount(tr("Balance account"), "SB", tr("Starting balance"), 0.0, "");
         QJsonObject obj = json.object();
         obj.insert("balanceaccount_md5", md5);
         obj.insert("version", 1);
