@@ -166,7 +166,7 @@
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="51"/>
         <source>Expense graph</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Visa graf</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="55"/>
@@ -196,23 +196,23 @@ grupp (Inkomst, Bank och Utgift)</translation>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="6"/>
         <source>Graph</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Graf</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="12"/>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Visa</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="15"/>
         <location filename="../qml/pages/GraphPage.qml" line="55"/>
-        <source>Expense</source>
-        <translation type="unfinished">Utgift</translation>
+        <source>Expenses</source>
+        <translation type="unfinished">Utgifter</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="16"/>
-        <source>Expense vs Bank</source>
-        <translation type="unfinished"></translation>
+        <source>Expenses vs Bank</source>
+        <translation type="unfinished">Utgifter vs Bank</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="54"/>

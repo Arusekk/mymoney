@@ -12,8 +12,8 @@ Page
         label: qsTr("Show")
         onCurrentIndexChanged: items.load()
         menu: ContextMenu {
-            MenuItem { text: qsTr("Expense")}
-            MenuItem { text: qsTr("Expense vs Bank")}
+            MenuItem { text: qsTr("Expenses")}
+            MenuItem { text: qsTr("Expenses vs Bank")}
         }
     }
     ListModel {
@@ -52,7 +52,7 @@ Page
                 if (items.count == 0)
                 {
                     items.append({"sum" : 0, "color" : "green", "title" : qsTr("Bank")})
-                    items.append({"sum" : 0, "color" : "red", "title" : qsTr("Expense")})
+                    items.append({"sum" : 0, "color" : "red", "title" : qsTr("Expenses")})
                     len = 2
                 }
                 var c;

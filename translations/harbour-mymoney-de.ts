@@ -205,12 +205,12 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="15"/>
         <location filename="../qml/pages/GraphPage.qml" line="55"/>
-        <source>Expense</source>
+        <source>Expenses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="16"/>
-        <source>Expense vs Bank</source>
+        <source>Expenses vs Bank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

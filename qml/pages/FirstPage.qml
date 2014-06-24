@@ -106,13 +106,14 @@ Page {
         }
     }
 
-
+/*
     Timer{
         interval: 200
         running: true
         repeat: false
         onTriggered:  pageStack.push(Qt.resolvedUrl("GraphPage.qml"))
     }
+    */
 }
 
 
