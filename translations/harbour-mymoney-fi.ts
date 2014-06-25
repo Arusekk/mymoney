@@ -60,28 +60,28 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="123"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="125"/>
         <source>Saldo %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="9"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="67"/>
         <source>Add transaction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="38"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="73"/>
         <source>Expense</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="39"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="74"/>
         <source>Bank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="40"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="75"/>
         <source>Income</source>
         <translation type="unfinished"></translation>
     </message>
@@ -91,33 +91,33 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="123"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="125"/>
         <source>To and from must be different</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="105"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="106"/>
         <source>To:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="131"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
         <source>Enter Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="132"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
         <source>Description of transaction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="142"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
         <source>Amount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="143"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
         <source>Enter amount</source>
         <translation type="unfinished"></translation>
     </message>
