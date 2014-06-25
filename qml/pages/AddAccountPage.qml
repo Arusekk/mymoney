@@ -30,15 +30,25 @@ Dialog {
             }
         }
 
-        function lookupIndex(id)
+        function lookupIndex(title)
         {
             for (var index = 0;index < modelCurrentAccountTypes.count; index++)
             {
                 var str = modelCurrentAccountTypes.get(index).title;
-                if (str == id)
+                if (str == title)
                     return index;
             }
             return -1;
+        }
+
+        function add(n)
+        {
+            var index = lookupIndex(n.title)
+            if (index != -1)
+                return index
+
+            modelCurrentAccountTypes.append(n)
+            return modelCurrentAccountTypes.count-1
         }
     }
 
@@ -48,22 +58,13 @@ Dialog {
         anchors.left: parent.left
         anchors.right: parent.right
 
-        TextField {
-            id: entryTitle
-            focus: true
-            text: account ? account.title : ""
-            label: qsTr("Name")
-            placeholderText: qsTr("Type name here")
-            width: parent.width
-            Keys.onReturnPressed: focus = text.length > 1
-        }
-
         ComboBox
         {
             id: comboAccountGroup
             label: qsTr("Group")
             currentIndex: -1
             enabled: entrySum.text == "0"
+            focus: true
             menu:ContextMenu{
                                 Repeater {
                                     model: modelAccountGroups;
@@ -73,15 +74,56 @@ Dialog {
                                 }
                             }
             onCurrentIndexChanged: {
+                    comboAccountType.currentIndex = -1
                     modelCurrentAccountTypes.load(modelAccountGroups.get(currentIndex).id);
+                    entryTitle.focus = true
                 }
         }
 
+        TextField {
+            id: entryTitle
+            text: account ? account.title : ""
+            label: qsTr("Name")
+            placeholderText: qsTr("Type name here")
+            width: parent.width
+            Keys.onReturnPressed: typeEntry.focus = text.length > 0
+        }
+
+        TextField {
+            id: typeEntry
+            visible: comboAccountType.currentIndex == -1
+            enabled: comboAccountGroup.currentIndex != -1
+            placeholderText: qsTr("Enter new type or select from below")
+            width: parent.width
+            EnterKey.iconSource: "image://theme/icon-m-enter-accept"
+            // onclicked only if empty text we show menu
+            onClicked: { if (focus && typeEntry.text.length == 0)
+                                { focus = false;  comboAccountType.clicked(undefined); }
+                        }
+            Keys.onReturnPressed: {
+                if (typeEntry.text.length)
+                {
+                    var ind = modelCurrentAccountTypes.add({"title" : typeEntry.text, "group" : modelAccountGroups.get(comboAccountGroup.currentIndex).id});
+                    comboAccountType.currentIndex = ind
+                    typeEntry.text = ""
+                    typeEntry.focus = false
+                    comboAccountType.menu.show(comboAccountType)
+                    comboAccountType.menu.hide()
+                }
+                else
+                {
+                    focus = false;
+                    comboAccountType.clicked(comboAccountType)
+                }
+            }
+        }
         ComboBox
         {
             id: comboAccountType
+            visible: comboAccountGroup.currentIndex != -1
             label: qsTr("Type")
             currentIndex: -1
+           //height: menu.active ? 600 : Theme.itemSizeMedium
             menu:ContextMenu{
                                 Repeater {
                                     model: modelCurrentAccountTypes;
@@ -93,7 +135,7 @@ Dialog {
         TextField {
             id: entrySum
             text: account ? account.sum.toLocaleCurrencyString() : "0"
-            opacity: (comboAccountGroup.currentIndex != 1 || account) ? 0.0 : 1.0 // bank only and not edited
+            visible: (comboAccountGroup.currentIndex != 1 || account) ? false : true // bank only and not edited
             label: qsTr("Starting Balance")
             placeholderText: qsTr("Enter start saldo")
             inputMethodHints: Qt.ImhFormattedNumbersOnly
@@ -117,5 +159,15 @@ Dialog {
     Component.onCompleted: {
         comboAccountGroup.currentIndex = account ? modelAccountGroups.lookupIndex(account.group) : -1
         comboAccountType.currentIndex = account ? modelCurrentAccountTypes.lookupIndex(account.type) : -1
+    }
+
+    Timer{
+        interval: 200
+        running: true
+        onTriggered:{
+            console.log("boom");
+                            if (comboAccountGroup.currentIndex == -1)
+                                 comboAccountGroup.menu.show(comboAccountGroup)
+                    }
     }
 }

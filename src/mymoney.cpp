@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
     QQuickView *view = SailfishApp::createView();
     view->rootContext()->setContextProperty("jsonloader", &json);
     view->rootContext()->setContextProperty("transactionmanager", &json.getTransactionManager());
+    view->rootContext()->setContextProperty("accounttypesmanager", &json.getAccountTypeManager());
     view->rootContext()->setContextProperty("appinfo", &appinfo);
     view->setSource(SailfishApp::pathTo("/qml/mymoney.qml"));
     view->showFullScreen();

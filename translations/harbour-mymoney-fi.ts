@@ -17,12 +17,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="55"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="86"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="56"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="87"/>
         <source>Type name here</source>
         <translation type="unfinished"></translation>
     </message>
@@ -32,22 +32,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="83"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="124"/>
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="97"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="96"/>
+        <source>Enter new type or select from below</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddAccountPage.qml" line="139"/>
         <source>Starting Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="98"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="140"/>
         <source>Enter start saldo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="105"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="147"/>
         <source>Saldo %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -188,13 +193,18 @@ group (Income, Bank and Expense).</source>
 <context>
     <name>JsonLoader</name>
     <message>
-        <location filename="../src/jsonloader.cpp" line="64"/>
+        <location filename="../src/jsonloader.cpp" line="65"/>
         <source>Starting balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="64"/>
+        <location filename="../src/jsonloader.cpp" line="65"/>
         <source>Balance account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="124"/>
+        <source>Balance</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -5,17 +5,19 @@
 #include <QJsonDocument>
 #include "appinfo.h"
 #include "transactionsmanager.h"
-
+#include "accounttypemanager.h"
 class JsonLoader : public QObject
 {
     Q_OBJECT
     AppInfo *appinfo;
     QJsonDocument json;
     TransactionsManager transactions;
+    AccountTypeManager accounttypes;
 public:
     explicit JsonLoader(QObject *parent, AppInfo *appi);
     QJsonDocument & getJson(){ return json; };
     TransactionsManager & getTransactionManager() {return transactions;};
+    AccountTypeManager & getAccountTypeManager() { return accounttypes; };
     QString getBalanceAccountMd5();
 signals:
     void error(QString error);

@@ -13,7 +13,8 @@ JsonLoader::JsonLoader(QObject *parent, AppInfo *appi) :
     QObject(parent),
     appinfo(appi),
     json(),
-    transactions(appi, *this)
+    transactions(appi, *this),
+    accounttypes(appi, *this)
 {
 }
 
@@ -103,7 +104,13 @@ QString JsonLoader::addAccount(QString name, QString group, QString type, double
     n["group"] = group;
     n["type"] = type;
     n["sum"] = 0.0;
+
+    accounttypes.addOrChange(group, type);
     QJsonObject obj = json.object();
+    qDebug() << "=====================";
+    qDebug() << json.object();
+    qDebug() << "=====================";
+
     QJsonObject arr = obj.value("accounts").toObject();
     if (md5 == "") // new
     {
@@ -114,7 +121,7 @@ QString JsonLoader::addAccount(QString name, QString group, QString type, double
         if (group != "SB") // are we creating balance account?
         {
             // nope
-            transactions.add(getBalanceAccountMd5(), md5, "Income", sum, false);
+            transactions.add(getBalanceAccountMd5(), md5, tr("Balance"), sum, false);
         }
     }
     else

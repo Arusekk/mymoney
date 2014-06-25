@@ -17,7 +17,8 @@ CONFIG += sailfishapp
 SOURCES += src/mymoney.cpp \
     src/appinfo.cpp \
     src/jsonloader.cpp \
-    src/transactionsmanager.cpp
+    src/transactionsmanager.cpp \
+    src/accounttypemanager.cpp
 
 OTHER_FILES += qml/mymoney.qml \
     qml/cover/CoverPage.qml \
@@ -55,7 +56,8 @@ HEADERS += \
     src/gen_config.h \
     src/appinfo.h \
     src/jsonloader.h \
-    src/transactionsmanager.h
+    src/transactionsmanager.h \
+    src/accounttypemanager.h
 
 other.files = ChangeLog.txt LICENSE.txt
 other.path = /usr/share/harbour-mymoney/
