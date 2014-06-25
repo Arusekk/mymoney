@@ -1,8 +1,10 @@
 Version 0.0.2
 
-  * possibility to add more account types
+  * Possibility to add more account types
   * Add Transaction UI improve
   * Graph
+  * Flickable bugfixes
+  * Transaction sort fix
 
 Version 0.0.1
 
