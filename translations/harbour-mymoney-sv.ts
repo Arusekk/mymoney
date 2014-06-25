@@ -32,27 +32,27 @@
         <translation type="unfinished">Kontogrupp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="124"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="96"/>
+        <source>Enter new type or press enter key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddAccountPage.qml" line="123"/>
         <source>Type</source>
         <translation type="unfinished">Kontotyp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="96"/>
-        <source>Enter new type or select from below</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="139"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="137"/>
         <source>Starting Balance</source>
         <translation type="unfinished">Ingående saldo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="140"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="138"/>
         <source>Enter start saldo</source>
         <translation type="unfinished">Skriv in nuvarande saldo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="147"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="145"/>
         <source>Saldo %1</source>
         <translation>Saldo %1</translation>
     </message>

@@ -93,7 +93,7 @@ Dialog {
             id: typeEntry
             visible: comboAccountType.currentIndex == -1
             enabled: comboAccountGroup.currentIndex != -1
-            placeholderText: qsTr("Enter new type or select from below")
+            placeholderText: qsTr("Enter new type or press enter key")
             width: parent.width
             EnterKey.iconSource: "image://theme/icon-m-enter-accept"
             onPressAndHold: { if (typeEntry.text.length == 0)

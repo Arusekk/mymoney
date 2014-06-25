@@ -1,3 +1,8 @@
+Version 0.0.2
+
+  * possibility to add more account types
+  * Add Transaction UI improved
+
 Version 0.0.1
 
   * First release
