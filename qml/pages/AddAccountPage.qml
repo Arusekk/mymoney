@@ -96,7 +96,6 @@ Dialog {
             placeholderText: qsTr("Enter new type or select from below")
             width: parent.width
             EnterKey.iconSource: "image://theme/icon-m-enter-accept"
-            // onclicked only if empty text we show menu
             onPressAndHold: { if (typeEntry.text.length == 0)
                                 { focus = false;  comboAccountType.clicked(undefined); }
                         }
@@ -123,7 +122,6 @@ Dialog {
             visible: comboAccountGroup.currentIndex != -1
             label: qsTr("Type")
             currentIndex: -1
-           //height: menu.active ? 600 : Theme.itemSizeMedium
             menu:ContextMenu{
                                 Repeater {
                                     model: modelCurrentAccountTypes;
@@ -165,7 +163,6 @@ Dialog {
         interval: 200
         running: true
         onTriggered:{
-            console.log("boom");
                             if (comboAccountGroup.currentIndex == -1)
                                  comboAccountGroup.menu.show(comboAccountGroup)
                     }
