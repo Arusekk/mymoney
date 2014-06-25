@@ -34,13 +34,19 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
-    // To enable PullDownMenu, place our content in a SilicaFlickable
-    SilicaFlickable {
-        interactive: !bankview.focus
-//        pressDelay: 0
-        anchors.fill: parent
-
-        // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
+    SilicaListView {
+        id: bankview
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.leftMargin: Theme.paddingSmall
+        anchors.rightMargin: Theme.paddingSmall
+        header: PageHeader {
+            id: header
+            height: Theme.itemSizeSmall
+            title: appinfo.getName()+" v"+appinfo.getVersion()
+        }
         PullDownMenu {
             MenuItem {
                 text: qsTr("About %1").arg(appinfo.getName())
@@ -63,50 +69,31 @@ Page {
             }
         }
 
-        // Tell SilicaFlickable the height of its content.
-       // contentHeight: bankview.height
+        clip: true //  to have the out of view items clipped nicely.
+        model: modelAccounts
 
-        PageHeader {
-            id: header
-            height: Theme.itemSizeSmall
-            title: appinfo.getName()+" v"+appinfo.getVersion()
-        }
-
-        SilicaListView {
-            id: bankview
-            anchors.top: header.bottom
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.leftMargin: Theme.paddingSmall
-            anchors.rightMargin: Theme.paddingSmall
-            clip: true //  to have the out of view items clipped nicely.
-            model: modelAccounts
-
-            delegate: BankDelegate {}
-            section.criteria: ViewSection.FullString
-            section.property: "group"
-            section.delegate: Label { font.family: Theme.fontFamilyHeading; color: Theme.highlightColor; text: modelAccountGroups.get(section).title; anchors.horizontalCenter: parent.horizontalCenter; }
-            VerticalScrollDecorator { flickable:bankview }
-        }
-
-        Column {
-            visible: modelAccounts.count < 3
-            anchors.centerIn: parent
-            Label {
-                color: Theme.highlightColor
-                font.pixelSize: Theme.fontSizeLarge
-                text: qsTr("Add accounts from pulley menu")
-                height: Theme.itemSizeSmall
-            }
-            Label {
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("You should have at least one of each\ngroup (Income, Bank and Expense).")
-                height: Theme.itemSizeMedium
-            }
-        }
+        delegate: BankDelegate {}
+        section.criteria: ViewSection.FullString
+        section.property: "group"
+        section.delegate: Label { font.family: Theme.fontFamilyHeading; color: Theme.highlightColor; text: modelAccountGroups.get(section).title; anchors.horizontalCenter: parent.horizontalCenter; }
+        VerticalScrollDecorator { flickable:bankview }
     }
 
+    Column {
+        visible: modelAccounts.count < 3
+        anchors.centerIn: parent
+        Label {
+            color: Theme.highlightColor
+            font.pixelSize: Theme.fontSizeLarge
+            text: qsTr("Add accounts from pulley menu")
+            height: Theme.itemSizeSmall
+        }
+        Label {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: qsTr("You should have at least one of each\ngroup (Income, Bank and Expense).")
+            height: Theme.itemSizeMedium
+        }
+    }
 
     Timer{
         interval: 200

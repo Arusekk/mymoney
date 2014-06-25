@@ -63,11 +63,12 @@ Page {
         }
     }
 
-    SilicaFlickable{
+    SilicaListView{
+        id: listView
         anchors.fill: parent
-        interactive: !listView.flicking
-        pressDelay: 0
-        PageHeader { id: header; title: qsTr("Transactions %1").arg(modelAccounts.lookupByMd5(md5).title) }
+        anchors.leftMargin: Theme.paddingSmall
+        anchors.rightMargin: Theme.paddingSmall
+        header: PageHeader { id: header; title: qsTr("Transactions %1").arg(modelAccounts.lookupByMd5(md5).title) }
 
         PullDownMenu {
             MenuItem {
@@ -76,19 +77,11 @@ Page {
             }
         }
 
-        SilicaListView{
-            id: listView
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.top: header.bottom
-            anchors.bottom: parent.bottom
-            anchors.leftMargin: Theme.paddingSmall
-            anchors.rightMargin: Theme.paddingSmall
-            clip: true
-            model: modelCurrentTransactions
-            delegate: TransactionDelegate {}
-            VerticalScrollDecorator { flickable:listView }
-        }
+        clip: true
+        model: modelCurrentTransactions
+        delegate: TransactionDelegate {}
+        VerticalScrollDecorator { flickable:listView }
     }
+
     Component.onCompleted: modelCurrentTransactions.load()
 }

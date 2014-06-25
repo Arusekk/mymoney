@@ -164,7 +164,7 @@
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="46"/>
+        <location filename="../qml/pages/FirstPage.qml" line="52"/>
         <source>About %1</source>
         <translation type="unfinished">Om %1</translation>
     </message>
@@ -173,22 +173,22 @@
         <translation type="obsolete">Visa graf</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="56"/>
+        <location filename="../qml/pages/FirstPage.qml" line="62"/>
         <source>Add account</source>
         <translation type="unfinished">Nytt konto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="61"/>
+        <location filename="../qml/pages/FirstPage.qml" line="67"/>
         <source>Add transaction</source>
         <translation type="unfinished">Ny transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="99"/>
+        <location filename="../qml/pages/FirstPage.qml" line="88"/>
         <source>Add accounts from pulley menu</source>
         <translation type="unfinished">Lägg till konto via pulley menu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="104"/>
+        <location filename="../qml/pages/FirstPage.qml" line="93"/>
         <source>You should have at least one of each
 group (Income, Bank and Expense).</source>
         <translation type="unfinished">Du bör ha minst ett konto från varje
@@ -258,7 +258,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation type="unfinished">Transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="77"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="75"/>
         <source>Add transaction</source>
         <translation type="unfinished">Ny transaktion</translation>
     </message>
