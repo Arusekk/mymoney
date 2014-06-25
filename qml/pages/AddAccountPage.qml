@@ -163,8 +163,8 @@ Dialog {
         interval: 200
         running: true
         onTriggered:{
-                            if (comboAccountGroup.currentIndex == -1)
-                                 comboAccountGroup.menu.show(comboAccountGroup)
+                        if (comboAccountGroup.currentIndex == -1)
+                            comboAccountGroup.menu.show(comboAccountGroup)
                     }
     }
 }
