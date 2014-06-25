@@ -169,26 +169,59 @@
         <translation type="unfinished">Om %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="50"/>
+        <source>Expense graph</source>
+        <translation type="obsolete">Visa graf</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FirstPage.qml" line="56"/>
         <source>Add account</source>
         <translation type="unfinished">Nytt konto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="55"/>
+        <location filename="../qml/pages/FirstPage.qml" line="61"/>
         <source>Add transaction</source>
         <translation type="unfinished">Ny transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="93"/>
+        <location filename="../qml/pages/FirstPage.qml" line="99"/>
         <source>Add accounts from pulley menu</source>
         <translation type="unfinished">Lägg till konto via pulley menu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="98"/>
+        <location filename="../qml/pages/FirstPage.qml" line="104"/>
         <source>You should have at least one of each
 group (Income, Bank and Expense).</source>
         <translation type="unfinished">Du bör ha minst ett konto från varje
 grupp (Inkomst, Bank och Utgift)</translation>
+    </message>
+</context>
+<context>
+    <name>GraphPage</name>
+    <message>
+        <location filename="../qml/pages/GraphPage.qml" line="7"/>
+        <source>Graph</source>
+        <translation type="unfinished">Graf</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GraphPage.qml" line="13"/>
+        <source>Show</source>
+        <translation type="unfinished">Visa</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GraphPage.qml" line="16"/>
+        <location filename="../qml/pages/GraphPage.qml" line="54"/>
+        <source>Expenses</source>
+        <translation type="unfinished">Utgifter</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GraphPage.qml" line="17"/>
+        <source>Expenses vs Bank</source>
+        <translation type="unfinished">Utgifter vs Bank</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GraphPage.qml" line="53"/>
+        <source>Bank</source>
+        <translation type="unfinished">Bank</translation>
     </message>
 </context>
 <context>

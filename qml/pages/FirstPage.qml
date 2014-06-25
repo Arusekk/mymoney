@@ -37,7 +37,7 @@ Page {
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
         interactive: !bankview.focus
-        pressDelay: 0
+//        pressDelay: 0
         anchors.fill: parent
 
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
@@ -46,6 +46,12 @@ Page {
                 text: qsTr("About %1").arg(appinfo.getName())
                 onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
             }
+/*            MenuItem
+            {
+                text: qsTr("Expense graph")
+                onClicked: pageStack.push(Qt.resolvedUrl("GraphPage.qml"))
+            }
+            */
             MenuItem {
                 text: qsTr("Add account")
                 onClicked: pageStack.push(Qt.resolvedUrl("AddAccountPage.qml"))
@@ -99,6 +105,14 @@ Page {
                 height: Theme.itemSizeMedium
             }
         }
+    }
+
+
+    Timer{
+        interval: 200
+        running: true
+        repeat: false
+        onTriggered:  pageStack.pushAttached(Qt.resolvedUrl("GraphPage.qml"))
     }
 }
 

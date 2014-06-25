@@ -43,7 +43,8 @@ OTHER_FILES += qml/mymoney.qml \
     rpm/harbour-mymoney.yaml \
     doc/mymoney_sv.json \
     translations/harbour-mymoney-sv.ts \
-    translations/harbour-mymoney-fi.ts
+    translations/harbour-mymoney-fi.ts \
+    qml/pages/GraphPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
