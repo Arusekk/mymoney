@@ -34,7 +34,7 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="96"/>
         <source>Enter new type or press enter key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skriv ny typ eller tryck enter</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="123"/>
@@ -253,12 +253,12 @@ grupp (Inkomst, Bank och Utgift)</translation>
 <context>
     <name>TransactionsPage</name>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="66"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="70"/>
         <source>Transactions %1</source>
         <translation type="unfinished">Transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="70"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="74"/>
         <source>Add transaction</source>
         <translation type="unfinished">Ny transaktion</translation>
     </message>

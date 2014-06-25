@@ -46,7 +46,11 @@ Page {
             for (var i = 0; i < modelCurrentTransactions.count; i++)
             {
                 var o = modelCurrentTransactions.get(i)
-                if (n.date <= o.date)
+                var d1 = new Date(n.date).getTime()
+                var d2 = new Date(o.date).getTime()
+                console.log(n.date+" = "+d1)
+                console.log(o.date+" = "+d2)
+                if (d1 <= d2)
                 {
                     modelCurrentTransactions.insert(i, n)
                     break;
