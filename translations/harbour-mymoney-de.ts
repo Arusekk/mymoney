@@ -248,12 +248,12 @@ group (Income, Bank and Expense).</source>
 <context>
     <name>TransactionsPage</name>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="70"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="71"/>
         <source>Transactions %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="74"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="77"/>
         <source>Add transaction</source>
         <translation type="unfinished"></translation>
     </message>
