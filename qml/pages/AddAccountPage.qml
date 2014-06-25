@@ -97,7 +97,7 @@ Dialog {
             width: parent.width
             EnterKey.iconSource: "image://theme/icon-m-enter-accept"
             // onclicked only if empty text we show menu
-            onClicked: { if (focus && typeEntry.text.length == 0)
+            onPressAndHold: { if (typeEntry.text.length == 0)
                                 { focus = false;  comboAccountType.clicked(undefined); }
                         }
             Keys.onReturnPressed: {
