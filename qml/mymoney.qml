@@ -38,12 +38,9 @@ ApplicationWindow
     initialPage: Component { FirstPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
+    signal transactionsUpdated
     property string errorText: ""
     onErrorTextChanged: { timerHot.start(); hot.opacity = 1.0; }
-
-    property double saldoIncomes: 0.0
-    property double saldoBanks: 0.0
-    property double saldoExpenses: 0.0
 
     Timer {
         id: timerHot
@@ -147,6 +144,8 @@ ApplicationWindow
             o = modelAccounts.lookupByMd5(to)
             o.sum = o.sum + sum
             modelAccounts.updateTotal(o.group, sum)
+
+            transactionsUpdated()
         }
     }
 
@@ -154,8 +153,15 @@ ApplicationWindow
     ListModel
     {
         id: modelAccounts
+        property double saldoIncomes: 0.0
+        property double saldoBanks: 0.0
+        property double saldoExpenses: 0.0
         function load(jsonObject)
         {
+            saldoIncomes = 0.0
+            saldoBanks = 0.0
+            saldoExpenses = 0.0
+            modelAccounts.clear()
             for (var key in jsonObject)
             {
                 var arr = jsonObject[key]
@@ -234,10 +240,16 @@ ApplicationWindow
         function addOrChange(group, title, typ, sum, _md5)
         {
             var o = lookupByMd5(_md5);
-            if (!o)
+            if (!o) // new
             {
+                // yes, notice addAcount will add new balancqa transaction...
                 _md5 = jsonloader.addAccount(title, group, typ, sum, "")
+                // insert in model FIXME we better reread json file less risk for bug
                 add(group, title, typ, sum, _md5);
+                // ... as we do it on transactions
+                var jsonObject = JSON.parse(jsonloader.dump())
+                modelTransactions.transactions = jsonObject.transactions
+                modelAccounts.load(jsonObject.accounts)
             }
             else
             {
