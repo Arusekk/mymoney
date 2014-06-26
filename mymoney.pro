@@ -41,10 +41,11 @@ OTHER_FILES += qml/mymoney.qml \
     qml/pages/TransactionsPage.qml \
     qml/pages/TransactionDelegate.qml \
     rpm/harbour-mymoney.yaml \
-    doc/mymoney_sv.json \
     translations/harbour-mymoney-sv.ts \
     translations/harbour-mymoney-fi.ts \
-    qml/pages/GraphPage.qml
+    qml/pages/GraphPage.qml \
+    qml/pages/DonatePage.qml \
+    qml/pages/ComboAccountToFrom.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

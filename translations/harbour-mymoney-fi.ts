@@ -60,65 +60,43 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="125"/>
-        <source>Saldo %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="67"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="83"/>
         <source>Add transaction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="73"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="89"/>
         <source>Expense</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="74"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Bank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="75"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="91"/>
         <source>Income</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="80"/>
-        <source>From:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="125"/>
-        <source>To and from must be different</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="106"/>
-        <source>To:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
-        <source>Enter Description</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
-        <source>Description of transaction</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="119"/>
         <source>Amount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="120"/>
         <source>Enter amount</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="135"/>
+        <source>Enter Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="136"/>
+        <source>Description of transaction</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -140,6 +118,31 @@
     <message>
         <location filename="../qml/pages/ChangeLog.qml" line="7"/>
         <source>ChangeLog</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ComboAccountToFrom</name>
+    <message>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="23"/>
+        <source>From:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="45"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="72"/>
+        <source>To and from must be different</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="45"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="72"/>
+        <source>Saldo %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="51"/>
+        <source>To:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -222,17 +225,157 @@ group (Income, Bank and Expense).</source>
 <context>
     <name>JsonLoader</name>
     <message>
+        <location filename="../src/jsonloader.cpp" line="56"/>
+        <source>Loan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="52"/>
+        <source>Salary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="53"/>
+        <source>Student grants</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="54"/>
+        <source>Unemployment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="55"/>
+        <source>Temporary disability</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="57"/>
+        <source>Other income</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="58"/>
+        <source>Visa</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="59"/>
+        <source>Maestro</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="60"/>
+        <source>Mastercard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="61"/>
+        <source>Savings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="62"/>
+        <source>Other card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="63"/>
+        <source>Online money</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="64"/>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/jsonloader.cpp" line="65"/>
+        <source>Rent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="66"/>
+        <source>Entertainment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="67"/>
+        <source>Food</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="68"/>
+        <source>Travel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="69"/>
+        <source>Internet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="70"/>
+        <source>Hobby</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="71"/>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="72"/>
+        <source>Health</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="73"/>
+        <source>Insurance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="74"/>
+        <source>Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="75"/>
+        <source>Clothes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="76"/>
+        <source>Other expence</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="110"/>
         <source>Starting balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="65"/>
+        <location filename="../src/jsonloader.cpp" line="110"/>
         <source>Balance account</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="124"/>
+        <location filename="../src/jsonloader.cpp" line="113"/>
+        <source>Income</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="114"/>
+        <source>Bank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="115"/>
+        <source>Expense</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/jsonloader.cpp" line="177"/>
         <source>Balance</source>
         <translation type="unfinished"></translation>
     </message>
@@ -248,12 +391,12 @@ group (Income, Bank and Expense).</source>
 <context>
     <name>TransactionsPage</name>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="71"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="78"/>
         <source>Transactions %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="75"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="82"/>
         <source>Add transaction</source>
         <translation type="unfinished"></translation>
     </message>

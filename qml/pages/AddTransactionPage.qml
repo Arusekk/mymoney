@@ -6,65 +6,75 @@ Dialog
  //   anchors.fill: parent
     property var transaction
     property bool init: true
-    canAccept: (entryDescription.text != "" && entrySum.text != "" && comboFrom.value != "" && comboTo.value != "" && entrySum.asDouble() > 0.0 && comboFrom.value != comboTo.value)
+    property string to: ""
+    property string from: ""
+    canAccept: (entryDescription.text != "" && entrySum.text != "" && to != "" && from != "" && entrySum.asDouble() > 0.0 && to != from)
     onAccepted: {
-        var from = modelFrom.get(comboFrom.currentIndex).md5
-        var to = modelTo.get(comboTo.currentIndex).md5
         modelTransactions.add(from, to, entryDescription.text, entrySum.asDouble())
     }
 
+    onFromChanged: console.log("from: "+from)
     function getAccountSaldoAsString(md5, addsum)
     {
         var o = modelAccounts.lookupByMd5(md5)
         return o ?  (o.sum + addsum).toLocaleCurrencyString(Qt.locale()) : ""
     }
 
-    function isToFromEqual()
-    {
-        return comboFrom.getCurrentMd5() == comboTo.getCurrentMd5()
-    }
-
     ListModel {
-        id: modelFrom
-        function load(group)
+        id: modelIncome
+        function load(combo)
         {
-            comboFrom.currentIndex = -1
-            comboFrom.value = ""
-            modelFrom.clear()
+            combo.model = modelIncome
+        }
+        function init()
+        {
             for (var i = 0; i < modelAccounts.count; i++)
             {
                 var o = modelAccounts.get(i)
-                if (o.group == group)
+                if (o.group == "0")
                 {
-                    console.log(o.group+" == "+group+" FROM "+o.title)
-                    modelFrom.append({"title" : o.title, "md5" : o.md5})
+                    append({"title" : o.title, "md5" : o.md5})
                 }
             }
-
-            comboFrom.menu.update()
-           // if (init == false)
-             //   comboFrom.clicked(comboFrom)
         }
 
     }
 
     ListModel {
-        id: modelTo
-        function load(group)
+        id: modelBank
+        function load(combo)
         {
-            comboTo.currentIndex = -1
-            comboTo.value = ""
-            modelTo.clear()
+            combo.model = modelBank
+        }
+        function init()
+        {
             for (var i = 0; i < modelAccounts.count; i++)
             {
                 var o = modelAccounts.get(i)
-                if (o.group == group)
+                if (o.group == "1")
                 {
-                    console.log(o.group+" == "+group+" "+o.title)
-                    modelTo.append({"title" : o.title, "md5" : o.md5 })
+                    append({"title" : o.title, "md5" : o.md5 })
                 }
             }
-            //comboTo.menu.contentY = Theme.itemSizeSmall * modelTo.count
+        }
+    }
+
+    ListModel {
+        id: modelExpense
+        function load(combo)
+        {
+            combo.model = modelExpense
+        }
+        function init()
+        {
+            for (var i = 0; i < modelAccounts.count; i++)
+            {
+                var o = modelAccounts.get(i)
+                if (o.group == "2")
+                {
+                    append({"title" : o.title, "md5" : o.md5 })
+                }
+            }
         }
     }
 
@@ -76,64 +86,30 @@ Dialog
             width: parent.width
             height: Theme.itemSizeSmall
             spacing: 0
-            TextSwitch {id: radioOutgoing; text: qsTr("Expense"); width: 205;  onClicked: { radioBank.checked = false; radioIncoming.checked = false; modelFrom.load(modelAccountGroups.get(1).id); modelTo.load(modelAccountGroups.get(2).id); }}
-            TextSwitch {id: radioBank; text: qsTr("Bank"); width: 165; onClicked: { radioIncoming.checked = false; radioOutgoing.checked = false; modelFrom.load(modelAccountGroups.get(1).id); modelTo.load(modelAccountGroups.get(1).id); } }
-            TextSwitch {id: radioIncoming; text: qsTr("Income"); width: 220; onClicked: { radioBank.checked = false; radioOutgoing.checked = false; modelFrom.load(modelAccountGroups.get(0).id); modelTo.load(modelAccountGroups.get(1).id); } }
+            TextSwitch {id: radioOutgoing; text: qsTr("Expense"); width: 205;  onClicked: { radioBank.checked = false; radioIncoming.checked = false; comboExpense.clear(); }}
+            TextSwitch {id: radioBank; text: qsTr("Bank"); width: 165; onClicked: { radioIncoming.checked = false; radioOutgoing.checked = false; comboBank.clear(); } }
+            TextSwitch {id: radioIncoming; text: qsTr("Income"); width: 220; onClicked: { radioBank.checked = false; radioOutgoing.checked = false; comboIncome.clear();} }
         }
 
-        ComboBox{
-            id: comboFrom
-            label: qsTr("From:")
-            currentIndex: -1
-            menu: ContextMenu {
-                Repeater {
-                    width: parent.width
-                    //height: 200
-                    model: modelFrom
-                    delegate: MenuItem { height: Theme.itemSizeSmall; text: title; }
-                }
-            }
-
-          //  onCurrentIndexChanged: { if (currentIndex != -1) comboTo.clicked(undefined); }
-            function getCurrentMd5()
-            {
-                var o = modelFrom.get(currentIndex)
-                return o ? o.md5 : ""
-            }
+        ComboAccountToFrom {
+            id: comboBank
+            visible: radioBank.checked
+            modelFrom: modelBank
+            modelTo: modelBank
         }
 
-        Label {
-            opacity: comboFrom.currentIndex != -1 ? 1.0 : 0.0
-            color: isToFromEqual() ? Theme.highlightColor : Theme.primaryColor
-            text: isToFromEqual() ? qsTr("To and from must be different") : qsTr("Saldo %1").arg(getAccountSaldoAsString(comboFrom.getCurrentMd5(), entrySum.asDouble() * -1))
-            anchors.horizontalCenter: parent.horizontalCenter
+        ComboAccountToFrom {
+            id: comboIncome
+            visible: radioIncoming.checked
+            modelFrom: modelIncome
+            modelTo: modelBank
         }
 
-        ComboBox{
-            id: comboTo
-            label: qsTr("To:")
-            currentIndex: -1
-            onCurrentIndexChanged: { if (currentIndex != -1) entrySum.focus = true; }
-            menu:ContextMenu{
-                                Repeater {
-                                    //height: 200
-                                    width: parent.width
-                                    model: modelTo;
-                                    delegate: MenuItem {  height: Theme.itemSizeSmall; text: title; }
-                                }
-                            }
-            function getCurrentMd5()
-            {
-                var o = modelTo.get(currentIndex)
-                return o ? o.md5 : ""
-            }
-        }
-
-        Label {
-            opacity: comboTo.currentIndex != -1 ? 1.0 : 0.0
-            color: isToFromEqual() ? Theme.highlightColor : Theme.primaryColor
-            text: isToFromEqual() ? qsTr("To and from must be different") :  qsTr("Saldo %1").arg(getAccountSaldoAsString(comboTo.getCurrentMd5(), entrySum.asDouble()))
-            anchors.horizontalCenter: parent.horizontalCenter
+        ComboAccountToFrom {
+            id: comboExpense
+            visible: radioOutgoing.checked
+            modelFrom: modelBank
+            modelTo: modelExpense
         }
 
         TextField
@@ -165,6 +141,9 @@ Dialog
     }
 
     Component.onCompleted: {
+        modelIncome.init()
+        modelBank.init()
+        modelExpense.init()
         switch (transaction.group)
         {
             case "0":
