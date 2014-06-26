@@ -9,6 +9,18 @@ Page {
         target: app
         onTransactionsUpdated: modelCurrentTransactions.load()
     }
+
+    QtObject{
+        // we need to make a copy of every transaction when insert in currentModel since we modify sum
+        // this probadly can be done better...
+        id: item
+        property double sum: 0.0
+        property double sum2: 0.0
+        property string description: ""
+        property string to: ""
+        property string from: ""
+        property string date: ""
+    }
     ListModel {
         id: modelCurrentTransactions
         function load()
@@ -23,13 +35,12 @@ Page {
                 var o = tr[key]
                 if (o.from == md5)
                 {
-                    if (isbank)
-                        o.sum = o.sum * -1
-                    modelCurrentTransactions.dirtyInsert(o)
+                    // invert sum only if bank is from
+                    modelCurrentTransactions.dirtyInsert(o, isbank)
                 }
                 else if(o.to == md5)
                 {
-                    modelCurrentTransactions.dirtyInsert(o)
+                    modelCurrentTransactions.dirtyInsert(o, false)
                 }
             }
 
@@ -47,9 +58,19 @@ Page {
             }
         }
 
-        function dirtyInsert(n) // this probadly could be done better...
+        function dirtyInsert(n, invertsum) // this probadly could be done better...
         {
-            n["sum2"] = 0.0
+            // we need to make a copy of the original since we modify sum
+            item.sum = n.sum
+            item.sum2 = 0.0
+            item.description = n.description
+            item.to = n.to
+            item.from = n.from
+            item.date = n.date
+            if (invertsum){
+                // and now the real reason we copy...
+                item.sum = item.sum * -1
+            }
             for (var i = 0; i < modelCurrentTransactions.count; i++)
             {
                 var o = modelCurrentTransactions.get(i)
@@ -59,12 +80,12 @@ Page {
                 console.log(o.date+" = "+d2)
                 if (d1 <= d2)
                 {
-                    modelCurrentTransactions.insert(i, n)
+                    modelCurrentTransactions.insert(i, item)
                     break;
                 }
             }
             if (i == modelCurrentTransactions.count) {
-                modelCurrentTransactions.append(n)
+                modelCurrentTransactions.append(item)
             }
 
         }

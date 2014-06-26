@@ -416,12 +416,12 @@ grupp (Inkomst, Bank och Utgift)</translation>
 <context>
     <name>TransactionsPage</name>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="78"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="99"/>
         <source>Transactions %1</source>
         <translation type="unfinished">Transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="82"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="103"/>
         <source>Add transaction</source>
         <translation type="unfinished">Ny transaktion</translation>
     </message>
