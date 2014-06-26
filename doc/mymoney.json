@@ -1,34 +1,6 @@
 {
-  "accountgroups" :
-  {
-      "0" : "Income",
-      "1" : "Bank",
-      "2" : "Expense"
-  },
-  "accounttypes" :
-  [
-        {"type" : "Visa" , "group" : "1"},
-        {"type" : "Mastercard" , "group" : "1"},
-        {"type" : "Maestro" , "group" : "1"},
-        {"type" : "Paypal" , "group" : "1"},
-        {"type" : "Bitcoin" , "group" : "1"},
-        {"type" : "Other Card" , "group" : "1"},
-        {"type" : "Other", "group" : "1"},
-        {"type" : "Savings" , "group" : "1"},
-        {"type" : "Loan" , "group" : "0"},
-        {"type" : "Salary" , "group" : "0"},
-        {"type" : "Student grants" , "group" : "0"},
-        {"type" : "Temporary disability" , "group" : "0"},
-        {"type" : "Rent" , "group" : "2"},
-        {"type" : "Entertainment" , "group" : "2"},
-        {"type" : "Car" , "group" : "2"},
-        {"type" : "Travel" , "group" : "2"},
-        {"type" : "Insurance" , "group" : "2"},
-        {"type" : "Internet" , "group" : "2"},
-        {"type" : "Food" , "group" : "2"},
-        {"type" : "Hobby" , "group" : "2"},
-        {"type" : "Other expend" , "group" : "2"}
-  ],
+  "accountgroups" : {},
+  "accounttypes" : [],
   "accounts" : {},
   "transactions" : []
 }

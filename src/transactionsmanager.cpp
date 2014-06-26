@@ -13,7 +13,7 @@ TransactionsManager::TransactionsManager(QObject *parent, JsonLoader &_loader) :
 
 bool TransactionsManager::add(QString fromaccount, QString toaccount, QString description, double sum, bool _save)
 {
-    QString md5 = QString(QCryptographicHash::hash((QDateTime::currentDateTime().toString(Qt::ISODate).toUtf8()),QCryptographicHash::Md5).toHex());
+    QString md5 = QString(QCryptographicHash::hash((QDateTime::currentDateTimeUtc().toString(Qt::ISODate).toUtf8()),QCryptographicHash::Md5).toHex());
     QJsonObject n;
     n["from"] = fromaccount;
     n["to"] = toaccount;
