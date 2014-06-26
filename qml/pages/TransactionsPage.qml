@@ -3,10 +3,17 @@ import Sailfish.Silica 1.0
 Page {
     property string md5: ""
     property var account
+
+    Connections
+    {
+        target: app
+        onTransactionsUpdated: modelCurrentTransactions.load()
+    }
     ListModel {
         id: modelCurrentTransactions
         function load()
         {
+            modelCurrentTransactions.clear()
             var isbank = modelAccounts.lookupByMd5(md5).group == "1"
             account = modelAccounts.lookupByMd5(md5)
             var tr = modelTransactions.transactions
