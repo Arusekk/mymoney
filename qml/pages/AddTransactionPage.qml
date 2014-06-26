@@ -29,18 +29,21 @@ Dialog
         function load(group)
         {
             comboFrom.currentIndex = -1
+            comboFrom.value = ""
             modelFrom.clear()
             for (var i = 0; i < modelAccounts.count; i++)
             {
                 var o = modelAccounts.get(i)
                 if (o.group == group)
                 {
+                    console.log(o.group+" == "+group+" FROM "+o.title)
                     modelFrom.append({"title" : o.title, "md5" : o.md5})
                 }
             }
 
-            if (init == false)
-                comboFrom.clicked(false)
+            comboFrom.menu.update()
+           // if (init == false)
+             //   comboFrom.clicked(comboFrom)
         }
 
     }
@@ -50,15 +53,18 @@ Dialog
         function load(group)
         {
             comboTo.currentIndex = -1
+            comboTo.value = ""
             modelTo.clear()
             for (var i = 0; i < modelAccounts.count; i++)
             {
                 var o = modelAccounts.get(i)
                 if (o.group == group)
                 {
+                    console.log(o.group+" == "+group+" "+o.title)
                     modelTo.append({"title" : o.title, "md5" : o.md5 })
                 }
             }
+            //comboTo.menu.contentY = Theme.itemSizeSmall * modelTo.count
         }
     }
 
@@ -79,14 +85,16 @@ Dialog
             id: comboFrom
             label: qsTr("From:")
             currentIndex: -1
-            menu:ContextMenu{
-                                Repeater {
-                                    model: modelFrom;
-                                    MenuItem { text: title; }
-                                }
-                            }
+            menu: ContextMenu {
+                Repeater {
+                    width: parent.width
+                    //height: 200
+                    model: modelFrom
+                    delegate: MenuItem { height: Theme.itemSizeSmall; text: title; }
+                }
+            }
 
-            onCurrentIndexChanged: comboTo.clicked(undefined)
+          //  onCurrentIndexChanged: { if (currentIndex != -1) comboTo.clicked(undefined); }
             function getCurrentMd5()
             {
                 var o = modelFrom.get(currentIndex)
@@ -95,7 +103,7 @@ Dialog
         }
 
         Label {
-            visible: comboFrom.currentIndex != -1
+            opacity: comboFrom.currentIndex != -1 ? 1.0 : 0.0
             color: isToFromEqual() ? Theme.highlightColor : Theme.primaryColor
             text: isToFromEqual() ? qsTr("To and from must be different") : qsTr("Saldo %1").arg(getAccountSaldoAsString(comboFrom.getCurrentMd5(), entrySum.asDouble() * -1))
             anchors.horizontalCenter: parent.horizontalCenter
@@ -105,11 +113,13 @@ Dialog
             id: comboTo
             label: qsTr("To:")
             currentIndex: -1
-            onCurrentIndexChanged: entrySum.focus = true
+            onCurrentIndexChanged: { if (currentIndex != -1) entrySum.focus = true; }
             menu:ContextMenu{
                                 Repeater {
+                                    //height: 200
+                                    width: parent.width
                                     model: modelTo;
-                                    MenuItem { text: title; }
+                                    delegate: MenuItem {  height: Theme.itemSizeSmall; text: title; }
                                 }
                             }
             function getCurrentMd5()
@@ -120,7 +130,7 @@ Dialog
         }
 
         Label {
-            visible: comboTo.currentIndex != -1
+            opacity: comboTo.currentIndex != -1 ? 1.0 : 0.0
             color: isToFromEqual() ? Theme.highlightColor : Theme.primaryColor
             text: isToFromEqual() ? qsTr("To and from must be different") :  qsTr("Saldo %1").arg(getAccountSaldoAsString(comboTo.getCurrentMd5(), entrySum.asDouble()))
             anchors.horizontalCenter: parent.horizontalCenter
