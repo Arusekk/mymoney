@@ -23,6 +23,62 @@ QString JsonLoader::dump()
     return QString(json.toJson());
 }
 
+void JsonLoader::addDefaultTypes()
+{
+    /*
+        {"type" : "Loan" , "group" : "0"},
+        {"type" : "Salary" , "group" : "0"},
+        {"type" : "Student grants" , "group" : "0"},
+        {"type" : "Temporary disability" , "group" : "0"},
+        {"type" : "Visa" , "group" : "1"},
+        {"type" : "Mastercard" , "group" : "1"},
+        {"type" : "Maestro" , "group" : "1"},
+        {"type" : "Paypal" , "group" : "1"},
+        {"type" : "Bitcoin" , "group" : "1"},
+        {"type" : "Other Card" , "group" : "1"},
+        {"type" : "Other", "group" : "1"},
+        {"type" : "Savings" , "group" : "1"},
+        {"type" : "Rent" , "group" : "2"},
+        {"type" : "Entertainment" , "group" : "2"},
+        {"type" : "Car" , "group" : "2"},
+        {"type" : "Travel" , "group" : "2"},
+        {"type" : "Insurance" , "group" : "2"},
+        {"type" : "Internet" , "group" : "2"},
+        {"type" : "Food" , "group" : "2"},
+        {"type" : "Hobby" , "group" : "2"},
+        {"type" : "Other expend" , "group" : "2"}
+    */
+
+    accounttypes.addOrChange("0", tr("Salary"));
+    accounttypes.addOrChange("0", tr("Student grants"));
+    accounttypes.addOrChange("0", tr("Unemployment"));
+    accounttypes.addOrChange("0", tr("Temporary disability"));
+    accounttypes.addOrChange("0", tr("Loan"));
+    accounttypes.addOrChange("0", tr("Other income"));
+    accounttypes.addOrChange("1", tr("Visa"));
+    accounttypes.addOrChange("1", tr("Maestro"));
+    accounttypes.addOrChange("1", tr("Mastercard"));
+    accounttypes.addOrChange("1", tr("Savings"));
+    accounttypes.addOrChange("1", tr("Other card"));
+    accounttypes.addOrChange("1", tr("Online money"));
+    accounttypes.addOrChange("1", tr("Other"));
+    accounttypes.addOrChange("2", tr("Rent"));
+    accounttypes.addOrChange("2", tr("Entertainment"));
+    accounttypes.addOrChange("2", tr("Food"));
+    accounttypes.addOrChange("2", tr("Travel"));
+    accounttypes.addOrChange("2", tr("Internet"));
+    accounttypes.addOrChange("2", tr("Hobby"));
+    accounttypes.addOrChange("2", tr("Home"));
+    accounttypes.addOrChange("2", tr("Health"));
+    accounttypes.addOrChange("2", tr("Insurance"));
+    accounttypes.addOrChange("2", tr("Media"));
+    accounttypes.addOrChange("2", tr("Clothes"));
+    accounttypes.addOrChange("2", tr("Other expence"));
+
+
+
+}
+
 QString JsonLoader::load()
 {
     bool fromtemplate = false;
@@ -36,26 +92,15 @@ QString JsonLoader::load()
     }
     else
     {
-        file.setFileName(("/usr/share/harbour-mymoney/templates/mymoney_"+QLocale::system().name().split("_")[0]+".json"));
+        file.setFileName("/usr/share/harbour-mymoney/templates/mymoney.json");
         if (file.open(QFile::ReadOnly))
         {
             data.append(file.readAll());
             file.close();
             fromtemplate = true; // first time creation
         }
-        else // nor locale
-        {
-            qDebug() << "failed: " << file.fileName() << endl;
-            file.setFileName("/usr/share/harbour-mymoney/templates/mymoney.json");
-            if (file.open(QFile::ReadOnly))
-            {
-                data.append(file.readAll());
-                file.close();
-                fromtemplate = true; // first time creation
-            }
-            else
-                emit error("Could not load json file");
-        }
+        else
+            emit error("Could not load json file");
     }
 
     QJsonParseError err;
@@ -64,9 +109,17 @@ QString JsonLoader::load()
     {
         QString md5 = addAccount(tr("Balance account"), "SB", tr("Starting balance"), 0.0, "");
         QJsonObject obj = json.object();
+        QJsonObject groups;
+        groups.insert("0", tr("Income"));
+        groups.insert("1", tr("Bank"));
+        groups.insert("2", tr("Expense"));
+        obj.insert("accountgroups", groups);
+
         obj.insert("balanceaccount_md5", md5);
         obj.insert("version", 1);
         json.setObject(obj); // and feed it
+
+        addDefaultTypes();
         save();
     }
 
