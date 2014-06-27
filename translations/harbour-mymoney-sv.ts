@@ -410,7 +410,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
     <message>
         <location filename="../src/jsonloader.cpp" line="188"/>
         <source>Balance</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ingående saldo</translation>
     </message>
 </context>
 <context>
@@ -426,12 +426,12 @@ grupp (Inkomst, Bank och Utgift)</translation>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="20"/>
         <source>Settings BETA</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inställningar</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="24"/>
         <source>Default currency</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Välj valuta</translation>
     </message>
 </context>
 <context>
