@@ -122,6 +122,17 @@ QString JsonLoader::load()
         addDefaultTypes();
         save();
     }
+    else
+    {
+        // overwrite json file since we use translations now.
+        QJsonObject obj = json.object();
+        QJsonObject groups;
+        groups.insert("0", tr("Income"));
+        groups.insert("1", tr("Bank"));
+        groups.insert("2", tr("Expense"));
+        obj.insert("accountgroups", groups);
+        json.setObject(obj); // and feed it
+    }
 
     return QString(json.toJson());
 }

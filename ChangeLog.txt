@@ -5,6 +5,7 @@ Version 0.0.2
   * Graph
   * Flickable bugfixes
   * Transaction sort fix
+  * Transaction saldo fix
 
 Version 0.0.1
 

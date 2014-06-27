@@ -386,21 +386,24 @@ grupp (Inkomst, Bank och Utgift)</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="113"/>
+        <location filename="../src/jsonloader.cpp" line="130"/>
         <source>Income</source>
         <translation type="unfinished">Inkomst</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="114"/>
+        <location filename="../src/jsonloader.cpp" line="131"/>
         <source>Bank</source>
         <translation type="unfinished">Bank</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="115"/>
+        <location filename="../src/jsonloader.cpp" line="132"/>
         <source>Expense</source>
         <translation type="unfinished">Utgift</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="177"/>
+        <location filename="../src/jsonloader.cpp" line="188"/>
         <source>Balance</source>
         <translation type="unfinished"></translation>
     </message>
