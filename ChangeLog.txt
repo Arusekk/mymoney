@@ -6,6 +6,8 @@ Version 0.0.2
   * Flickable bugfixes
   * Transaction sort fix
   * Transaction saldo fix
+  * global currency setting
+  * Finish translations (there probadly is akward translations, send me an email if you see any)
 
 Version 0.0.1
 
