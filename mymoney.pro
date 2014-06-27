@@ -45,7 +45,8 @@ OTHER_FILES += qml/mymoney.qml \
     translations/harbour-mymoney-fi.ts \
     qml/pages/GraphPage.qml \
     qml/pages/DonatePage.qml \
-    qml/pages/ComboAccountToFrom.qml
+    qml/pages/ComboAccountToFrom.qml \
+    qml/pages/SettingsPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

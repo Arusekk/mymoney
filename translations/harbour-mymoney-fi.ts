@@ -172,6 +172,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../qml/pages/FirstPage.qml" line="57"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/FirstPage.qml" line="62"/>
         <source>Add account</source>
         <translation type="unfinished"></translation>
@@ -392,14 +397,27 @@ group (Income, Bank and Expense).</source>
     </message>
 </context>
 <context>
+    <name>SettingsPage</name>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="20"/>
+        <source>Settings BETA</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="24"/>
+        <source>Default currency</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TransactionsPage</name>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="99"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="97"/>
         <source>Transactions %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="103"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="101"/>
         <source>Add transaction</source>
         <translation type="unfinished"></translation>
     </message>

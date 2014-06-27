@@ -51,7 +51,7 @@ BackgroundItem  {
                 Label {
                     font.pixelSize: Theme.fontSizeSmall
                     anchors.fill: parent
-                    text: Number(sum).toLocaleCurrencyString(Qt.locale())
+                    text: Number(sum).toLocaleCurrencyString(Qt.locale(currentLocale))
                 }
             }
         }
@@ -102,7 +102,7 @@ BackgroundItem  {
                 height: 40
                 font.pixelSize: Theme.fontSizeSmall
                // anchors.fill: parent
-                text: Number(sum2).toLocaleCurrencyString(Qt.locale())
+                text: Number(sum2).toLocaleCurrencyString(Qt.locale(currentLocale))
             }
         }
     }

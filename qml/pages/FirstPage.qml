@@ -52,12 +52,12 @@ Page {
                 text: qsTr("About %1").arg(appinfo.getName())
                 onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
             }
-/*            MenuItem
+            MenuItem
             {
-                text: qsTr("Expense graph")
-                onClicked: pageStack.push(Qt.resolvedUrl("GraphPage.qml"))
+                text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }
-            */
+
             MenuItem {
                 text: qsTr("Add account")
                 onClicked: pageStack.push(Qt.resolvedUrl("AddAccountPage.qml"))

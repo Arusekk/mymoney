@@ -29,6 +29,7 @@
 */
 
 import QtQuick 2.0
+import QtQuick.LocalStorage 2.0
 import Sailfish.Silica 1.0
 import "pages"
 
@@ -38,6 +39,7 @@ ApplicationWindow
     initialPage: Component { FirstPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
+    property string currentLocale: Qt.locale().name
     signal transactionsUpdated
     property string errorText: ""
     onErrorTextChanged: { timerHot.start(); hot.opacity = 1.0; }
@@ -48,6 +50,39 @@ ApplicationWindow
         interval: 3000
         running: false
         onTriggered: hot.opacity = 0.0
+    }
+
+    QtObject{
+        id: db
+        property var _db: undefined
+        function load()
+        {
+            _db = LocalStorage.openDatabaseSync("MyMoneyDB", "1.0", "Settings", 1000);
+            _db.transaction(
+                            function(tx) {
+                                // Create the database if it doesn't already exist
+                                tx.executeSql('CREATE TABLE IF NOT EXISTS Locale(current TEXT)');
+                            }
+                        )
+
+            _db.transaction(function(tx)
+            {
+                var rs = tx.executeSql('SELECT current FROM Locale;');
+                if(rs.rows.length)
+                {
+                    currentLocale = rs.rows.item(0).current
+                }
+            });
+        }
+
+        function save()
+        {
+            _db.transaction(function(tx)
+            {
+                tx.executeSql('DELETE FROM Locale;')
+                tx.executeSql('INSERT OR REPLACE INTO Locale VALUES (?);',[currentLocale])
+            });
+        }
     }
 
     Rectangle {
@@ -194,7 +229,7 @@ ApplicationWindow
         function getAccountSaldoAsString(md5)
         {
             var o = lookupByMd5(md5)
-            return o ?  o.sum.toLocaleCurrencyString(Qt.locale()) : ""
+            return o ?  o.sum.toLocaleCurrencyString(Qt.locale(currentLocale)) : ""
         }
 
         function add(group, title, typ, sum, md)
@@ -265,7 +300,9 @@ ApplicationWindow
     Component.onCompleted: {
         var txt = jsonloader.load()
         console.log(txt)
+        console.log(currentLocale)
         var jsonObject = JSON.parse(txt)
+        db.load()
         modelAccountGroups.load(jsonObject.accountgroups)
         modelAccountTypes.load(jsonObject.accounttypes)
         modelAccounts.load(jsonObject.accounts)
