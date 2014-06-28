@@ -53,10 +53,23 @@ Page {
 
         Repeater{
             model: credits
-            Label  {
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: title
-                font.pixelSize: Theme.fontSizeSmall
+            Item {
+                height: url ? button.height : label.height
+                width: parent.width
+                Label  {
+                    id: label
+                    visible: model.url === undefined
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: title
+                    font.pixelSize: Theme.fontSizeSmall
+                }
+                Button  {
+                    id: button
+                    visible: titleurl ? true : false
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: titleurl ? titleurl : ""
+                    onClicked: Qt.openUrlExternally(url+"MyMoney v"+appinfo.getVersion())
+                }
             }
         }
 

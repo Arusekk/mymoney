@@ -381,7 +381,7 @@ group (Income, Bank and Expense).</source>
         <location filename="../src/jsonloader.cpp" line="119"/>
         <location filename="../src/jsonloader.cpp" line="140"/>
         <source>Expense</source>
-        <translation type="unfinished"Ausgabe></translation>
+        <translation type="unfinished">Ausgabe</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="202"/>

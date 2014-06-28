@@ -439,7 +439,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
     <message>
         <location filename="../qml/pages/TransactionsPage.qml" line="97"/>
         <source>Transactions %1</source>
-        <translation type="unfinished">Transaktion</translation>
+        <translation type="unfinished">%1</translation>
     </message>
     <message>
         <location filename="../qml/pages/TransactionsPage.qml" line="101"/>
