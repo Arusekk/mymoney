@@ -10,7 +10,7 @@ Version 0.0.2
   * Finish translations
   * German translations
   * Open email app when user clicks maintainer in about page
-  * (Notice! there probadly is akward translations, send me an email if you see any)
+  * (Notice! there probadly is awkward translations, send me an email if you see any)
 
 Version 0.0.1
 
