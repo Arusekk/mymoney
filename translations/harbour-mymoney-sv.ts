@@ -251,57 +251,57 @@ grupp (Inkomst, Bank och Utgift)</translation>
 <context>
     <name>JsonLoader</name>
     <message>
-        <location filename="../src/jsonloader.cpp" line="56"/>
+        <location filename="../src/jsonloader.cpp" line="60"/>
         <source>Loan</source>
         <translation type="unfinished">Lån</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="52"/>
+        <location filename="../src/jsonloader.cpp" line="56"/>
         <source>Salary</source>
         <translation type="unfinished">Lön</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="53"/>
+        <location filename="../src/jsonloader.cpp" line="57"/>
         <source>Student grants</source>
         <translation type="unfinished">CSN</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="54"/>
+        <location filename="../src/jsonloader.cpp" line="58"/>
         <source>Unemployment</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="55"/>
+        <location filename="../src/jsonloader.cpp" line="59"/>
         <source>Temporary disability</source>
         <translation type="unfinished">Sjukpenning</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="57"/>
+        <location filename="../src/jsonloader.cpp" line="61"/>
         <source>Other income</source>
         <translation type="unfinished">Annan inkomst</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="58"/>
+        <location filename="../src/jsonloader.cpp" line="62"/>
         <source>Visa</source>
         <translation type="unfinished">Visa kort</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="59"/>
+        <location filename="../src/jsonloader.cpp" line="63"/>
         <source>Maestro</source>
         <translation type="unfinished">Maestro kort</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="60"/>
+        <location filename="../src/jsonloader.cpp" line="64"/>
         <source>Mastercard</source>
         <translation type="unfinished">Mastercard</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="61"/>
+        <location filename="../src/jsonloader.cpp" line="65"/>
         <source>Savings</source>
         <translation type="unfinished">Sparkonto</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="62"/>
+        <location filename="../src/jsonloader.cpp" line="66"/>
         <source>Other card</source>
         <translation type="unfinished">Annat kort</translation>
     </message>
@@ -310,105 +310,105 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation type="obsolete">Online kort</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="63"/>
+        <location filename="../src/jsonloader.cpp" line="67"/>
         <source>Online money</source>
         <translation type="unfinished">Internet</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="64"/>
+        <location filename="../src/jsonloader.cpp" line="68"/>
         <source>Other</source>
         <translation type="unfinished">Övrigt</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="65"/>
+        <location filename="../src/jsonloader.cpp" line="69"/>
         <source>Rent</source>
         <translation type="unfinished">Hyra</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="66"/>
+        <location filename="../src/jsonloader.cpp" line="70"/>
         <source>Entertainment</source>
         <translation type="unfinished">Nöje</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="67"/>
+        <location filename="../src/jsonloader.cpp" line="71"/>
         <source>Food</source>
         <translation type="unfinished">Mat</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="68"/>
+        <location filename="../src/jsonloader.cpp" line="72"/>
         <source>Travel</source>
         <translation type="unfinished">Resor</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="69"/>
+        <location filename="../src/jsonloader.cpp" line="73"/>
         <source>Internet</source>
         <translation type="unfinished">Internet</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="70"/>
+        <location filename="../src/jsonloader.cpp" line="74"/>
         <source>Hobby</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="71"/>
+        <location filename="../src/jsonloader.cpp" line="75"/>
         <source>Home</source>
         <translation type="unfinished">Hem</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="72"/>
+        <location filename="../src/jsonloader.cpp" line="76"/>
         <source>Health</source>
         <translation type="unfinished">Hälsa</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="73"/>
+        <location filename="../src/jsonloader.cpp" line="77"/>
         <source>Insurance</source>
         <translation type="unfinished">Försäkring</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="74"/>
+        <location filename="../src/jsonloader.cpp" line="78"/>
         <source>Media</source>
         <translation type="unfinished">Musik/Film</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="75"/>
+        <location filename="../src/jsonloader.cpp" line="79"/>
         <source>Clothes</source>
         <translation type="unfinished">Kläder</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="76"/>
+        <location filename="../src/jsonloader.cpp" line="80"/>
         <source>Other expence</source>
         <translation type="unfinished">Annan utgift</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="110"/>
+        <location filename="../src/jsonloader.cpp" line="114"/>
         <source>Starting balance</source>
         <translation type="unfinished">Ingående saldo</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="110"/>
+        <location filename="../src/jsonloader.cpp" line="114"/>
         <source>Balance account</source>
         <translation type="unfinished">Balanskonto</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="113"/>
-        <location filename="../src/jsonloader.cpp" line="130"/>
+        <location filename="../src/jsonloader.cpp" line="117"/>
+        <location filename="../src/jsonloader.cpp" line="138"/>
         <source>Income</source>
         <translation type="unfinished">Inkomst</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="114"/>
-        <location filename="../src/jsonloader.cpp" line="131"/>
+        <location filename="../src/jsonloader.cpp" line="118"/>
+        <location filename="../src/jsonloader.cpp" line="139"/>
         <source>Bank</source>
         <translation type="unfinished">Bank</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="115"/>
-        <location filename="../src/jsonloader.cpp" line="132"/>
+        <location filename="../src/jsonloader.cpp" line="119"/>
+        <location filename="../src/jsonloader.cpp" line="140"/>
         <source>Expense</source>
         <translation type="unfinished">Utgift</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="188"/>
+        <location filename="../src/jsonloader.cpp" line="202"/>
         <source>Balance</source>
         <translation type="unfinished">Ingående saldo</translation>
     </message>

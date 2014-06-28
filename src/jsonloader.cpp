@@ -3,12 +3,16 @@
 #include <QDebug>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QJsonValue>
+#include <QVariant>
 #include <QDateTime>
 #include <QCryptographicHash>
 #include <QLocale>
 #include "appinfo.h"
 #include "jsonloader.h"
 #include "transactionsmanager.h"
+
+#define JSON_FILE_VERSION 2
 JsonLoader::JsonLoader(QObject *parent, AppInfo *appi) :
     QObject(parent),
     appinfo(appi),
@@ -116,7 +120,7 @@ QString JsonLoader::load()
         obj.insert("accountgroups", groups);
 
         obj.insert("balanceaccount_md5", md5);
-        obj.insert("version", 1);
+        obj.insert("version", JSON_FILE_VERSION);
         json.setObject(obj); // and feed it
 
         addDefaultTypes();
@@ -124,14 +128,24 @@ QString JsonLoader::load()
     }
     else
     {
-        // overwrite json file since we use translations now.
         QJsonObject obj = json.object();
-        QJsonObject groups;
-        groups.insert("0", tr("Income"));
-        groups.insert("1", tr("Bank"));
-        groups.insert("2", tr("Expense"));
-        obj.insert("accountgroups", groups);
-        json.setObject(obj); // and feed it
+        // overwrite json file since we use translations now.
+        // FIXME Qt 5.1 has no toInt()
+        if (obj.value("version").toDouble() == 1) // if version 1
+        {
+            QJsonObject groups;
+            QJsonArray clr;
+            groups.insert("0", tr("Income"));
+            groups.insert("1", tr("Bank"));
+            groups.insert("2", tr("Expense"));
+            obj.insert("accountgroups", groups);
+            obj.insert("version", JSON_FILE_VERSION);
+            obj.insert("accounttypes", clr); // clear old values with empty array
+            json.setObject(obj); // and feed it
+            // this makes obj above outdated
+            addDefaultTypes();
+            save();
+        }
     }
 
     return QString(json.toJson());
