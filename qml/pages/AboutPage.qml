@@ -87,5 +87,22 @@ Page {
             onClicked: pageStack.push(Qt.resolvedUrl("LicensePage.qml"))
         }
 
+        IconButton {
+            icon.source: "qrc:/images/PayBtn_BgImg.png"
+            anchors.horizontalCenter: parent.horizontalCenter
+            opacity: pressed ? 0.5 : 1.0
+            width: 200
+            height: 80
+            Text {
+                y: 8
+                height: 60
+                width: 80
+                font.pixelSize: Theme.fontSizeSmall
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Donate")
+            }
+            onClicked: Qt.openUrlExternally("https://www.payson.se/SendMoney/?De=My+money+sailfish+app&Se=mike%407b4.se&Cost=0&Currency=SEK&&Sp=1")
+        }
+
     }
 }

@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>harbour-mymoney.png</file>
         <file>mymoney.png</file>
+        <file>images/PayBtn_BgImg.png</file>
     </qresource>
 </RCC>
