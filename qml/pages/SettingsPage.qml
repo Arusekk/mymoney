@@ -7,14 +7,7 @@ Dialog {
         db.save()
     }
 
-    ListModel
-    {
-        id: modelLanguages
-        ListElement { title: "Euro"; locale : "FI_fi"}
-        ListElement { title: "US Dollar"; locale : "EN_us"}
-        ListElement { title: "Swiss franc(not tested)"; locale : "de-ch"}
-        ListElement { title: "Krona"; locale : "sv_SE"}
-    }
+    CurrencyModel { id: modelLanguages; }
     Column {
         anchors.fill: parent
         DialogHeader { title: qsTr("Settings BETA"); }

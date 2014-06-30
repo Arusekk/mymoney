@@ -15,6 +15,8 @@ Dialog {
         modelAccounts.addOrChange(group, entryTitle.text, typ, Number.fromLocaleString(Qt.locale(), entrySum.text), md)
     }
 
+    CurrencyModel { id: modelLanguages; }
+
     ListModel {
         id: modelCurrentAccountTypes
         function load(id)

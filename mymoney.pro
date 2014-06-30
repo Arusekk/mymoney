@@ -46,7 +46,8 @@ OTHER_FILES += qml/mymoney.qml \
     qml/pages/GraphPage.qml \
     qml/pages/DonatePage.qml \
     qml/pages/ComboAccountToFrom.qml \
-    qml/pages/SettingsPage.qml
+    qml/pages/SettingsPage.qml \
+    qml/pages/CurrencyModel.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
