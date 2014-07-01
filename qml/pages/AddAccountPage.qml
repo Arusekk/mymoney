@@ -7,12 +7,13 @@ Dialog {
     property bool block: false
     DialogHeader {  id: header; title: qsTr("%1 account").arg((account && account.md5 != "") ? "Change" : "Add") }
 
-    canAccept: (entrySum.text != "" && entryTitle != "" && comboAccountType.value != "" && comboAccountGroup.value != "")
+    canAccept: (entrySum.text != "" && entryTitle != "" && comboAccountType.value != "" && comboAccountGroup.value != "" && comboLocale.value != "")
     onAccepted: {
         var md = account  ? account.md5 : ""
         var group = modelAccountGroups.get(comboAccountGroup.currentIndex).id
         var typ = modelCurrentAccountTypes.get(comboAccountType.currentIndex).title
-        modelAccounts.addOrChange(group, entryTitle.text, typ, Number.fromLocaleString(Qt.locale(), entrySum.text), md)
+        var currency = modelLanguages.get(comboLocale.currentIndex).locale
+        modelAccounts.addOrChange(group, entryTitle.text, typ, Number.fromLocaleString(Qt.locale(), entrySum.text), currency, md)
     }
 
     CurrencyModel { id: modelLanguages; }
@@ -132,6 +133,39 @@ Dialog {
                             }
         }
 
+        ComboBox {
+            id: comboLocale
+            currentIndex: -1
+            label: qsTr("Currency")
+            menu: ContextMenu {
+                Repeater {
+                    model: modelLanguages
+                    MenuItem {text: model.title;}
+                }
+            }
+            function select(local)
+            {
+                local = local.split(".")[0]
+                switch(local)
+                {
+                    case "sv_SE":
+                    case "no_NO":
+                    case "da":
+                        currentIndex = 3
+                        break;
+                    case "de-ch":
+                        currentIndex = 2
+                        break
+                    case "en_US":
+                        currentIndex = 1
+                        break
+                    default:
+                        currentIndex = 0
+                        break
+                }
+            }
+        }
+
         TextField {
             id: entrySum
             text: account ? account.sum.toLocaleCurrencyString() : "0"
@@ -159,6 +193,7 @@ Dialog {
     Component.onCompleted: {
         comboAccountGroup.currentIndex = account ? modelAccountGroups.lookupIndex(account.group) : -1
         comboAccountType.currentIndex = account ? modelCurrentAccountTypes.lookupIndex(account.type) : -1
+        comboLocale.currentIndex = account ? comboLocale.select(account.currency) : comboLocale.select(currentLocale)
     }
 
     Timer{

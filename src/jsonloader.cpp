@@ -18,7 +18,8 @@ JsonLoader::JsonLoader(QObject *parent, AppInfo *appi) :
     appinfo(appi),
     json(),
     transactions(appi, *this),
-    accounttypes(appi, *this)
+    accounttypes(appi, *this),
+    defaultCurrency("")
 {
 }
 
@@ -111,7 +112,7 @@ QString JsonLoader::load()
     json = QJsonDocument::fromJson(data, &err);
     if (fromtemplate) // first time creation
     {
-        QString md5 = addAccount(tr("Balance account"), "SB", tr("Starting balance"), 0.0, "");
+        QString md5 = addAccount(tr("Balance account"), "SB", tr("Starting balance"), 0.0, defaultCurrency, "");
         QJsonObject obj = json.object();
         QJsonObject groups;
         groups.insert("0", tr("Income"));
@@ -175,12 +176,13 @@ void JsonLoader::save()
     }
 }
 
-QString JsonLoader::addAccount(QString name, QString group, QString type, double sum, QString md5)
+QString JsonLoader::addAccount(QString name, QString group, QString type, double sum, QString currency, QString md5)
 {
     QJsonObject n;
     n["title"] = name;
     n["group"] = group;
     n["type"] = type;
+    n["currency"] = currency;
     n["sum"] = 0.0;
 
     accounttypes.addOrChange(group, type);

@@ -39,8 +39,10 @@ ApplicationWindow
     initialPage: Component { FirstPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
-    property string currentLocale: Qt.locale().name
     signal transactionsUpdated
+
+    property bool hideIncome: false
+    property string currentLocale: Qt.locale().name
     property string errorText: ""
     onErrorTextChanged: { timerHot.start(); hot.opacity = 1.0; }
 
@@ -55,33 +57,72 @@ ApplicationWindow
     QtObject{
         id: db
         property var _db: undefined
-        function load()
+        function setup()
+        {            
+            createdb(false)
+            if (!load())
+            {
+                console.log("recreate settingsdb")
+                createdb(true)
+                load()
+            }
+        }
+
+        function createdb(force)
         {
-            _db = LocalStorage.openDatabaseSync("MyMoneyDB", "1.0", "Settings", 1000);
-            _db.transaction(
+            if (_db == undefined)
+                _db = LocalStorage.openDatabaseSync("MyMoneyDB", "1.0", "Settings", 1000);
+
+            if (force)
+                _db.transaction(
                             function(tx) {
                                 // Create the database if it doesn't already exist
-                                tx.executeSql('CREATE TABLE IF NOT EXISTS Locale(current TEXT)');
+                                tx.executeSql('DROP TABLE Settings;');
                             }
                         )
 
-            _db.transaction(function(tx)
-            {
-                var rs = tx.executeSql('SELECT current FROM Locale;');
-                if(rs.rows.length)
+            _db.transaction(
+                        function(tx) {
+                            // Create the database if it doesn't already exist
+                            tx.executeSql('CREATE TABLE IF NOT EXISTS Settings(currentLocale TEXT, hideIncome BOOLEAN)');
+                        }
+                    )
+        }
+
+        function load()
+        {
+            try {
+                _db.transaction(function(tx)
                 {
-                    currentLocale = rs.rows.item(0).current
-                }
-            });
+                    var rs = tx.executeSql('SELECT currentLocale, hideIncome FROM Settings;');
+                    if(rs.rows.length)
+                    {
+                        currentLocale = rs.rows.item(0).currentLocale // FIXME remove ASAP duplicate
+                        hideIncome = rs.rows.item(0).hideIncome
+                    }
+                });
+            }
+            catch (e)
+            {
+                console.log("fail")
+                jsonloader.defaultCurrency = currentLocale
+                return false
+            }
+
+            return true
         }
 
         function save()
         {
             _db.transaction(function(tx)
             {
-                tx.executeSql('DELETE FROM Locale;')
-                tx.executeSql('INSERT OR REPLACE INTO Locale VALUES (?);',[currentLocale])
+                tx.executeSql('DELETE FROM Settings;')
+                tx.executeSql('INSERT OR REPLACE INTO Settings VALUES (?,?);',[currentLocale, hideIncome])
             });
+
+            // special case jsonloader has no access to QML atm...
+            // so we need to feed
+            jsonloader.defaultCurrency = currentLocale
         }
     }
 
@@ -184,7 +225,7 @@ ApplicationWindow
         }
     }
 
-    QtObject{ id: balanceAccount; property string md5; property string group; property string title; property string type; property double sum; }
+    QtObject{ id: balanceAccount; property string md5; property string group; property string title; property string type; property double sum; property string locale: currentLocale; }
     ListModel
     {
         id: modelAccounts
@@ -202,7 +243,8 @@ ApplicationWindow
                 var arr = jsonObject[key]
                 if (arr["group"] != "SB")  // don't show balance account
                 {
-                    add(arr["group"], arr["title"], arr["type"], arr["sum"], key)
+                    var currency = arr["currency"] ? arr["currency"] : currentLocale
+                    add(arr["group"], arr["title"], arr["type"], arr["sum"], currency, key)
                 }
                 else
                 {
@@ -232,11 +274,11 @@ ApplicationWindow
             return o ?  o.sum.toLocaleCurrencyString(Qt.locale(currentLocale)) : ""
         }
 
-        function add(group, title, typ, sum, md)
+        function add(group, title, typ, sum, currency, md)
         {
             var d = new Date()
             updateTotal(group, sum)
-            var o = {"md5" : md, "group": group, "type" : typ, "title" : title, "sum" : sum}
+            var o = {"md5" : md, "group": group, "type" : typ, "title" : title, "sum" : sum, "currency" : currency}
             console.log(o.md5)
             for (var i = 0; i < modelAccounts.count; i++)
             {
@@ -272,15 +314,15 @@ ApplicationWindow
             return undefined;
         }
 
-        function addOrChange(group, title, typ, sum, _md5)
+        function addOrChange(group, title, typ, sum, currency, _md5)
         {
             var o = lookupByMd5(_md5);
             if (!o) // new
             {
                 // yes, notice addAcount will add new balancqa transaction...
-                _md5 = jsonloader.addAccount(title, group, typ, sum, "")
+                _md5 = jsonloader.addAccount(title, group, typ, sum, currency, "")
                 // insert in model FIXME we better reread json file less risk for bug
-                add(group, title, typ, sum, _md5);
+                add(group, title, typ, sum, currency, _md5);
                 // ... as we do it on transactions
                 var jsonObject = JSON.parse(jsonloader.dump())
                 modelTransactions.transactions = jsonObject.transactions
@@ -291,18 +333,19 @@ ApplicationWindow
                 o.group = group
                 o.title = title
                 o.type = typ
+                o.currency = currency
 //                o.sum = sum
-                jsonloader.addAccount(title, group, typ, sum, _md5)
+                jsonloader.addAccount(title, group, typ, sum, currency, _md5)
             }
         }
     }
 
     Component.onCompleted: {
+        db.setup()
         var txt = jsonloader.load()
         console.log(txt)
         console.log(currentLocale)
         var jsonObject = JSON.parse(txt)
-        db.load()
         modelAccountGroups.load(jsonObject.accountgroups)
         modelAccountTypes.load(jsonObject.accounttypes)
         modelAccounts.load(jsonObject.accounts)

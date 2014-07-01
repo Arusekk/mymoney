@@ -4,13 +4,14 @@ Dialog {
     onAccepted: {
         var  o = modelLanguages.get(comboLocale.currentIndex)
         currentLocale = o.locale
+        hideIncome = checkboxHideIncome.checked
         db.save()
     }
 
     CurrencyModel { id: modelLanguages; }
     Column {
         anchors.fill: parent
-        DialogHeader { title: qsTr("Settings BETA"); }
+        DialogHeader { title: qsTr("Settings"); }
         ComboBox {
             id: comboLocale
             currentIndex: -1
@@ -31,7 +32,7 @@ Dialog {
                     case "da":
                         currentIndex = 3
                         break;
-                    case "de-ch":
+                    case "de_CH":
                         currentIndex = 2
                         break
                     case "en_US":
@@ -42,6 +43,12 @@ Dialog {
                         break
                 }
             }
+        }
+
+        TextSwitch{
+            id: checkboxHideIncome
+            text: qsTr("Hide income")
+            checked: hideIncome
         }
 
     }

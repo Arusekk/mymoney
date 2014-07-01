@@ -70,7 +70,7 @@ BackgroundItem  {
                 Label {
                     font.pixelSize: Theme.fontSizeSmall
                     anchors.fill: parent
-                    text: Number(group != "0" ? sum : (sum * -1)).toLocaleCurrencyString(Qt.locale(currentLocale))
+                    text: Number(group != "0" ? sum : (sum * -1)).toLocaleCurrencyString(Qt.locale(currency))
                 }
             }
         }
