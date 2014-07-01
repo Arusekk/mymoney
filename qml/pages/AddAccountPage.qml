@@ -7,12 +7,14 @@ Dialog {
     property bool block: false
     DialogHeader {  id: header; title: qsTr("%1 account").arg((account && account.md5 != "") ? "Change" : "Add") }
 
-    canAccept: (entrySum.text != "" && entryTitle != "" && comboAccountType.value != "" && comboAccountGroup.value != "" && comboLocale.value != "")
+    canAccept: (entrySum.text != "" && entryTitle.text != "" && comboAccountType.value != "" && comboAccountGroup.value != "" && comboLocale.value != "")
     onAccepted: {
+        var reload = false
         var md = account  ? account.md5 : ""
         var group = modelAccountGroups.get(comboAccountGroup.currentIndex).id
         var typ = modelCurrentAccountTypes.get(comboAccountType.currentIndex).title
         var currency = modelLanguages.get(comboLocale.currentIndex).locale
+        console.log("md"+md)
         modelAccounts.addOrChange(group, entryTitle.text, typ, Number.fromLocaleString(Qt.locale(), entrySum.text), currency, md)
     }
 
@@ -176,6 +178,7 @@ Dialog {
             validator: DoubleValidator { decimals: 2; }
             width: parent.width
         }
+
         Label {
             opacity: (comboAccountGroup.currentIndex != 1 || (account && account.sum != 0)) ? 1.0 : 0.0 // bank only and not edited
             text: qsTr("Saldo %1").arg(getSaldo())

@@ -53,7 +53,7 @@ CoverBackground {
         Label {
             id: sum1
             anchors.horizontalCenter: parent.horizontalCenter
-            text: Number(modelAccounts.saldoIncomes * -1).toLocaleCurrencyString(Qt.locale())
+            text: Number(modelAccounts.saldoIncomes * -1).toLocaleCurrencyString(Qt.locale(defaultCurrency))
         }
 
         Label {
@@ -66,7 +66,7 @@ CoverBackground {
         Label {
             id: sum2
             anchors.horizontalCenter: parent.horizontalCenter
-            text: Number(modelAccounts.saldoBanks).toLocaleCurrencyString(Qt.locale())
+            text: Number(modelAccounts.saldoBanks).toLocaleCurrencyString(Qt.locale(defaultCurrency))
         }
 
         Label {
@@ -79,7 +79,7 @@ CoverBackground {
         Label {
             id: sum3
             anchors.horizontalCenter: parent.horizontalCenter
-            text: Number(modelAccounts.saldoExpenses).toLocaleCurrencyString(Qt.locale())
+            text: Number(modelAccounts.saldoExpenses).toLocaleCurrencyString(Qt.locale(defaultCurrency))
         }
     }
 

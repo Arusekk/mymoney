@@ -22,47 +22,47 @@
         <translation type="unfinished">%1 konto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="89"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="91"/>
         <source>Name</source>
         <translation type="unfinished">Namn</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="90"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="92"/>
         <source>Type name here</source>
         <translation type="unfinished">Skriv in kontonamn</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="67"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="69"/>
         <source>Group</source>
         <translation type="unfinished">Kontogrupp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="99"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="101"/>
         <source>Enter new type or press enter key</source>
         <translation type="unfinished">Skriv ny typ eller tryck enter</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="126"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="128"/>
         <source>Type</source>
         <translation type="unfinished">Kontotyp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="139"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="141"/>
         <source>Currency</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="173"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="175"/>
         <source>Starting Balance</source>
         <translation type="unfinished">Ingående saldo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="174"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="176"/>
         <source>Enter start saldo</source>
         <translation type="unfinished">Skriv in nuvarande saldo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="181"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="184"/>
         <source>Saldo %1</source>
         <translation>Saldo %1</translation>
     </message>
@@ -74,22 +74,22 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="85"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="83"/>
         <source>Add transaction</source>
         <translation type="unfinished">Ny transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="91"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="89"/>
         <source>Expense</source>
         <translation type="unfinished">Utgift</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Bank</source>
         <translation type="unfinished">Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="93"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="91"/>
         <source>Income</source>
         <translation type="unfinished">Inkomst</translation>
     </message>
@@ -106,22 +106,22 @@
         <translation type="obsolete">Till:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="137"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="135"/>
         <source>Enter Description</source>
         <translation type="unfinished">Beskrivninmg av transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="138"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="136"/>
         <source>Description of transaction</source>
         <translation type="unfinished">Beskrivning av transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="121"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="119"/>
         <source>Amount</source>
         <translation type="unfinished">Belopp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="122"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="120"/>
         <source>Enter amount</source>
         <translation type="unfinished">Skriv in belopp</translation>
     </message>
@@ -197,7 +197,7 @@
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="52"/>
+        <location filename="../qml/pages/FirstPage.qml" line="78"/>
         <source>About %1</source>
         <translation type="unfinished">Om %1</translation>
     </message>
@@ -206,27 +206,27 @@
         <translation type="obsolete">Visa graf</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="57"/>
+        <location filename="../qml/pages/FirstPage.qml" line="83"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="62"/>
+        <location filename="../qml/pages/FirstPage.qml" line="88"/>
         <source>Add account</source>
         <translation type="unfinished">Nytt konto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="67"/>
+        <location filename="../qml/pages/FirstPage.qml" line="93"/>
         <source>Add transaction</source>
         <translation type="unfinished">Ny transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="88"/>
+        <location filename="../qml/pages/FirstPage.qml" line="114"/>
         <source>Add accounts from pulley menu</source>
         <translation type="unfinished">Lägg till konto via pulley menu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="93"/>
+        <location filename="../qml/pages/FirstPage.qml" line="119"/>
         <source>You should have at least one of each
 group (Income, Bank and Expense).</source>
         <translation type="unfinished">Du bör ha minst ett konto från varje
@@ -247,7 +247,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="16"/>
-        <location filename="../qml/pages/GraphPage.qml" line="54"/>
+        <location filename="../qml/pages/GraphPage.qml" line="55"/>
         <source>Expenses</source>
         <translation type="unfinished">Utgifter</translation>
     </message>
@@ -257,7 +257,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation type="unfinished">Utgifter vs Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="53"/>
+        <location filename="../qml/pages/GraphPage.qml" line="54"/>
         <source>Bank</source>
         <translation type="unfinished">Bank</translation>
     </message>
@@ -442,17 +442,17 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation type="obsolete">Inställningar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="14"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="20"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="18"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="24"/>
         <source>Default currency</source>
         <translation type="unfinished">Välj valuta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="50"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="56"/>
         <source>Hide income</source>
         <translation type="unfinished"></translation>
     </message>

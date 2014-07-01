@@ -30,7 +30,8 @@ Page
             for (var i = 0;i < modelAccounts.count; i++)
             {
                 var o = modelAccounts.get(i)
-                filterAccount(o);
+                if (o.currency == defaultCurrency)
+                    filterAccount(o);
             }
 
             pie.requestPaint()

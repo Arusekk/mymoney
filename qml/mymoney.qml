@@ -1,38 +1,13 @@
 /*
-  Copyright (C) 2013 Jolla Ltd.
-  Contact: Thomas Perl <thomas.perl@jollamobile.com>
+  Copyright (C) 2014 Mikael Hermansson
+  Contact: Mikael Hermansson <mike@7b4.se>
   All rights reserved.
-
-  You may use this file under the terms of BSD license as follows:
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are met:
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer in the
-      documentation and/or other materials provided with the distribution.
-    * Neither the name of the Jolla Ltd nor the
-      names of its contributors may be used to endorse or promote products
-      derived from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR
-  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 import QtQuick 2.0
 import QtQuick.LocalStorage 2.0
 import Sailfish.Silica 1.0
 import "pages"
-
 ApplicationWindow
 {
     id: app
@@ -42,7 +17,7 @@ ApplicationWindow
     signal transactionsUpdated
 
     property bool hideIncome: false
-    property string currentLocale: Qt.locale().name
+    property string defaultCurrency: Qt.locale().name
     property string errorText: ""
     onErrorTextChanged: { timerHot.start(); hot.opacity = 1.0; }
 
@@ -84,7 +59,7 @@ ApplicationWindow
             _db.transaction(
                         function(tx) {
                             // Create the database if it doesn't already exist
-                            tx.executeSql('CREATE TABLE IF NOT EXISTS Settings(currentLocale TEXT, hideIncome BOOLEAN)');
+                            tx.executeSql('CREATE TABLE IF NOT EXISTS Settings(defaultCurrency TEXT, hideIncome BOOLEAN)');
                         }
                     )
         }
@@ -94,18 +69,17 @@ ApplicationWindow
             try {
                 _db.transaction(function(tx)
                 {
-                    var rs = tx.executeSql('SELECT currentLocale, hideIncome FROM Settings;');
+                    var rs = tx.executeSql('SELECT defaultCurrency, hideIncome FROM Settings;');
                     if(rs.rows.length)
                     {
-                        currentLocale = rs.rows.item(0).currentLocale // FIXME remove ASAP duplicate
+                        defaultCurrency = rs.rows.item(0).defaultCurrency // FIXME remove ASAP duplicate
                         hideIncome = rs.rows.item(0).hideIncome
                     }
                 });
             }
             catch (e)
             {
-                console.log("fail")
-                jsonloader.defaultCurrency = currentLocale
+                jsonloader.defaultCurrency = defaultCurrency
                 return false
             }
 
@@ -117,12 +91,12 @@ ApplicationWindow
             _db.transaction(function(tx)
             {
                 tx.executeSql('DELETE FROM Settings;')
-                tx.executeSql('INSERT OR REPLACE INTO Settings VALUES (?,?);',[currentLocale, hideIncome])
+                tx.executeSql('INSERT OR REPLACE INTO Settings VALUES (?,?);',[defaultCurrency, hideIncome])
             });
 
             // special case jsonloader has no access to QML atm...
             // so we need to feed
-            jsonloader.defaultCurrency = currentLocale
+            jsonloader.defaultCurrency = defaultCurrency
         }
     }
 
@@ -216,22 +190,32 @@ ApplicationWindow
             modelTransactions.transactions = JSON.parse(jsonloader.dump()).transactions
             var o = modelAccounts.lookupByMd5(from)
             o.sum = o.sum - sum
-            modelAccounts.updateTotal(o.group, (sum * -1))
+            if (o.currency == defaultCurrency)
+                modelAccounts.updateTotal(o.group, (sum * -1))
+
             o = modelAccounts.lookupByMd5(to)
             o.sum = o.sum + sum
-            modelAccounts.updateTotal(o.group, sum)
+            if (o.currency == defaultCurrency)
+                modelAccounts.updateTotal(o.group, sum)
 
             transactionsUpdated()
         }
     }
 
-    QtObject{ id: balanceAccount; property string md5; property string group; property string title; property string type; property double sum; property string locale: currentLocale; }
+    QtObject{ id: balanceAccount; property string md5; property string group; property string title; property string type; property double sum; property string locale: defaultCurrency; }
     ListModel
     {
         id: modelAccounts
+        signal accountUpdated
         property double saldoIncomes: 0.0
         property double saldoBanks: 0.0
         property double saldoExpenses: 0.0
+
+        function reload()
+        {
+            var jsonObject = JSON.parse(jsonloader.dump())
+            load(jsonObject.accounts)
+        }
         function load(jsonObject)
         {
             saldoIncomes = 0.0
@@ -243,7 +227,7 @@ ApplicationWindow
                 var arr = jsonObject[key]
                 if (arr["group"] != "SB")  // don't show balance account
                 {
-                    var currency = arr["currency"] ? arr["currency"] : currentLocale
+                    var currency = arr["currency"] ? arr["currency"] : defaultCurrency
                     add(arr["group"], arr["title"], arr["type"], arr["sum"], currency, key)
                 }
                 else
@@ -255,6 +239,8 @@ ApplicationWindow
                     balanceAccount.md5 = key
                 }
             }
+
+            accountUpdated()
         }
 
         function updateTotal(group, sum)
@@ -271,13 +257,14 @@ ApplicationWindow
         function getAccountSaldoAsString(md5)
         {
             var o = lookupByMd5(md5)
-            return o ?  o.sum.toLocaleCurrencyString(Qt.locale(currentLocale)) : ""
+            return o ?  o.sum.toLocaleCurrencyString(Qt.locale(defaultCurrency)) : ""
         }
 
         function add(group, title, typ, sum, currency, md)
         {
             var d = new Date()
-            updateTotal(group, sum)
+            if (currency == defaultCurrency)
+                updateTotal(group, sum)
             var o = {"md5" : md, "group": group, "type" : typ, "title" : title, "sum" : sum, "currency" : currency}
             console.log(o.md5)
             for (var i = 0; i < modelAccounts.count; i++)
@@ -316,6 +303,7 @@ ApplicationWindow
 
         function addOrChange(group, title, typ, sum, currency, _md5)
         {
+            var jsonObject
             var o = lookupByMd5(_md5);
             if (!o) // new
             {
@@ -324,18 +312,34 @@ ApplicationWindow
                 // insert in model FIXME we better reread json file less risk for bug
                 add(group, title, typ, sum, currency, _md5);
                 // ... as we do it on transactions
-                var jsonObject = JSON.parse(jsonloader.dump())
+                jsonObject = JSON.parse(jsonloader.dump())
                 modelTransactions.transactions = jsonObject.transactions
                 modelAccounts.load(jsonObject.accounts)
             }
             else
             {
-                o.group = group
-                o.title = title
-                o.type = typ
-                o.currency = currency
-//                o.sum = sum
-                jsonloader.addAccount(title, group, typ, sum, currency, _md5)
+                // has currency changed
+                if (o.currency == currency) // if currency has not changed no point reload just change model direcly
+                {
+                    o.group = group
+                    o.title = title
+                    o.type = typ
+                    o.currency = currency
+                    // but we have to save it in json file to...
+                    jsonloader.addAccount(title, group, typ, sum, currency, _md5)
+                    // ...and tell filter model (in FirstPage) we have updated accountModel (eg reread)...
+                    accountUpdated()
+                }
+                else // currency has changed we have to reload account model(s) so that totalsaldo gets updated correcly..
+                {
+                    // store
+                    jsonloader.addAccount(title, group, typ, sum, currency, _md5)
+                    // fully reread json file..
+                    jsonObject = JSON.parse(jsonloader.dump())
+                    modelTransactions.transactions = jsonObject.transactions
+                    modelAccounts.load(jsonObject.accounts)
+                    // no point call accountUpdated here since load will do it...
+                }
             }
         }
     }
@@ -344,7 +348,7 @@ ApplicationWindow
         db.setup()
         var txt = jsonloader.load()
         console.log(txt)
-        console.log(currentLocale)
+        console.log(defaultCurrency)
         var jsonObject = JSON.parse(txt)
         modelAccountGroups.load(jsonObject.accountgroups)
         modelAccountTypes.load(jsonObject.accounttypes)

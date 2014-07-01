@@ -34,6 +34,32 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
+
+    onStatusChanged: { if (status == PageStatus.Activating) modelFilter.load() }
+    Connections{
+        target: modelAccounts
+        onAccountUpdated: modelFilter.load()
+    }
+
+    ListModel {
+        id: modelFilter
+        function load()
+        {
+            modelFilter.clear()
+            for (var i = 0; i < modelAccounts.count;i++)
+            {
+                var o = modelAccounts.get(i)
+                if (o.group == "0" && hideIncome)
+                {
+                    // not listed
+                }
+                else
+                {
+                    modelFilter.append(o)
+                }
+            }
+        }
+    }
     SilicaListView {
         id: bankview
         anchors.top: parent.top
@@ -70,7 +96,7 @@ Page {
         }
 
         clip: true //  to have the out of view items clipped nicely.
-        model: modelAccounts
+        model: modelFilter
 
         delegate: BankDelegate {}
         section.criteria: ViewSection.FullString

@@ -3,9 +3,15 @@ import Sailfish.Silica 1.0
 Dialog {
     onAccepted: {
         var  o = modelLanguages.get(comboLocale.currentIndex)
-        currentLocale = o.locale
         hideIncome = checkboxHideIncome.checked
-        db.save()
+        if (o.locale != defaultCurrency) // currency changed?
+        {
+            defaultCurrency = o.locale
+            db.save()
+            modelAccounts.reload()
+        }
+        else
+            db.save()
     }
 
     CurrencyModel { id: modelLanguages; }
@@ -53,5 +59,5 @@ Dialog {
 
     }
 
-    Component.onCompleted: comboLocale.select(currentLocale)
+    Component.onCompleted: comboLocale.select(defaultCurrency)
 }
