@@ -430,7 +430,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="56"/>
         <source>Hide income</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ausblenden Erträge aus Kontosicht</translation>
     </message>
 </context>
 <context>
