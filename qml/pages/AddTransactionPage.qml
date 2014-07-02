@@ -17,7 +17,7 @@ Dialog
     function getAccountSaldoAsString(md5, addsum)
     {
         var o = modelAccounts.lookupByMd5(md5)
-        return o ?  (o.sum + addsum).toLocaleCurrencyString(Qt.locale(defaultCurrency)) : ""
+        return o ?  (o.sum + addsum).toLocaleCurrencyString(Qt.locale(o.currency)) : ""
     }
 
     ListModel {
