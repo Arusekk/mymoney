@@ -49,7 +49,7 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="141"/>
         <source>Currency</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Valuutta</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="175"/>
