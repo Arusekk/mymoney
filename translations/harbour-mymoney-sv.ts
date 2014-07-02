@@ -208,7 +208,7 @@
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="83"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inställningar</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="88"/>
@@ -444,17 +444,17 @@ grupp (Inkomst, Bank och Utgift)</translation>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="20"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inställningar</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="24"/>
         <source>Default currency</source>
-        <translation type="unfinished">Välj valuta</translation>
+        <translation type="unfinished">Välj standard valuta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="56"/>
         <source>Hide income</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dölj inkomstkonton i huvudvyn</translation>
     </message>
 </context>
 <context>

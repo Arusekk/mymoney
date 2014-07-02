@@ -1,3 +1,9 @@
+Version 0.0.3
+
+  * Add Currency per account
+  * Cover/Graph only sum default currency
+  * Setting add possibility to hide income accounts in main page
+
 Version 0.0.2
 
   * Possibility to add more account types
