@@ -99,7 +99,12 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: qsTr("Add transaction")
-                onClicked: pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { transaction:  { "md5" : md5, "group" : account.group, "sum" : 0.0 } })
+                onClicked: {
+                    if (account.group != "2")
+                        pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { transaction:  { "from" : md5, "group" : account.group, "sum" : 0.0, "description" : "" } })
+                    else
+                        pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { transaction:  {  "to" : md5, "group" : account.group, "sum" : 0.0, "description" : "" } })
+                }
             }
         }
 

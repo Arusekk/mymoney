@@ -3,12 +3,16 @@ import Sailfish.Silica 1.0
 Column {
     property var modelTo
     property var modelFrom
+   // property int fromIndex: -1
+   // property int toIndex: -1
     width: parent.width
     height: childrenRect.height
     function clear()
     {
-        comboFrom.currentIndex = -1;
-        comboTo.currentIndex = -1;
+        console.log("clear")
+        toIndex = fromIndex = -1
+       // comboFrom.currentIndex = -1;
+      //  comboTo.currentIndex = -1;
         to = ""
         from = ""
     }
@@ -18,17 +22,47 @@ Column {
         return comboFrom.getCurrentMd5() == comboTo.getCurrentMd5()
     }
 
+    function setFromIndexFromMd5(md5)
+    {
+        for (var i = 0; i < modelFrom.count; i++)
+        {
+            var o = modelFrom.get(i)
+            if (o.md5 == md5)
+            {
+                comboFrom.currentIndex = i;
+                return;
+            }
+        }
+        comboFrom.currentIndex = -1
+    }
+
+    function setToIndexFromMd5(md5)
+    {
+        console.log(md5)
+        var i = modelTo.count - 1
+        for (; i > -1; i--)
+        {
+            var o = modelTo.get(i)
+            if (o.md5 == md5)
+            {
+                comboTo.currentIndex = i
+                return ;
+            }
+        }
+        comboTo.currentIndex = -1
+    }
+
     ComboBox{
         id: comboFrom
         label: qsTr("From:")
         currentIndex: -1
-        onCurrentIndexChanged: { if (currentIndex != -1) entrySum.focus = true; from = getCurrentMd5();}
+        onCurrentIndexChanged: { console.log("from indexchanged "+currentIndex); if (currentIndex != -1 && comboTo.currentIndex != -1){ entrySum.focus = true; } from = getCurrentMd5();}
         menu:ContextMenu{
                             Repeater {
                                 //height: 200
                                 width: parent.width
                                 model: modelFrom
-                                delegate: MenuItem {  height: Theme.itemSizeSmall; text: title; }
+                                delegate: MenuItem {  height: Theme.itemSizeSmall; text: title; onClicked: comboFrom.currentItem = modelData; }
                             }
                         }
 
@@ -50,7 +84,7 @@ Column {
         id: comboTo
         label: qsTr("To:")
         currentIndex: -1
-        onCurrentIndexChanged: { if (currentIndex != -1) entrySum.focus = true; to = getCurrentMd5(); }
+        onCurrentIndexChanged: {console.log("to indexchanged "+currentIndex); if (currentIndex != -1 && comboFrom.currentIndex != -1) entrySum.focus = true; to = getCurrentMd5(); }
         menu:ContextMenu{
                             Repeater {
                                 //height: 200

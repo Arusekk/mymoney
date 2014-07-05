@@ -31,6 +31,15 @@ BackgroundItem  {
         id: contextMenuComponent
         ContextMenu {
             MenuItem {
+                text: qsTr("Add transactions")
+                onClicked: {
+                    if (group != "2")
+                        pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { "transaction": {"group" : model.group, "from" : model.md5, "description" : "", "sum" : 0.0}})
+                    else
+                        pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { "transaction": {"group" : model.group, "to" : model.md5, "description" : "", "sum" : 0.0}})
+                }
+            }
+            MenuItem {
                 text: qsTr("Show transactions")
                 onClicked: pageStack.push(Qt.resolvedUrl("TransactionsPage.qml"), { md5 : model.md5})
             }
@@ -50,8 +59,6 @@ BackgroundItem  {
             Label {
                 id: labelTitle
                 font.pixelSize: Theme.fontSizeSmall
-                //color: getTitleColor()
-                //font.bold: model.title
                 text: title
             }
             Item {

@@ -13,7 +13,6 @@ Dialog
         modelTransactions.add(from, to, entryDescription.text, entrySum.asDouble())
     }
 
-    onFromChanged: console.log("from: "+from)
     function getAccountSaldoAsString(md5, addsum)
     {
         var o = modelAccounts.lookupByMd5(md5)
@@ -140,23 +139,46 @@ Dialog
         }
     }
 
-    Component.onCompleted: {
+    onStatusChanged: if (status == PageStatus.Active && init) setup();
+
+    function setup()
+    {
         modelIncome.init()
         modelBank.init()
         modelExpense.init()
+        hackt.start()
+        init = false
+    }
+
+    Timer {
+        id: hackt
+        running: false
+        interval: 1
+        onTriggered: hack()
+    }
+
+    function hack()
+    {
+        console.log(transaction.from)
         switch (transaction.group)
         {
             case "0":
-                radioIncoming.clicked(false)
+                radioIncoming.checked=true;//clicked(radioIncoming)
+                if (transaction)
+                    comboIncome.setFromIndexFromMd5(transaction.from)
                 break;
             case "1":
-                radioBank.clicked(false)
+                radioBank.checked = true; //clicked(radioBank)
+                if (transaction)
+                    comboBank.setFromIndexFromMd5(transaction.from)
                 break;
             case "2":
                 //radioOutgoing.checked = true
-                radioOutgoing.clicked(false)
+                radioOutgoing.checked = true; // clicked(radioOutgoing)
+                if (transaction)
+                    comboExpense.setToIndexFromMd5(transaction.to)
                 break;
         }
-        init = false
+
     }
 }

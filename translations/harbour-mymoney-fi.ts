@@ -74,42 +74,42 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="83"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="82"/>
         <source>Add transaction</source>
         <translation type="unfinished">Lisää tapahtuma</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="89"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="88"/>
         <source>Expense</source>
         <translation type="unfinished">Kulu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="89"/>
         <source>Bank</source>
         <translation type="unfinished">Pankki</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="91"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Income</source>
         <translation type="unfinished">Tulo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="119"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="118"/>
         <source>Amount</source>
         <translation type="unfinished">Määrä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="120"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="119"/>
         <source>Enter amount</source>
         <translation type="unfinished">Anna Määrä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="135"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
         <source>Enter Description</source>
         <translation type="unfinished">Anna kuvaus</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="136"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="135"/>
         <source>Description of transaction</source>
         <translation type="unfinished">Kuvaus</translation>
     </message>
@@ -118,11 +118,16 @@
     <name>BankDelegate</name>
     <message>
         <location filename="../qml/pages/BankDelegate.qml" line="34"/>
+        <source>Add transactions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/BankDelegate.qml" line="43"/>
         <source>Show transactions</source>
         <translation type="unfinished">Näytä liiketoimi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="38"/>
+        <location filename="../qml/pages/BankDelegate.qml" line="47"/>
         <source>Edit account</source>
         <translation type="unfinished">Muokkaa tiliä</translation>
     </message>
@@ -138,24 +143,24 @@
 <context>
     <name>ComboAccountToFrom</name>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="23"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="57"/>
         <source>From:</source>
         <translation type="unfinished">Tililtä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="45"/>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="72"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="79"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="106"/>
         <source>To and from must be different</source>
         <translation type="unfinished">Ja sieltä on oltava eri</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="45"/>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="72"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="79"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="106"/>
         <source>Saldo %1</source>
         <translation type="unfinished">Tasapaino %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="51"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="85"/>
         <source>To:</source>
         <translation type="unfinished">Tilille</translation>
     </message>

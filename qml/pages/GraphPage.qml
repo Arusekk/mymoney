@@ -21,7 +21,7 @@ Page
         id: items
         property double total: 0.0
         property int len: 0
-        property var colors: ["red", "green", "blue", "burlywood", "yellow", "magenta", "cyan", "white", "gray", "brown","darksalmon","darkviolet", "mintcream","pink","red", "green", "blue", "burlywood", "yellow", "magenta", "cyan", "white", "gray", "brown","darksalmon","darkviolet", "mintcream","pink"]
+        property var colors: ["red", "green", "blue", "burlywood", "yellow", "magenta", "cyan", "white", "gray", "brown","darksalmon","darkviolet", "mintcream","pink","red", "green"]
         function load()
         {
             items.clear()
@@ -42,7 +42,7 @@ Page
             {
                 if (o.group == "2" && o.sum)
                 {
-                    items.append({"sum" : o.sum, "color" : colors[len], "title" : o.title})
+                    items.append({"sum" : o.sum, "color" : colors[len & 0x0F], "title" : o.title})
                     len++
                     total += o.sum
                 }
@@ -83,12 +83,10 @@ Page
             width: parent.width
             Repeater {
                 model: items
-               // height: 280
                 Item
                 {
                     height: 40
                     width: grid.width/grid.columns
-//                    width: parent.width
                     Rectangle {
                         id: rect
                         width: 32
@@ -98,7 +96,6 @@ Page
                     Label {
                         x: 40
                         font.pixelSize: Theme.fontSizeSmall
-                      //  anchors.horizontalCenter: parent.horizontalCenter
                         text: title+" "+((sum/items.total)*100).toFixed(1)+"%"
                     }
                 }
@@ -117,20 +114,6 @@ Page
                 var percent = 0.0
                 var segment = 0.0
                 var ctx = getContext("2d")
-/*                ctx.fillStyle = 'green'
-                ctx.strokeStyle = "blue"
-                ctx.lineWidth = 4
-                ctx.beginPath();
-                ctx.moveTo(centerX, 0);
-                ctx.lineTo(centerX, height);
-                ctx.stroke();
-                ctx.beginPath();
-                ctx.moveTo(0, centerY);
-                ctx.lineTo(height, centerY);
-                ctx.stroke();
-                ctx.strokeStyle = "black"
-                ctx.strokeRect(0,0, 300, 300)
-                */
                 for (var i = 0; i < items.count; i++)
                 {
                     ctx.beginPath();
@@ -138,9 +121,6 @@ Page
                     ctx.fillStyle = o.color
                     ctx.moveTo(centerX, centerY)
                     percent = ((o.sum/items.total) * Math.PI * 2)
-                    console.log("paintsegstart "+segment)
-                    console.log("paintsegend "+percent)
-                    console.log(o.color)
                     ctx.arc(centerX, centerY, radius, segment, segment + percent);
                     segment += percent
                     ctx.closePath()

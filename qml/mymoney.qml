@@ -294,7 +294,7 @@ ApplicationWindow
             for (var index = 0;index < modelAccounts.count; index++)
             {
                 var o = modelAccounts.get(index)
-                console.log(_md5+" == "+o.md5)
+               // console.log(_md5+" == "+o.md5)
                 if (o.md5 == _md5)
                     return o;
             }
