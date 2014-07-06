@@ -1,6 +1,7 @@
 Version 0.0.4
 
   * Add Transaction preselect from account
+  * German tralsations thanks to Lechindianer
 
 Version 0.0.3
 
