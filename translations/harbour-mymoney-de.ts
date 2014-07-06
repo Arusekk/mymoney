@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="de_DE">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="7"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Über</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="102"/>
         <source>Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>Spenden</translation>
     </message>
 </context>
 <context>
@@ -19,52 +19,52 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="8"/>
         <source>%1 account</source>
-        <translation type="unfinished">%1 konto</translation>
+        <translation>%1 Konto</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="91"/>
         <source>Name</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="92"/>
         <source>Type name here</source>
-        <translation type="unfinished">Geben Sie hier Namen</translation>
+        <translation>Name eingeben</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="69"/>
         <source>Group</source>
-        <translation type="unfinished">Gruppe</translation>
+        <translation>Gruppe</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="101"/>
         <source>Enter new type or press enter key</source>
-        <translation type="unfinished">Geben Sie neue oder Enter-Taste drücken</translation>
+        <translation>Neuen Typ angeben oder Entertaste drücken</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="128"/>
         <source>Type</source>
-        <translation type="unfinished">Typ</translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="141"/>
         <source>Currency</source>
-        <translation type="unfinished">Währung</translation>
+        <translation>Währung</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="175"/>
         <source>Starting Balance</source>
-        <translation type="unfinished">Startguthaben</translation>
+        <translation>Startguthaben</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="176"/>
         <source>Enter start saldo</source>
-        <translation type="unfinished">Geben startguthaben</translation>
+        <translation>Startsaldo eingeben</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="184"/>
         <source>Saldo %1</source>
-        <translation type="unfinished">Balance %1</translation>
+        <translation>Saldo %1</translation>
     </message>
     <message>
         <source>Default currency</source>
@@ -76,42 +76,42 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="82"/>
         <source>Add transaction</source>
-        <translation type="unfinished">Transaktion hinzufügen</translation>
+        <translation>Transaktion hinzufügen</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="88"/>
         <source>Expense</source>
-        <translation type="unfinished">Ausgabe</translation>
+        <translation>Auslage</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="89"/>
         <source>Bank</source>
-        <translation type="unfinished">Bank</translation>
+        <translation>Bank</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Income</source>
-        <translation type="unfinished">Einkommen</translation>
+        <translation>Einkommen</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="118"/>
         <source>Amount</source>
-        <translation type="unfinished">Betreg</translation>
+        <translation>Betrag</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="119"/>
         <source>Enter amount</source>
-        <translation type="unfinished">Geben sie betreg</translation>
+        <translation>Betrag eingeben</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
         <source>Enter Description</source>
-        <translation type="unfinished">Giben sie beschreibung</translation>
+        <translation>Beschreibung eingeben</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="135"/>
         <source>Description of transaction</source>
-        <translation type="unfinished">Beschreibung Transaktion</translation>
+        <translation>Beschreibung der Transaktion</translation>
     </message>
 </context>
 <context>
@@ -124,12 +124,12 @@
     <message>
         <location filename="../qml/pages/BankDelegate.qml" line="47"/>
         <source>Edit account</source>
-        <translation type="unfinished">Konto bearbeiten</translation>
+        <translation>Konto bearbeiten</translation>
     </message>
     <message>
         <location filename="../qml/pages/BankDelegate.qml" line="43"/>
         <source>Show transactions</source>
-        <translation type="unfinished">transaktion anzeigen</translation>
+        <translation>Transaktionen anzeigen</translation>
     </message>
 </context>
 <context>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../qml/pages/ChangeLog.qml" line="7"/>
         <source>ChangeLog</source>
-        <translation type="unfinished"></translation>
+        <translation>ChangeLog</translation>
     </message>
 </context>
 <context>
@@ -145,24 +145,24 @@
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="57"/>
         <source>From:</source>
-        <translation type="unfinished">aus</translation>
+        <translation>Von:</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="79"/>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="106"/>
         <source>To and from must be different</source>
-        <translation type="unfinished">von und zu unterscheiden, müssen</translation>
+        <translation>Zu und von müssen unterschiedlich sein</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="79"/>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="106"/>
         <source>Saldo %1</source>
-        <translation type="unfinished">Balance %1</translation>
+        <translation>Saldo %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="85"/>
         <source>To:</source>
-        <translation type="unfinished">zu</translation>
+        <translation>Zu:</translation>
     </message>
 </context>
 <context>
@@ -170,17 +170,17 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="48"/>
         <source>Income</source>
-        <translation type="unfinished">Einkommen</translation>
+        <translation>Einkommen</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="63"/>
         <source>Bank</source>
-        <translation type="unfinished">Bank</translation>
+        <translation>Bank</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="76"/>
         <source>Expenses</source>
-        <translation type="unfinished">Auslagen</translation>
+        <translation>Auslagen</translation>
     </message>
 </context>
 <context>
@@ -188,34 +188,34 @@
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="78"/>
         <source>About %1</source>
-        <translation type="unfinished">Über %1</translation>
+        <translation>Über %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="83"/>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="88"/>
         <source>Add account</source>
-        <translation type="unfinished">Konto hinzufügen</translation>
+        <translation>Konto hinzufügen</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="93"/>
         <source>Add transaction</source>
-        <translation type="unfinished">Transaktion hinzufügen</translation>
+        <translation>Transaktion hinzufügen</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="114"/>
         <source>Add accounts from pulley menu</source>
-        <translation type="unfinished">Konten hinzufügen von der Riemenscheibe Menü</translation>
+        <translation>Konten hinzufügen von Pulleymenü</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="119"/>
         <source>You should have at least one of each
 group (Income, Bank and Expense).</source>
-        <translation type="unfinished">Sie sollte zumindest eine der jeweils
-        Gruppe (Income, Bank-und Expense)</translation>
+        <translation>Sie sollte zumindest jeweils eine der Gruppen haben
+(Einkommen, Bank und Auslagen).</translation>
     </message>
 </context>
 <context>
@@ -223,28 +223,28 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="7"/>
         <source>Graph</source>
-        <translation type="unfinished">Diagramm</translation>
+        <translation>Diagramm</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="13"/>
         <source>Show</source>
-        <translation type="unfinished">Zeigen</translation>
+        <translation>Zeige</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="16"/>
         <location filename="../qml/pages/GraphPage.qml" line="55"/>
         <source>Expenses</source>
-        <translation type="unfinished">Auslagen</translation>
+        <translation>Auslagen</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="17"/>
         <source>Expenses vs Bank</source>
-        <translation type="unfinished">Auslagen vs Bank</translation>
+        <translation>Auslagen vs Bank</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="54"/>
         <source>Bank</source>
-        <translation type="unfinished">Bank</translation>
+        <translation>Bank</translation>
     </message>
 </context>
 <context>
@@ -252,160 +252,160 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../src/jsonloader.cpp" line="61"/>
         <source>Loan</source>
-        <translation type="unfinished">Kredit</translation>
+        <translation>Kredit</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="57"/>
         <source>Salary</source>
-        <translation type="unfinished">Gehalt</translation>
+        <translation>Gehalt</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="58"/>
         <source>Student grants</source>
-        <translation type="unfinished">Studienbeihilfen</translation>
+        <translation>Studienbeihilfen</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="59"/>
         <source>Unemployment</source>
-        <translation type="unfinished">Arbeitslosigkeit</translation>
+        <translation>Arbeitslosigkeit</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="60"/>
         <source>Temporary disability</source>
-        <translation type="unfinished">Krankenkasse</translation>
+        <translation>Vorübergehende Arbeitsunfähigkeit</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="62"/>
         <source>Other income</source>
-        <translation type="unfinished"></translation>
+        <translation>Andere Einkommen</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="63"/>
         <source>Visa</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="64"/>
         <source>Maestro</source>
-        <translation type="unfinished">Sonstige Erträge</translation>
+        <translation>Maestro</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="65"/>
         <source>Mastercard</source>
-        <translation type="unfinished"></translation>
+        <translation>MasterCard</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="66"/>
         <source>Savings</source>
-        <translation type="unfinished">Sparen</translation>
+        <translation>Ersparnisse</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="67"/>
         <source>Other card</source>
-        <translation type="unfinished">Andere Kreditkarten</translation>
+        <translation>Andere Kreditkarten</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="68"/>
         <source>Online money</source>
-        <translation type="unfinished">Online Geld</translation>
+        <translation>Online Geld</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="69"/>
         <source>Other</source>
-        <translation type="unfinished">Andere</translation>
+        <translation>Andere</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="70"/>
         <source>Rent</source>
-        <translation type="unfinished">Mieten</translation>
+        <translation>Mieten</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="71"/>
         <source>Entertainment</source>
-        <translation type="unfinished">Spaß</translation>
+        <translation>Freizeit</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="72"/>
         <source>Food</source>
-        <translation type="unfinished">Lebensmittel</translation>
+        <translation>Lebensmittel</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="73"/>
         <source>Travel</source>
-        <translation type="unfinished">Reise</translation>
+        <translation>Reise</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="74"/>
         <source>Internet</source>
-        <translation type="unfinished">Internet</translation>
+        <translation>Internet</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="75"/>
         <source>Hobby</source>
-        <translation type="unfinished"></translation>
+        <translation>Hobby</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="76"/>
         <source>Home</source>
-        <translation type="unfinished">Hobby</translation>
+        <translation>Heim</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="77"/>
         <source>Health</source>
-        <translation type="unfinished">Gesundheit</translation>
+        <translation>Gesundheit</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="78"/>
         <source>Insurance</source>
-        <translation type="unfinished">Versicherung</translation>
+        <translation>Versicherung</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="79"/>
         <source>Media</source>
-        <translation type="unfinished">Media</translation>
+        <translation>Media</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="80"/>
         <source>Clothes</source>
-        <translation type="unfinished">Kleidung</translation>
+        <translation>Kleidung</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="81"/>
         <source>Other expence</source>
-        <translation type="unfinished">Andere expsense</translation>
+        <translation>Andere Kosten</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="115"/>
         <source>Starting balance</source>
-        <translation type="unfinished">Anfangssaldo</translation>
+        <translation>Anfangssaldo</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="115"/>
         <source>Balance account</source>
-        <translation type="unfinished">Balance konto</translation>
+        <translation>Saldokonto</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="118"/>
         <location filename="../src/jsonloader.cpp" line="139"/>
         <source>Income</source>
-        <translation type="unfinished">Einkommen</translation>
+        <translation>Einkommen</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="119"/>
         <location filename="../src/jsonloader.cpp" line="140"/>
         <source>Bank</source>
-        <translation type="unfinished">Bank</translation>
+        <translation>Bank</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="120"/>
         <location filename="../src/jsonloader.cpp" line="141"/>
         <source>Expense</source>
-        <translation type="unfinished">Ausgabe</translation>
+        <translation>Auslage</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="204"/>
         <source>Balance</source>
-        <translation type="unfinished">Balance</translation>
+        <translation>Saldo</translation>
     </message>
 </context>
 <context>
@@ -413,7 +413,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/LicensePage.qml" line="7"/>
         <source>License</source>
-        <translation type="unfinished">Lizenz</translation>
+        <translation>Lizenz</translation>
     </message>
 </context>
 <context>
@@ -425,17 +425,17 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="20"/>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="24"/>
         <source>Default currency</source>
-        <translation type="unfinished">Standardwährung</translation>
+        <translation>Standardwährung</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="56"/>
         <source>Hide income</source>
-        <translation type="unfinished">Ausblenden Erträge aus Kontosicht</translation>
+        <translation>Erträge aus Kontosicht ausblenden</translation>
     </message>
 </context>
 <context>
@@ -443,12 +443,12 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/TransactionsPage.qml" line="97"/>
         <source>Transactions %1</source>
-        <translation type="unfinished">Transaktionen %1</translation>
+        <translation>Transaktionen %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/TransactionsPage.qml" line="101"/>
         <source>Add transaction</source>
-        <translation type="unfinished">Transaktion hinzufügen</translation>
+        <translation>Transaktion hinzufügen</translation>
     </message>
 </context>
 </TS>
