@@ -130,23 +130,28 @@ QString JsonLoader::load()
     else
     {
         QJsonObject obj = json.object();
+        QJsonObject groups;
+        QJsonArray clr;
         // overwrite json file since we use translations now.
         // FIXME Qt 5.1 has no toInt()
         if (obj.value("version").toDouble() == 1) // if version 1
         {
-            QJsonObject groups;
-            QJsonArray clr;
-            groups.insert("0", tr("Income"));
-            groups.insert("1", tr("Bank"));
-            groups.insert("2", tr("Expense"));
             obj.insert("accountgroups", groups);
             obj.insert("version", JSON_FILE_VERSION);
             obj.insert("accounttypes", clr); // clear old values with empty array
             json.setObject(obj); // and feed it
             // this makes obj above outdated
             addDefaultTypes();
-            save();
         }
+
+        // above may have modifiet it reread...
+        obj = json.object();
+        groups.insert("0", tr("Income"));
+        groups.insert("1", tr("Bank"));
+        groups.insert("2", tr("Expense"));
+        obj.insert("accountgroups", groups);
+        json.setObject(obj); // and feed it
+        save();
     }
 
     return QString(json.toJson());

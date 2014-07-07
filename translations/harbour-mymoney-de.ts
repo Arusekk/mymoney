@@ -79,37 +79,37 @@
         <translation>Transaktion hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="88"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="91"/>
         <source>Expense</source>
         <translation>Auslage</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="89"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="93"/>
         <source>Income</source>
         <translation>Einkommen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="118"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="121"/>
         <source>Amount</source>
         <translation>Betrag</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="119"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="122"/>
         <source>Enter amount</source>
         <translation>Betrag eingeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="137"/>
         <source>Enter Description</source>
         <translation>Beschreibung eingeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="135"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="138"/>
         <source>Description of transaction</source>
         <translation>Beschreibung der Transaktion</translation>
     </message>
@@ -117,9 +117,13 @@
 <context>
     <name>BankDelegate</name>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="34"/>
         <source>Add transactions</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Transaktion hinzufügen</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/BankDelegate.qml" line="34"/>
+        <source>Add transaction</source>
+        <translation>Transaktion hinzufügen</translation>
     </message>
     <message>
         <location filename="../qml/pages/BankDelegate.qml" line="47"/>
@@ -386,24 +390,24 @@ group (Income, Bank and Expense).</source>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="118"/>
-        <location filename="../src/jsonloader.cpp" line="139"/>
+        <location filename="../src/jsonloader.cpp" line="149"/>
         <source>Income</source>
         <translation>Einkommen</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="119"/>
-        <location filename="../src/jsonloader.cpp" line="140"/>
+        <location filename="../src/jsonloader.cpp" line="150"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="120"/>
-        <location filename="../src/jsonloader.cpp" line="141"/>
+        <location filename="../src/jsonloader.cpp" line="151"/>
         <source>Expense</source>
         <translation>Auslage</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="204"/>
+        <location filename="../src/jsonloader.cpp" line="209"/>
         <source>Balance</source>
         <translation>Saldo</translation>
     </message>

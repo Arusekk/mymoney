@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="7"/>
         <source>About</source>
-        <translation type="unfinished">Noin</translation>
+        <translation type="unfinished">About</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="102"/>
@@ -79,37 +79,37 @@
         <translation type="unfinished">Lisää tapahtuma</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="88"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="91"/>
         <source>Expense</source>
         <translation type="unfinished">Kulu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="89"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Bank</source>
         <translation type="unfinished">Pankki</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="93"/>
         <source>Income</source>
         <translation type="unfinished">Tulo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="118"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="121"/>
         <source>Amount</source>
         <translation type="unfinished">Määrä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="119"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="122"/>
         <source>Enter amount</source>
         <translation type="unfinished">Anna Määrä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="137"/>
         <source>Enter Description</source>
         <translation type="unfinished">Anna kuvaus</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="135"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="138"/>
         <source>Description of transaction</source>
         <translation type="unfinished">Kuvaus</translation>
     </message>
@@ -118,7 +118,7 @@
     <name>BankDelegate</name>
     <message>
         <location filename="../qml/pages/BankDelegate.qml" line="34"/>
-        <source>Add transactions</source>
+        <source>Add transaction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../qml/pages/ChangeLog.qml" line="7"/>
         <source>ChangeLog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ChangeLog</translation>
     </message>
 </context>
 <context>
@@ -188,7 +188,7 @@
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="78"/>
         <source>About %1</source>
-        <translation type="unfinished">Jos %1</translation>
+        <translation>About %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="83"/>
@@ -281,17 +281,17 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../src/jsonloader.cpp" line="63"/>
         <source>Visa</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Visa</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="64"/>
         <source>Maestro</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Maestro</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="65"/>
         <source>Mastercard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mastercard</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="66"/>
@@ -385,24 +385,24 @@ group (Income, Bank and Expense).</source>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="118"/>
-        <location filename="../src/jsonloader.cpp" line="139"/>
+        <location filename="../src/jsonloader.cpp" line="149"/>
         <source>Income</source>
         <translation type="unfinished">Tulo</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="119"/>
-        <location filename="../src/jsonloader.cpp" line="140"/>
+        <location filename="../src/jsonloader.cpp" line="150"/>
         <source>Bank</source>
         <translation type="unfinished">Pankki</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="120"/>
-        <location filename="../src/jsonloader.cpp" line="141"/>
+        <location filename="../src/jsonloader.cpp" line="151"/>
         <source>Expense</source>
         <translation type="unfinished">Kulu</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="204"/>
+        <location filename="../src/jsonloader.cpp" line="209"/>
         <source>Balance</source>
         <translation type="unfinished">Aloitussaldo</translation>
     </message>

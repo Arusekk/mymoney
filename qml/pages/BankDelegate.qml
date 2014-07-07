@@ -31,7 +31,7 @@ BackgroundItem  {
         id: contextMenuComponent
         ContextMenu {
             MenuItem {
-                text: qsTr("Add transactions")
+                text: qsTr("Add transaction")
                 onClicked: {
                     if (group != "2")
                         pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { "transaction": {"group" : model.group, "from" : model.md5, "description" : "", "sum" : 0.0}})

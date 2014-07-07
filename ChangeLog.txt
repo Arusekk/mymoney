@@ -1,13 +1,10 @@
-Version 0.0.4
-
-  * Add Transaction preselect from account
-  * German tralsations thanks to Lechindianer
-
 Version 0.0.3
 
   * Add Currency per account
   * Cover/Graph only sum default currency
   * Setting add possibility to hide income accounts in main page
+  * Transaction, preselect account if selected from show transaction page
+  * German translations thanks to Lechindianer
 
 Version 0.0.2
 

@@ -81,13 +81,16 @@ Dialog
         anchors.fill: parent
         DialogHeader {  id: header; visible: !entryDescription.focus; title: qsTr("Add transaction"); } //.arg(transaction.md5 == "" ? "Add" : "Change") }
         width: page.width
-        Row {
+        Grid {
             width: parent.width
-            height: Theme.itemSizeSmall
+            //height: Theme.itemSizeLarge+
+//            height: Theme.itemSizeSmall
+            rows: 2
+            columns: 2
             spacing: 0
-            TextSwitch {id: radioOutgoing; text: qsTr("Expense"); width: 205;  onClicked: { radioBank.checked = false; radioIncoming.checked = false; comboExpense.clear(); }}
-            TextSwitch {id: radioBank; text: qsTr("Bank"); width: 165; onClicked: { radioIncoming.checked = false; radioOutgoing.checked = false; comboBank.clear(); } }
-            TextSwitch {id: radioIncoming; text: qsTr("Income"); width: 220; onClicked: { radioBank.checked = false; radioOutgoing.checked = false; comboIncome.clear();} }
+            TextSwitch {id: radioOutgoing; text: qsTr("Expense"); width: parent.width/2;  onClicked: { radioBank.checked = false; radioIncoming.checked = false; comboExpense.clear(); }}
+            TextSwitch {id: radioBank; text: qsTr("Bank"); width: parent.width/2; onClicked: { radioIncoming.checked = false; radioOutgoing.checked = false; comboBank.clear(); } }
+            TextSwitch {id: radioIncoming; text: qsTr("Income"); width: parent.width/2; onClicked: { radioBank.checked = false; radioOutgoing.checked = false; comboIncome.clear();} }
         }
 
         ComboAccountToFrom {
@@ -159,7 +162,6 @@ Dialog
 
     function hack()
     {
-        console.log(transaction.from)
         switch (transaction.group)
         {
             case "0":
@@ -175,7 +177,7 @@ Dialog
             case "2":
                 //radioOutgoing.checked = true
                 radioOutgoing.checked = true; // clicked(radioOutgoing)
-                if (transaction)
+                if (transaction && transaction.to)
                     comboExpense.setToIndexFromMd5(transaction.to)
                 break;
         }
