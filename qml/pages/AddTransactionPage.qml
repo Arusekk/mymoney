@@ -83,8 +83,7 @@ Dialog
         width: page.width
         Grid {
             width: parent.width
-            //height: Theme.itemSizeLarge+
-//            height: Theme.itemSizeSmall
+            visible: !(entryDescription.focus || entrySum.focus)
             rows: 2
             columns: 2
             spacing: 0

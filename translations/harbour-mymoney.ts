@@ -75,37 +75,37 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="91"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Expense</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="91"/>
         <source>Bank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="93"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Income</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="121"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="120"/>
         <source>Amount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="122"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="121"/>
         <source>Enter amount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="137"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="136"/>
         <source>Enter Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="138"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="137"/>
         <source>Description of transaction</source>
         <translation type="unfinished"></translation>
     </message>
