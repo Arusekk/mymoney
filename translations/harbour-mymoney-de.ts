@@ -17,9 +17,8 @@
 <context>
     <name>AddAccountPage</name>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="8"/>
         <source>%1 account</source>
-        <translation>%1 Konto</translation>
+        <translation type="obsolete">%1 Konto</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="91"/>
@@ -35,6 +34,11 @@
         <location filename="../qml/pages/AddAccountPage.qml" line="69"/>
         <source>Group</source>
         <translation>Gruppe</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddAccountPage.qml" line="8"/>
+        <source>Account</source>
+        <translation>Konto</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="101"/>

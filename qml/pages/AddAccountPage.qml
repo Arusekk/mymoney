@@ -5,7 +5,7 @@ Dialog {
     anchors.fill: parent
     property QtObject account
     property bool block: false
-    DialogHeader {  id: header; title: qsTr("%1 account").arg((account && account.md5 != "") ? "Change" : "Add") }
+    DialogHeader {  id: header; title: qsTr("Account"); }
 
     canAccept: (entrySum.text != "" && entryTitle.text != "" && comboAccountType.value != "" && comboAccountGroup.value != "" && comboLocale.value != "")
     onAccepted: {
