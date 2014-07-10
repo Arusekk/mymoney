@@ -216,13 +216,14 @@
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="114"/>
         <source>Add accounts from pulley menu</source>
-        <translation>Konten hinzufügen von Pulleymenü</translation>
+        <translation>Konten hinzufügen von menü</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="119"/>
         <source>You should have at least one of each
 group (Income, Bank and Expense).</source>
-        <translation>Sie sollte zumindest jeweils eine der Gruppen haben
+        <translation>Sie sollte zumindest jeweils eine
+der Gruppen haben
 (Einkommen, Bank und Auslagen).</translation>
     </message>
 </context>
