@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="it_IT" sourcelanguage="it">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="7"/>
         <source>About</source>
-        <translation>About</translation>
+        <translation>Info su</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="102"/>
         <source>Donate</source>
-        <translation>Donare</translation>
+        <translation>Donazione</translation>
     </message>
 </context>
 <context>
@@ -23,7 +23,7 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="8"/>
         <source>Account</source>
-        <translation type="unfinished">Conto</translation>
+        <translation>Conto</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="69"/>
@@ -38,12 +38,12 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="92"/>
         <source>Type name here</source>
-        <translation>Inserire il nome qui</translation>
+        <translation>Insersci il nome qui</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="101"/>
         <source>Enter new type or press enter key</source>
-        <translation>Nuovo tipo oppure selezionare dal basso</translation>
+        <translation>Inserisci nuovo tipo o seleziona uno esistente</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="128"/>
@@ -58,12 +58,12 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="175"/>
         <source>Starting Balance</source>
-        <translation>Avvio balance</translation>
+        <translation>Saldo iniziale</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="176"/>
         <source>Enter start saldo</source>
-        <translation>Inserisci iniziare a Saldo</translation>
+        <translation>Inserisci saldo iniziale</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="184"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Expense</source>
-        <translation>Costo</translation>
+        <translation>Spese</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="91"/>
@@ -91,7 +91,7 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Income</source>
-        <translation>Reddito</translation>
+        <translation>Entrate</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="120"/>
@@ -106,12 +106,12 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="136"/>
         <source>Enter Description</source>
-        <translation>Inserire la descrizione</translation>
+        <translation>Inserisci descrizione</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="137"/>
         <source>Description of transaction</source>
-        <translation>Descrizione</translation>
+        <translation>Descrizione della transazione</translation>
     </message>
 </context>
 <context>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../qml/pages/BankDelegate.qml" line="47"/>
         <source>Edit account</source>
-        <translation>Edit conto</translation>
+        <translation>Modifica conto</translation>
     </message>
 </context>
 <context>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../qml/pages/ChangeLog.qml" line="7"/>
         <source>ChangeLog</source>
-        <translation>ChangeLog</translation>
+        <translation>Changelog</translation>
     </message>
 </context>
 <context>
@@ -145,13 +145,13 @@
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="57"/>
         <source>From:</source>
-        <translation>Dal conto</translation>
+        <translation>Da:</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="79"/>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="106"/>
         <source>To and from must be different</source>
-        <translation>da e devono differire</translation>
+        <translation>Da e A devono essere differenti</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="79"/>
@@ -162,7 +162,7 @@
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="85"/>
         <source>To:</source>
-        <translation>Per conto</translation>
+        <translation>A:</translation>
     </message>
 </context>
 <context>
@@ -170,7 +170,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="48"/>
         <source>Income</source>
-        <translation>Reddito</translation>
+        <translation>Entrate</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="63"/>
@@ -188,7 +188,7 @@
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="78"/>
         <source>About %1</source>
-        <translation>About %1</translation>
+        <translation>Info su %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="83"/>
@@ -198,7 +198,7 @@
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="88"/>
         <source>Add account</source>
-        <translation>Aggiungi conti</translation>
+        <translation>Aggiungi conto</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="93"/>
@@ -208,15 +208,15 @@
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="114"/>
         <source>Add accounts from pulley menu</source>
-        <translation>Aggiungere gli account
-dal menu &apos;puleggia</translation>
+        <translation>Aggiungi gli account 
+dal pulley menu</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="119"/>
         <source>You should have at least one of each
 group (Income, Bank and Expense).</source>
-        <translation>Devi avere almeno uno di ciascuno
- gruppo (reddito, banca e spense)</translation>
+        <translation>Devi avere almeno un conto di ciascun 
+gruppo (entrate, banca e spese).</translation>
     </message>
 </context>
 <context>
@@ -224,12 +224,12 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="7"/>
         <source>Graph</source>
-        <translation>Grafico</translation>
+        <translation>Grafici</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="13"/>
         <source>Show</source>
-        <translation>spettacolo</translation>
+        <translation>Mostra</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="16"/>
@@ -258,7 +258,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../src/jsonloader.cpp" line="58"/>
         <source>Student grants</source>
-        <translation>borse di studio</translation>
+        <translation>Borsa di studio</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="59"/>
@@ -268,7 +268,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../src/jsonloader.cpp" line="60"/>
         <source>Temporary disability</source>
-        <translation>inabilità temporanea</translation>
+        <translation>Disabilità temporanea</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="61"/>
@@ -278,7 +278,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../src/jsonloader.cpp" line="62"/>
         <source>Other income</source>
-        <translation>Altri proventi</translation>
+        <translation>Altro</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="63"/>
@@ -308,12 +308,12 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../src/jsonloader.cpp" line="68"/>
         <source>Online money</source>
-        <translation>Soldi internet</translation>
+        <translation>Conto online</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="69"/>
         <source>Other</source>
-        <translation>Altri</translation>
+        <translation>Altro</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="70"/>
@@ -378,18 +378,18 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../src/jsonloader.cpp" line="115"/>
         <source>Balance account</source>
-        <translation>Balance</translation>
+        <translation>Saldo</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="115"/>
         <source>Starting balance</source>
-        <translation>Avvio balance</translation>
+        <translation>Saldo iniziale</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="118"/>
         <location filename="../src/jsonloader.cpp" line="149"/>
         <source>Income</source>
-        <translation>Reddito</translation>
+        <translation>Entrate</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="119"/>
@@ -406,7 +406,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../src/jsonloader.cpp" line="209"/>
         <source>Balance</source>
-        <translation>Bilancio</translation>
+        <translation>Saldo</translation>
     </message>
 </context>
 <context>
@@ -427,12 +427,12 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="24"/>
         <source>Default currency</source>
-        <translation>Valuta standard</translation>
+        <translation>Valuta preferita</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="56"/>
         <source>Hide income</source>
-        <translation>Nascondi reddito</translation>
+        <translation>Nascondi entrate</translation>
     </message>
 </context>
 <context>
@@ -440,7 +440,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/TransactionsPage.qml" line="97"/>
         <source>Transactions %1</source>
-        <translation>%1</translation>
+        <translation>Transazioni %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/TransactionsPage.qml" line="101"/>
