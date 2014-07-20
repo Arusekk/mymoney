@@ -13,7 +13,7 @@ Name:       harbour-mymoney
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    MyMoney
-Version:    0.0.3
+Version:    0.0.4
 Release:    1
 Group:      Qt/Qt
 License:    GPL 2.0
@@ -41,7 +41,8 @@ MyMoney Simple budget application
 # >> build pre
 # << build pre
 
-%qtc_qmake5 
+%qtc_qmake5  \
+    VERSION='%{version}'
 
 %qtc_make %{?_smp_mflags}
 

@@ -58,6 +58,7 @@ TRANSLATIONS += translations/harbour-mymoney-fi.ts
 TRANSLATIONS += translations/harbour-mymoney-sv.ts
 TRANSLATIONS += translations/harbour-mymoney-it.ts
 
+DEFINES+= VERSION=\\\"$$VERSION\\\"
 HEADERS += \
     src/gen_config.h \
     src/appinfo.h \
