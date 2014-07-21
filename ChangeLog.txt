@@ -1,6 +1,7 @@
 Version 0.0.4
 
   * Italian translation thanks to Francesco
+  * Possiblility to change transactions
 
 Version 0.0.3
 
