@@ -78,42 +78,47 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="89"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Add transaction</source>
         <translation type="unfinished">Lisää tapahtuma</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="97"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <source>Change transaction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
         <source>Expense</source>
         <translation type="unfinished">Kulu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
         <source>Bank</source>
         <translation type="unfinished">Pankki</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
         <source>Income</source>
         <translation type="unfinished">Tulo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="127"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="131"/>
         <source>Amount</source>
         <translation type="unfinished">Määrä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="128"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="132"/>
         <source>Enter amount</source>
         <translation type="unfinished">Anna Määrä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="143"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="147"/>
         <source>Enter Description</source>
         <translation type="unfinished">Anna kuvaus</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="144"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="148"/>
         <source>Description of transaction</source>
         <translation type="unfinished">Kuvaus</translation>
     </message>
@@ -147,24 +152,24 @@
 <context>
     <name>ComboAccountToFrom</name>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="57"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="66"/>
         <source>From:</source>
         <translation type="unfinished">Tililtä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="79"/>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="106"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="115"/>
         <source>To and from must be different</source>
         <translation type="unfinished">Ja sieltä on oltava eri</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="79"/>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="106"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="115"/>
         <source>Saldo %1</source>
         <translation type="unfinished">Tasapaino %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="85"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="94"/>
         <source>To:</source>
         <translation type="unfinished">Tilille</translation>
     </message>
