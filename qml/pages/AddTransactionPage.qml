@@ -10,13 +10,21 @@ Dialog
     property string from: ""
     canAccept: (entryDescription.text != "" && entrySum.text != "" && to != "" && from != "" && entrySum.asDouble() > 0.0 && to != from)
     onAccepted: {
-        modelTransactions.add(from, to, entryDescription.text, entrySum.asDouble())
+        modelTransactions.add(transaction.md5, from, to, entryDescription.text, entrySum.asDouble())
     }
 
     function getAccountSaldoAsString(md5, addsum)
     {
+        var balance = 0.0
         var o = modelAccounts.lookupByMd5(md5)
-        return o ?  (o.sum + addsum).toLocaleCurrencyString(Qt.locale(o.currency)) : ""
+        if (addsum && (md5 == transaction.from || md5 == transaction.to)) // only balance if change... and not sum == 0.0
+        {
+            if (addsum > 0) // to
+                balance = transaction.sum * -1.0
+            else
+                balance = transaction.sum
+        }
+        return o ?  (o.sum + addsum + balance).toLocaleCurrencyString(Qt.locale(o.currency)) : ""
     }
 
     ListModel {
@@ -79,7 +87,7 @@ Dialog
 
     Column{
         anchors.fill: parent
-        DialogHeader {  id: header; visible: !entryDescription.focus; title: qsTr("Add transaction"); } //.arg(transaction.md5 == "" ? "Add" : "Change") }
+        DialogHeader {  id: header; visible: !entryDescription.focus; title: transaction.md5 =="" ? qsTr("Add transaction") : qsTr("Change transaction"); }
         width: page.width
         Grid {
             width: parent.width
@@ -94,6 +102,7 @@ Dialog
 
         ComboAccountToFrom {
             id: comboBank
+            objectName: "Bank"
             visible: radioBank.checked
             modelFrom: modelBank
             modelTo: modelBank
@@ -101,6 +110,7 @@ Dialog
 
         ComboAccountToFrom {
             id: comboIncome
+            objectName: "Income"
             visible: radioIncoming.checked
             modelFrom: modelIncome
             modelTo: modelBank
@@ -108,6 +118,7 @@ Dialog
 
         ComboAccountToFrom {
             id: comboExpense
+            objectName: "Expense"
             visible: radioOutgoing.checked
             modelFrom: modelBank
             modelTo: modelExpense
@@ -165,19 +176,19 @@ Dialog
         {
             case "0":
                 radioIncoming.checked=true;//clicked(radioIncoming)
-                if (transaction)
-                    comboIncome.setFromIndexFromMd5(transaction.from)
+                comboIncome.setFromIndexFromMd5(transaction.from)
+                comboBank.setToIndexFromMd5(transaction.to)
                 break;
             case "1":
                 radioBank.checked = true; //clicked(radioBank)
-                if (transaction)
-                    comboBank.setFromIndexFromMd5(transaction.from)
+                comboBank.setFromIndexFromMd5(transaction.from)
+                comboBank.setToIndexFromMd5(transaction.to)
                 break;
             case "2":
                 //radioOutgoing.checked = true
                 radioOutgoing.checked = true; // clicked(radioOutgoing)
-                if (transaction && transaction.to)
-                    comboExpense.setToIndexFromMd5(transaction.to)
+                comboBank.setFromIndexFromMd5(transaction.from)
+                comboExpense.setToIndexFromMd5(transaction.to)
                 break;
         }
 

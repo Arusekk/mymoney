@@ -78,42 +78,47 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="82"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Add transaction</source>
         <translation>Transaktion hinzufügen</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <source>Change transaction</source>
+        <translation>Transaktion ändern</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
         <source>Expense</source>
         <translation>Auslage</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="91"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
         <source>Income</source>
         <translation>Einkommen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="120"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="131"/>
         <source>Amount</source>
         <translation>Betrag</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="121"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="132"/>
         <source>Enter amount</source>
         <translation>Betrag eingeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="136"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="147"/>
         <source>Enter Description</source>
         <translation>Beschreibung eingeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="137"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="148"/>
         <source>Description of transaction</source>
         <translation>Beschreibung der Transaktion</translation>
     </message>
@@ -151,24 +156,24 @@
 <context>
     <name>ComboAccountToFrom</name>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="57"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="66"/>
         <source>From:</source>
         <translation>Von:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="79"/>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="106"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="115"/>
         <source>To and from must be different</source>
         <translation>Zu und von müssen unterschiedlich sein</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="79"/>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="106"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="115"/>
         <source>Saldo %1</source>
         <translation>Saldo %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="85"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="94"/>
         <source>To:</source>
         <translation>Zu:</translation>
     </message>
@@ -448,14 +453,21 @@ der Gruppen haben
     </message>
 </context>
 <context>
+    <name>TransactionDelegate</name>
+    <message>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <source>Change transaction</source>
+        <translation>Transaktion ändern</translation>
+    </message>
+</context>
+<context>
     <name>TransactionsPage</name>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="97"/>
         <source>Transactions %1</source>
-        <translation>Transaktionen %1</translation>
+        <translation type="obsolete">Transaktionen %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="101"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="104"/>
         <source>Add transaction</source>
         <translation>Transaktion hinzufügen</translation>
     </message>

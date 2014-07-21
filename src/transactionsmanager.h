@@ -16,7 +16,7 @@ public:
 signals:
     void error(QString error);
 public slots:
-    bool add(QString fromaccount, QString toaccount, QString description, double sum, bool save);
+    bool add(QString md5, QString fromaccount, QString toaccount, QString description, double sum, bool save);
 };
 
 #endif // TRANSACTIONSMANAGER_H

@@ -5,7 +5,7 @@ BackgroundItem  {
     anchors.left: ListView.left
     anchors.right: ListView.right
     contentHeight: Theme.itemSizeSmall+Theme.itemSizeSmall
-    height: Theme.itemSizeSmall+Theme.itemSizeSmall
+    height: menuOpen ? contextMenu.height + Theme.itemSizeSmall * 2 : Theme.itemSizeSmall * 2
 
     property bool menuOpen: contextMenu != null && contextMenu.parent === background
     property Item contextMenu
@@ -20,6 +20,24 @@ BackgroundItem  {
             color = Theme.highlightColor
         }
         return color
+    }
+
+    onPressAndHold: {
+                   if (!contextMenu)
+                       contextMenu = contextMenuComponent.createObject(listView)
+                   contextMenu.show(background)
+               }
+    Component
+    {
+        id: contextMenuComponent
+        ContextMenu {
+            MenuItem {
+                text: qsTr("Change transaction")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { "transaction": {"md5" : model.md5, "group" : transactionsPage.group, "from" : model.from, "to" : model.to, "description" : model.description, "sum" : Math.abs(model.sum)}})
+                }
+            }
+        }
     }
 
     Column{

@@ -184,9 +184,40 @@ ApplicationWindow
             modelTransactions.transactions = jsonObject
         }
 
-        function add(from, to, description, sum)
+        function changeSaldos(trmd5, sum)
         {
-            transactionmanager.add(from, to, description, sum, true)
+            var o
+            var tr = modelTransactions.transactions
+            for (var key in tr)
+            {
+                if (key == trmd5)
+                {
+                    o = tr[key]  // o == transaction
+                    break
+                }
+            }
+            if (o)
+            {
+                var o2 = modelAccounts.lookupByMd5(o.from)
+                o2.sum = o2.sum + o.sum
+                if (o2.currency == defaultCurrency)
+                    modelAccounts.updateTotal(o.group, o.sum)
+
+                o2 = modelAccounts.lookupByMd5(o.to)
+                o2.sum = o2.sum - o.sum
+                if (o2.currency == defaultCurrency)
+                    modelAccounts.updateTotal(o2.group, (o.sum * -1))
+            }
+            else
+                console.log("CRITICAL==================================")
+        }
+
+        function add(transactionmd5, from, to, description, sum)
+        {
+            if (transactionmd5 != "")
+                changeSaldos(transactionmd5)
+
+            transactionmanager.add(transactionmd5, from, to, description, sum, true)
             modelTransactions.transactions = JSON.parse(jsonloader.dump()).transactions
             var o = modelAccounts.lookupByMd5(from)
             o.sum = o.sum - sum
