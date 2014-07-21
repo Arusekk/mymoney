@@ -74,42 +74,42 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="82"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="89"/>
         <source>Add transaction</source>
         <translation>Aggiungi transazione</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="97"/>
         <source>Expense</source>
         <translation>Spese</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="91"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
         <source>Bank</source>
         <translation>Banca</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
         <source>Income</source>
         <translation>Entrate</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="120"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="127"/>
         <source>Amount</source>
         <translation>Importo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="121"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="128"/>
         <source>Enter amount</source>
         <translation>Inserisci importo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="136"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="143"/>
         <source>Enter Description</source>
         <translation>Inserisci descrizione</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="137"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="144"/>
         <source>Description of transaction</source>
         <translation>Descrizione della transazione</translation>
     </message>
@@ -436,14 +436,21 @@ gruppo (entrate, banca e spese).</translation>
     </message>
 </context>
 <context>
+    <name>TransactionDelegate</name>
+    <message>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <source>Change transaction</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TransactionsPage</name>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="97"/>
         <source>Transactions %1</source>
-        <translation>Transazioni %1</translation>
+        <translation type="obsolete">Transazioni %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="101"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="104"/>
         <source>Add transaction</source>
         <translation>Aggiungi transazione</translation>
     </message>

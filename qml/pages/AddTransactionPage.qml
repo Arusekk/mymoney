@@ -10,13 +10,20 @@ Dialog
     property string from: ""
     canAccept: (entryDescription.text != "" && entrySum.text != "" && to != "" && from != "" && entrySum.asDouble() > 0.0 && to != from)
     onAccepted: {
-        modelTransactions.add(from, to, entryDescription.text, entrySum.asDouble())
+        modelTransactions.add(transaction.md5, from, to, entryDescription.text, entrySum.asDouble())
     }
 
     function getAccountSaldoAsString(md5, addsum)
     {
+        var balance = 0.0
         var o = modelAccounts.lookupByMd5(md5)
-        return o ?  (o.sum + addsum).toLocaleCurrencyString(Qt.locale(o.currency)) : ""
+        console.log(addsum)
+        if (addsum > 0) // to
+            balance = transaction.sum * -1.0
+        else
+            balance = transaction.sum
+
+        return o && addsum != 0.0 ?  (o.sum + addsum + balance).toLocaleCurrencyString(Qt.locale(o.currency)) : "?"
     }
 
     ListModel {

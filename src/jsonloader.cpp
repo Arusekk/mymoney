@@ -206,7 +206,7 @@ QString JsonLoader::addAccount(QString name, QString group, QString type, double
         if (group != "SB") // are we creating balance account?
         {
             // nope
-            transactions.add(getBalanceAccountMd5(), md5, tr("Balance"), sum, false);
+            transactions.add("", getBalanceAccountMd5(), md5, tr("Balance"), sum, false);
         }
     }
     else

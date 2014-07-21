@@ -41,7 +41,7 @@ BackgroundItem  {
             }
             MenuItem {
                 text: qsTr("Show transactions")
-                onClicked: pageStack.push(Qt.resolvedUrl("TransactionsPage.qml"), { md5 : model.md5})
+                onClicked: { console.log(model.group); pageStack.push(Qt.resolvedUrl("TransactionsPage.qml"), { md5 : model.md5, group : model.group}) }
             }
             MenuItem {
                 text: qsTr("Edit account")

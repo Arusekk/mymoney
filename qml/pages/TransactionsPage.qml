@@ -1,9 +1,10 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 Page {
+    id: transactionsPage
     property string md5: ""
     property var account
-
+    property string group: ""
     Connections
     {
         target: app
@@ -14,6 +15,7 @@ Page {
         // we need to make a copy of every transaction when insert in currentModel since we modify sum
         // this probadly can be done better...
         id: item
+        property string md5: "" // transactionmd5
         property double sum: 0.0
         property double sum2: 0.0
         property string description: ""
@@ -36,11 +38,11 @@ Page {
                 if (o.from == md5)
                 {
                     // invert sum only if bank is from
-                    modelCurrentTransactions.dirtyInsert(o, isbank)
+                    modelCurrentTransactions.dirtyInsert(key, o, isbank)
                 }
                 else if(o.to == md5)
                 {
-                    modelCurrentTransactions.dirtyInsert(o, false)
+                    modelCurrentTransactions.dirtyInsert(key, o, false)
                 }
             }
 
@@ -58,7 +60,7 @@ Page {
             }
         }
 
-        function dirtyInsert(n, invertsum) // this probadly could be done better...
+        function dirtyInsert(key, n, invertsum) // this probadly could be done better...
         {
             // we need to make a copy of the original since we modify sum
             item.sum = n.sum
@@ -67,6 +69,7 @@ Page {
             item.to = n.to
             item.from = n.from
             item.date = n.date
+            item.md5 = key
             if (invertsum){
                 // and now the real reason we copy...
                 item.sum = item.sum * -1
@@ -94,7 +97,7 @@ Page {
         anchors.fill: parent
         anchors.leftMargin: Theme.paddingSmall
         anchors.rightMargin: Theme.paddingSmall
-        header: PageHeader { id: header; title: qsTr("Transactions %1").arg(modelAccounts.lookupByMd5(md5).title) }
+        header: PageHeader { id: header; title: modelAccounts.lookupByMd5(md5).title }
 
         PullDownMenu {
             MenuItem {

@@ -22,6 +22,24 @@ BackgroundItem  {
         return color
     }
 
+    onPressAndHold: {
+                   if (!contextMenu)
+                       contextMenu = contextMenuComponent.createObject(listView)
+                   contextMenu.show(background)
+               }
+    Component
+    {
+        id: contextMenuComponent
+        ContextMenu {
+            MenuItem {
+                text: qsTr("Change transaction")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { "transaction": {"md5" : model.md5, "group" : transactionsPage.group, "from" : model.md5, "description" : model.description, "sum" : Math.abs(model.sum)}})
+                }
+            }
+        }
+    }
+
     Column{
         id: myListItem
         anchors.fill: parent
