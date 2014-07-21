@@ -85,7 +85,7 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Change transaction</source>
-        <translation type="unfinished"></translation>
+        <translation>Transaktion ändern</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
@@ -457,7 +457,7 @@ der Gruppen haben
     <message>
         <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
         <source>Change transaction</source>
-        <translation type="unfinished"></translation>
+        <translation>Transaktion ändern</translation>
     </message>
 </context>
 <context>

@@ -42,7 +42,7 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="8"/>
         <source>Account</source>
-        <translation type="unfinished">Konto</translation>
+        <translation>Konto</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="101"/>
@@ -89,7 +89,7 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Change transaction</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändra transaktion</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
@@ -480,7 +480,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
     <message>
         <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
         <source>Change transaction</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändra transaktion</translation>
     </message>
 </context>
 <context>

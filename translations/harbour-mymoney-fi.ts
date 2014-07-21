@@ -85,7 +85,7 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Change transaction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Muuta liiketoimi</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
@@ -451,7 +451,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
         <source>Change transaction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Muutaa liiketoimet</translation>
     </message>
 </context>
 <context>
