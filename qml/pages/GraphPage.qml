@@ -8,7 +8,6 @@ Page
     ComboBox {
         id: combo
         anchors.top: header.bottom
-        height: Theme.itemSizeSmall
         currentIndex: 0
         label: qsTr("Show")
         onCurrentIndexChanged: items.load()
