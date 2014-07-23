@@ -50,6 +50,14 @@ Dialog {
                 }
             }
         }
+        Label {
+            text: qsTr("Attention! Only accounts with default currency will be shown in graph and cover.")
+            height: Theme.itemSizeVeryLarge//+Theme.itemSizeSmall
+            wrapMode: Text.WordWrap
+            width: parent.width-Theme.paddingLarge*2 // wordwrap "hack"
+            color: Theme.secondaryHighlightColor
+            x: Theme.paddingLarge // wordwrap "hack"
+        }
 
         TextSwitch{
             id: checkboxHideIncome

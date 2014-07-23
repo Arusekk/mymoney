@@ -168,6 +168,16 @@ Dialog {
             }
         }
 
+        Label {
+            visible: defaultCurrency != modelLanguages.get(comboLocale.currentIndex).locale
+            text: qsTr("Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.")
+            height: Theme.itemSizeVeryLarge//+Theme.itemSizeSmall
+            wrapMode: Text.WordWrap
+            width: parent.width-Theme.paddingLarge*2 // wordwrap "hack"
+            color: Theme.secondaryHighlightColor
+            x: Theme.paddingLarge // wordwrap "hack"
+        }
+
         TextField {
             id: entrySum
             text: account ? account.sum.toLocaleCurrencyString() : "0"
@@ -196,7 +206,7 @@ Dialog {
     Component.onCompleted: {
         comboAccountGroup.currentIndex = account ? modelAccountGroups.lookupIndex(account.group) : -1
         comboAccountType.currentIndex = account ? modelCurrentAccountTypes.lookupIndex(account.type) : -1
-        comboLocale.currentIndex = account ? comboLocale.select(account.currency) : comboLocale.select(currentLocale)
+        comboLocale.currentIndex = account ? comboLocale.select(account.currency) : comboLocale.select(defaultCurrency)
     }
 
     Timer{

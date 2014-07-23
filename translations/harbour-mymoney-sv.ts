@@ -60,17 +60,22 @@
         <translation>Valuta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="175"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="173"/>
+        <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddAccountPage.qml" line="185"/>
         <source>Starting Balance</source>
         <translation>Ingående saldo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="176"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="186"/>
         <source>Enter start saldo</source>
         <translation>Skriv in nuvarande saldo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="184"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="194"/>
         <source>Saldo %1</source>
         <translation>Saldo %1</translation>
     </message>
@@ -470,7 +475,12 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation>Välj standard valuta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="56"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="64"/>
         <source>Hide income</source>
         <translation>Dölj inkomstkonton i huvudvyn</translation>
     </message>

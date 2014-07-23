@@ -56,17 +56,22 @@
         <translation>Valuutta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="175"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="173"/>
+        <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddAccountPage.qml" line="185"/>
         <source>Starting Balance</source>
         <translation>Aloita tasapaino</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="176"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="186"/>
         <source>Enter start saldo</source>
         <translation>Anna nykyinen Balance</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="184"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="194"/>
         <source>Saldo %1</source>
         <translation>Tasapaino %1</translation>
     </message>
@@ -442,7 +447,12 @@ kutakin ryhmä (tulot, pankki ja kulut).</translation>
         <translation>Oletusvaluuttaa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="56"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="64"/>
         <source>Hide income</source>
         <translation>Piilota tuotot tilinäkymässä</translation>
     </message>
