@@ -2,9 +2,10 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 Page {
     id: transactionsPage
-    property string md5: ""
+    property string md5: "" // md5 of account
     property var account
     property string group: ""
+    property string currency: modelAccounts.lookupByMd5(md5).currency
     Connections
     {
         target: app

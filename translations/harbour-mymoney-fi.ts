@@ -21,57 +21,57 @@
         <translation type="obsolete">Tili</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="91"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="93"/>
         <source>Name</source>
         <translation>Nimi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="92"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="94"/>
         <source>Type name here</source>
         <translation>Anna nimi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="69"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="71"/>
         <source>Group</source>
         <translation>Syötä tilin nimi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="8"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="10"/>
         <source>Account</source>
         <translation>Tili</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="101"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="103"/>
         <source>Enter new type or press enter key</source>
         <translation>Kirjoita uusi tyyppi-tai paina Enter</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="128"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="130"/>
         <source>Type</source>
         <translation>Tilin tyyppi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="141"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="143"/>
         <source>Currency</source>
         <translation>Valuutta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="173"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="175"/>
         <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
         <translation>HUOM että vain tilit valitun standardin arvo näkyy kuvaajan ja kansi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="185"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="187"/>
         <source>Starting Balance</source>
         <translation>Aloita tasapaino</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="186"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="188"/>
         <source>Enter start saldo</source>
         <translation>Anna nykyinen Balance</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="194"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="196"/>
         <source>Saldo %1</source>
         <translation>Tasapaino %1</translation>
     </message>
@@ -448,8 +448,12 @@ kutakin ryhmä (tulot, pankki ja kulut).</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
+        <translation>HUOM että vain tilit valitun &apos;%1&apos; arvo näkyy kuvaajan ja kansi</translation>
+    </message>
+    <message>
         <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
-        <translation>HUOM että vain tilit valitun standardin arvo näkyy kuvaajan ja kansi</translation>
+        <translation type="obsolete">HUOM että vain tilit valitun standardin arvo näkyy kuvaajan ja kansi</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="64"/>
@@ -472,7 +476,7 @@ kutakin ryhmä (tulot, pankki ja kulut).</translation>
         <translation type="obsolete">Liiketoimet %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="104"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="105"/>
         <source>Add transaction</source>
         <translation>Lisää liiketoimet</translation>
     </message>

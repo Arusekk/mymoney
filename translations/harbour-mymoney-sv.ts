@@ -21,17 +21,17 @@
         <translation type="obsolete">%1 konto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="91"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="93"/>
         <source>Name</source>
         <translation>Namn</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="92"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="94"/>
         <source>Type name here</source>
         <translation>Skriv in kontonamn</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="69"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="71"/>
         <source>Group</source>
         <translation>Kontogrupp</translation>
     </message>
@@ -40,42 +40,42 @@
         <translation type="obsolete">Account</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="8"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="10"/>
         <source>Account</source>
         <translation>Konto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="101"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="103"/>
         <source>Enter new type or press enter key</source>
         <translation>Skriv ny typ eller tryck enter</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="128"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="130"/>
         <source>Type</source>
         <translation>Kontotyp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="141"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="143"/>
         <source>Currency</source>
         <translation>Valuta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="173"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="175"/>
         <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
         <translation>OBS! Om du skapar ett konto med annat valuta än standardvaluta (se inställningar), så kommer detta konto inte att visas i graf eller covern.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="185"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="187"/>
         <source>Starting Balance</source>
         <translation>Ingående saldo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="186"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="188"/>
         <source>Enter start saldo</source>
         <translation>Skriv in nuvarande saldo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="194"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="196"/>
         <source>Saldo %1</source>
         <translation>Saldo %1</translation>
     </message>
@@ -476,8 +476,12 @@ grupp (Inkomst, Bank och Utgift)</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
+        <translation>OBS! Endast konton med valutan &apos;%1&apos; kommer att visas i graf och cover.</translation>
+    </message>
+    <message>
         <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
-        <translation>OBS! Endast konton med standard valutan kommer att visas i graf och cover.</translation>
+        <translation type="obsolete">OBS! Endast konton med standard valutan kommer att visas i graf och cover.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="64"/>
@@ -500,7 +504,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation type="obsolete">%1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="104"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="105"/>
         <source>Add transaction</source>
         <translation>Ny transaktion</translation>
     </message>

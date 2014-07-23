@@ -5,6 +5,8 @@ Dialog {
     anchors.fill: parent
     property QtObject account
     property bool block: false
+    property string selectedCurrency: comboLocale.currentIndex != -1 ? modelLanguages.get(comboLocale.currentIndex).locale : "en"
+    onSelectedCurrencyChanged: console.log(selectedCurrency)
     DialogHeader {  id: header; title: qsTr("Account"); }
 
     canAccept: (entrySum.text != "" && entryTitle.text != "" && comboAccountType.value != "" && comboAccountGroup.value != "" && comboLocale.value != "")
@@ -196,9 +198,9 @@ Dialog {
             function getSaldo()
             {
                 if (account)
-                    return account.group == "0" ? (account.sum * -1).toLocaleCurrencyString(Qt.locale()) : account.sum.toLocaleCurrencyString(Qt.locale())
+                    return account.group == "0" ? (account.sum * -1).toLocaleCurrencyString(Qt.locale(selectedCurrency)) : account.sum.toLocaleCurrencyString(Qt.locale(selectedCurrency))
 
-                return Number(0.0).toLocaleCurrencyString(Qt.locale())
+                return Number(0.0).toLocaleCurrencyString(Qt.locale(selectedCurrency))
             }
         }
     }

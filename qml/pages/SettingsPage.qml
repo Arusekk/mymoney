@@ -51,7 +51,7 @@ Dialog {
             }
         }
         Label {
-            text: qsTr("Attention! Only accounts with default currency will be shown in graph and cover.")
+            text: qsTr("Attention! Only accounts with currency '%1' will be shown in graph and cover.").arg(comboLocale.value)
             height: Theme.itemSizeVeryLarge//+Theme.itemSizeSmall
             wrapMode: Text.WordWrap
             width: parent.width-Theme.paddingLarge*2 // wordwrap "hack"
