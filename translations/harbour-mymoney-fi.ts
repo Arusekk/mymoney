@@ -6,12 +6,12 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="7"/>
         <source>About</source>
-        <translation type="unfinished">About</translation>
+        <translation>About</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="102"/>
         <source>Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>Donate</translation>
     </message>
 </context>
 <context>
@@ -23,52 +23,52 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="91"/>
         <source>Name</source>
-        <translation type="unfinished">Nimi</translation>
+        <translation>Nimi</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="92"/>
         <source>Type name here</source>
-        <translation type="unfinished">Anna nimi</translation>
+        <translation>Anna nimi</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="69"/>
         <source>Group</source>
-        <translation type="unfinished">Syötä tilin nimi</translation>
+        <translation>Syötä tilin nimi</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="8"/>
         <source>Account</source>
-        <translation type="unfinished">Tili</translation>
+        <translation>Tili</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="101"/>
         <source>Enter new type or press enter key</source>
-        <translation type="unfinished">Kirjoita uusi tyyppi-tai paina Enter</translation>
+        <translation>Kirjoita uusi tyyppi-tai paina Enter</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="128"/>
         <source>Type</source>
-        <translation type="unfinished">Tilin tyyppi</translation>
+        <translation>Tilin tyyppi</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="141"/>
         <source>Currency</source>
-        <translation type="unfinished">Valuutta</translation>
+        <translation>Valuutta</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="175"/>
         <source>Starting Balance</source>
-        <translation type="unfinished">Aloita tasapaino</translation>
+        <translation>Aloita tasapaino</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="176"/>
         <source>Enter start saldo</source>
-        <translation type="unfinished">Anna nykyinen Balance</translation>
+        <translation>Anna nykyinen Balance</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="184"/>
         <source>Saldo %1</source>
-        <translation type="unfinished">Tasapaino %1</translation>
+        <translation>Tasapaino %1</translation>
     </message>
     <message>
         <source>Default currency</source>
@@ -80,47 +80,47 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Add transaction</source>
-        <translation type="unfinished">Lisää tapahtuma</translation>
+        <translation>Lisää tapahtuma</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
         <source>Change transaction</source>
-        <translation type="unfinished">Muuta liiketoimi</translation>
+        <translation>Muuta liiketoimi</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
         <source>Expense</source>
-        <translation type="unfinished">Kulu</translation>
+        <translation>Kulu</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
         <source>Bank</source>
-        <translation type="unfinished">Pankki</translation>
+        <translation>Pankki</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
         <source>Income</source>
-        <translation type="unfinished">Tulo</translation>
+        <translation>Tulo</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="131"/>
         <source>Amount</source>
-        <translation type="unfinished">Määrä</translation>
+        <translation>Määrä</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="132"/>
         <source>Enter amount</source>
-        <translation type="unfinished">Anna Määrä</translation>
+        <translation>Anna Määrä</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="147"/>
         <source>Enter Description</source>
-        <translation type="unfinished">Anna kuvaus</translation>
+        <translation>Anna kuvaus</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="148"/>
         <source>Description of transaction</source>
-        <translation type="unfinished">Kuvaus</translation>
+        <translation>Kuvaus</translation>
     </message>
 </context>
 <context>
@@ -128,17 +128,17 @@
     <message>
         <location filename="../qml/pages/BankDelegate.qml" line="34"/>
         <source>Add transaction</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää tapahtuma</translation>
     </message>
     <message>
         <location filename="../qml/pages/BankDelegate.qml" line="43"/>
         <source>Show transactions</source>
-        <translation type="unfinished">Näytä liiketoimi</translation>
+        <translation>Näytä liiketoimi</translation>
     </message>
     <message>
         <location filename="../qml/pages/BankDelegate.qml" line="47"/>
         <source>Edit account</source>
-        <translation type="unfinished">Muokkaa tiliä</translation>
+        <translation>Muokkaa tiliä</translation>
     </message>
 </context>
 <context>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../qml/pages/ChangeLog.qml" line="7"/>
         <source>ChangeLog</source>
-        <translation type="unfinished">ChangeLog</translation>
+        <translation>ChangeLog</translation>
     </message>
 </context>
 <context>
@@ -154,24 +154,24 @@
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="66"/>
         <source>From:</source>
-        <translation type="unfinished">Tililtä</translation>
+        <translation>Tililtä</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="115"/>
         <source>To and from must be different</source>
-        <translation type="unfinished">Ja sieltä on oltava eri</translation>
+        <translation>Ja sieltä on oltava eri</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="115"/>
         <source>Saldo %1</source>
-        <translation type="unfinished">Tasapaino %1</translation>
+        <translation>Tasapaino %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="94"/>
         <source>To:</source>
-        <translation type="unfinished">Tilille</translation>
+        <translation>Tilille</translation>
     </message>
 </context>
 <context>
@@ -179,17 +179,17 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="48"/>
         <source>Income</source>
-        <translation type="unfinished">Tulo</translation>
+        <translation>Tulo</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="63"/>
         <source>Bank</source>
-        <translation type="unfinished">Pankkitili</translation>
+        <translation>Pankkitili</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="76"/>
         <source>Expenses</source>
-        <translation type="unfinished">Kulut</translation>
+        <translation>Kulut</translation>
     </message>
 </context>
 <context>
@@ -202,28 +202,29 @@
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="83"/>
         <source>Settings</source>
-        <translation type="unfinished">Asetukset</translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="88"/>
         <source>Add account</source>
-        <translation type="unfinished">Lisää tili</translation>
+        <translation>Lisää tili</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="93"/>
         <source>Add transaction</source>
-        <translation type="unfinished">Lisää tapahtuma</translation>
+        <translation>Lisää tapahtuma</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="114"/>
         <source>Add accounts from pulley menu</source>
-        <translation type="unfinished">Lisää tunnus talja valikosta</translation>
+        <translation>Lisää tunnus talja valikosta</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="119"/>
         <source>You should have at least one of each
 group (Income, Bank and Expense).</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinun pitäisi olla vähintään yksi
+kutakin ryhmä (tulot, pankki ja kulut).</translation>
     </message>
 </context>
 <context>
@@ -231,28 +232,28 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="7"/>
         <source>Graph</source>
-        <translation type="unfinished">Diagrammi</translation>
+        <translation>Diagrammi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="13"/>
+        <location filename="../qml/pages/GraphPage.qml" line="12"/>
         <source>Show</source>
-        <translation type="unfinished">Show</translation>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GraphPage.qml" line="15"/>
+        <location filename="../qml/pages/GraphPage.qml" line="54"/>
+        <source>Expenses</source>
+        <translation>Kulut</translation>
     </message>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="16"/>
-        <location filename="../qml/pages/GraphPage.qml" line="55"/>
-        <source>Expenses</source>
-        <translation type="unfinished">Kulut</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GraphPage.qml" line="17"/>
         <source>Expenses vs Bank</source>
-        <translation type="unfinished">Kulut vs Pankki</translation>
+        <translation>Kulut vs Pankki</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="54"/>
+        <location filename="../qml/pages/GraphPage.qml" line="53"/>
         <source>Bank</source>
-        <translation type="unfinished">Pankki</translation>
+        <translation>Pankki</translation>
     </message>
 </context>
 <context>
@@ -260,160 +261,160 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../src/jsonloader.cpp" line="61"/>
         <source>Loan</source>
-        <translation type="unfinished">Laina</translation>
+        <translation>Laina</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="57"/>
         <source>Salary</source>
-        <translation type="unfinished">Palkkaus</translation>
+        <translation>Palkkaus</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="58"/>
         <source>Student grants</source>
-        <translation type="unfinished">Opintotukien</translation>
+        <translation>Opintotukien</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="59"/>
         <source>Unemployment</source>
-        <translation type="unfinished">Työttömyys</translation>
+        <translation>Työttömyys</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="60"/>
         <source>Temporary disability</source>
-        <translation type="unfinished">Sairauspäiväraha</translation>
+        <translation>Sairauspäiväraha</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="62"/>
         <source>Other income</source>
-        <translation type="unfinished">Muut tuotot</translation>
+        <translation>Muut tuotot</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="63"/>
         <source>Visa</source>
-        <translation type="unfinished">Visa</translation>
+        <translation>Visa</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="64"/>
         <source>Maestro</source>
-        <translation type="unfinished">Maestro</translation>
+        <translation>Maestro</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="65"/>
         <source>Mastercard</source>
-        <translation type="unfinished">Mastercard</translation>
+        <translation>Mastercard</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="66"/>
         <source>Savings</source>
-        <translation type="unfinished">Säästötili</translation>
+        <translation>Säästötili</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="67"/>
         <source>Other card</source>
-        <translation type="unfinished">Muut kortti</translation>
+        <translation>Muut kortti</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="68"/>
         <source>Online money</source>
-        <translation type="unfinished">Online-rahaa</translation>
+        <translation>Online-rahaa</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="69"/>
         <source>Other</source>
-        <translation type="unfinished">Muut</translation>
+        <translation>Muut</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="70"/>
         <source>Rent</source>
-        <translation type="unfinished">Vuokra</translation>
+        <translation>Vuokra</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="71"/>
         <source>Entertainment</source>
-        <translation type="unfinished">Hauska</translation>
+        <translation>Hauska</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="72"/>
         <source>Food</source>
-        <translation type="unfinished">Ruoka</translation>
+        <translation>Ruoka</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="73"/>
         <source>Travel</source>
-        <translation type="unfinished">Matkailu</translation>
+        <translation>Matkailu</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="74"/>
         <source>Internet</source>
-        <translation type="unfinished">Internet</translation>
+        <translation>Internet</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="75"/>
         <source>Hobby</source>
-        <translation type="unfinished">Harraste</translation>
+        <translation>Harraste</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="76"/>
         <source>Home</source>
-        <translation type="unfinished">Koti</translation>
+        <translation>Koti</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="77"/>
         <source>Health</source>
-        <translation type="unfinished">Terveys</translation>
+        <translation>Terveys</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="78"/>
         <source>Insurance</source>
-        <translation type="unfinished">Vakuutus</translation>
+        <translation>Vakuutus</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="79"/>
         <source>Media</source>
-        <translation type="unfinished">Tiedotusvälineet</translation>
+        <translation>Tiedotusvälineet</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="80"/>
         <source>Clothes</source>
-        <translation type="unfinished">Vaatteet</translation>
+        <translation>Vaatteet</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="81"/>
         <source>Other expence</source>
-        <translation type="unfinished">Muut menot</translation>
+        <translation>Muut menot</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="115"/>
         <source>Starting balance</source>
-        <translation type="unfinished">Aloitussaldo</translation>
+        <translation>Aloitussaldo</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="115"/>
         <source>Balance account</source>
-        <translation type="unfinished">Aloitussaldo</translation>
+        <translation>Aloitussaldo</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="118"/>
         <location filename="../src/jsonloader.cpp" line="149"/>
         <source>Income</source>
-        <translation type="unfinished">Tulo</translation>
+        <translation>Tulo</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="119"/>
         <location filename="../src/jsonloader.cpp" line="150"/>
         <source>Bank</source>
-        <translation type="unfinished">Pankki</translation>
+        <translation>Pankki</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="120"/>
         <location filename="../src/jsonloader.cpp" line="151"/>
         <source>Expense</source>
-        <translation type="unfinished">Kulu</translation>
+        <translation>Kulu</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="209"/>
         <source>Balance</source>
-        <translation type="unfinished">Aloitussaldo</translation>
+        <translation>Aloitussaldo</translation>
     </message>
 </context>
 <context>
@@ -421,7 +422,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/LicensePage.qml" line="7"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisenssi</translation>
     </message>
 </context>
 <context>
@@ -433,17 +434,17 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="20"/>
         <source>Settings</source>
-        <translation type="unfinished">Asetukset</translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="24"/>
         <source>Default currency</source>
-        <translation type="unfinished">Oletusvaluuttaa</translation>
+        <translation>Oletusvaluuttaa</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="56"/>
         <source>Hide income</source>
-        <translation type="unfinished">Piilota tuotot tilinäkymässä</translation>
+        <translation>Piilota tuotot tilinäkymässä</translation>
     </message>
 </context>
 <context>
@@ -451,7 +452,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
         <source>Change transaction</source>
-        <translation type="unfinished">Muutaa liiketoimet</translation>
+        <translation>Muutaa liiketoimet</translation>
     </message>
 </context>
 <context>
@@ -463,7 +464,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/TransactionsPage.qml" line="104"/>
         <source>Add transaction</source>
-        <translation type="unfinished">Lisää liiketoimet</translation>
+        <translation>Lisää liiketoimet</translation>
     </message>
 </context>
 </TS>
