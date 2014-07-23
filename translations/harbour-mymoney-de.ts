@@ -58,7 +58,7 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="173"/>
         <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
-        <translation type="unfinished"></translation>
+        <translation>HINWEIS Nur Konto mit der ausgewählten Standardwährung wird in der Grafik und Cover angezeigt werden</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="185"/>
@@ -454,7 +454,7 @@ der Gruppen haben
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
-        <translation type="unfinished"></translation>
+        <translation>HINWEIS Nur Konto mit der ausgewählten Standardwährung wird in der Grafik und Cover angezeigt werden.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="64"/>

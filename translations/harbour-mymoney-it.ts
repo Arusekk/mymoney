@@ -58,7 +58,7 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="173"/>
         <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
-        <translation type="unfinished"></translation>
+        <translation>NOTA Solo conto con la valuta standard selezionato verrà visualizzato nel grafico e copertina</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="185"/>
@@ -442,7 +442,7 @@ gruppo (entrate, banca e spese).</translation>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
-        <translation type="unfinished"></translation>
+        <translation>NOTA Solo conto con la valuta standard selezionato verrà visualizzato nel grafico e copertina</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="64"/>

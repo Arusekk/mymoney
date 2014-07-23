@@ -62,7 +62,7 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="173"/>
         <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
-        <translation type="unfinished"></translation>
+        <translation>OBS! Om du skapar ett konto med annat valuta än standardvaluta (se inställningar), så kommer detta konto inte att visas i graf eller covern.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="185"/>
@@ -477,7 +477,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
-        <translation type="unfinished"></translation>
+        <translation>OBS! Endast konton med standard valutan kommer att visas i graf och cover.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="64"/>
