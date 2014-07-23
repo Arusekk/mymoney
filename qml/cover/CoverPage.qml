@@ -89,7 +89,7 @@ CoverBackground {
 
         CoverAction {
             iconSource: "image://theme/icon-cover-new"
-            onTriggered: { pageStack.push(Qt.resolvedUrl("../pages/AddTransactionPage.qml")); app.activate();  }
+            onTriggered: { pageStack.push(Qt.resolvedUrl("../pages/AddTransactionPage.qml"), { "transaction":  { "md5" : "", "group" : "2", "description" : "", "sum" : 0.0 } }); app.activate();  }
         }
     }
 }

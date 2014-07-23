@@ -240,23 +240,23 @@ der Gruppen haben
         <translation>Diagramm</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="13"/>
+        <location filename="../qml/pages/GraphPage.qml" line="12"/>
         <source>Show</source>
         <translation>Zeige</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="16"/>
-        <location filename="../qml/pages/GraphPage.qml" line="55"/>
+        <location filename="../qml/pages/GraphPage.qml" line="15"/>
+        <location filename="../qml/pages/GraphPage.qml" line="54"/>
         <source>Expenses</source>
         <translation>Auslagen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="17"/>
+        <location filename="../qml/pages/GraphPage.qml" line="16"/>
         <source>Expenses vs Bank</source>
         <translation>Auslagen vs Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="54"/>
+        <location filename="../qml/pages/GraphPage.qml" line="53"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>

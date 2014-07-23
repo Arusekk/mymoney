@@ -226,23 +226,23 @@ group (Income, Bank and Expense).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="13"/>
+        <location filename="../qml/pages/GraphPage.qml" line="12"/>
         <source>Show</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="16"/>
-        <location filename="../qml/pages/GraphPage.qml" line="55"/>
+        <location filename="../qml/pages/GraphPage.qml" line="15"/>
+        <location filename="../qml/pages/GraphPage.qml" line="54"/>
         <source>Expenses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="17"/>
+        <location filename="../qml/pages/GraphPage.qml" line="16"/>
         <source>Expenses vs Bank</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="54"/>
+        <location filename="../qml/pages/GraphPage.qml" line="53"/>
         <source>Bank</source>
         <translation type="unfinished"></translation>
     </message>
