@@ -245,25 +245,30 @@ der Gruppen haben
         <translation>Diagramm</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="12"/>
+        <location filename="../qml/pages/GraphPage.qml" line="16"/>
         <source>Show</source>
         <translation>Zeige</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="15"/>
-        <location filename="../qml/pages/GraphPage.qml" line="54"/>
+        <location filename="../qml/pages/GraphPage.qml" line="19"/>
+        <location filename="../qml/pages/GraphPage.qml" line="59"/>
         <source>Expenses</source>
         <translation>Auslagen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="16"/>
+        <location filename="../qml/pages/GraphPage.qml" line="20"/>
         <source>Expenses vs Bank</source>
         <translation>Auslagen vs Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="53"/>
+        <location filename="../qml/pages/GraphPage.qml" line="58"/>
         <source>Bank</source>
         <translation>Bank</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GraphPage.qml" line="85"/>
+        <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
+        <translation type="unfinished">HINWEIS Nur Konto mit der ausgewählten währung &apos;%1&apos; wird in der Grafik und Cover angezeigt werden.</translation>
     </message>
 </context>
 <context>

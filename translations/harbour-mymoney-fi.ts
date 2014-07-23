@@ -240,25 +240,30 @@ kutakin ryhmä (tulot, pankki ja kulut).</translation>
         <translation>Diagrammi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="12"/>
+        <location filename="../qml/pages/GraphPage.qml" line="16"/>
         <source>Show</source>
         <translation>Show</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="15"/>
-        <location filename="../qml/pages/GraphPage.qml" line="54"/>
+        <location filename="../qml/pages/GraphPage.qml" line="19"/>
+        <location filename="../qml/pages/GraphPage.qml" line="59"/>
         <source>Expenses</source>
         <translation>Kulut</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="16"/>
+        <location filename="../qml/pages/GraphPage.qml" line="20"/>
         <source>Expenses vs Bank</source>
         <translation>Kulut vs Pankki</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="53"/>
+        <location filename="../qml/pages/GraphPage.qml" line="58"/>
         <source>Bank</source>
         <translation>Pankki</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GraphPage.qml" line="85"/>
+        <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
+        <translation type="unfinished">HUOM että vain tilit valitun &apos;%1&apos; arvo näkyy kuvaajan ja kansi</translation>
     </message>
 </context>
 <context>

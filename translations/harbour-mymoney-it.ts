@@ -237,25 +237,30 @@ gruppo (entrate, banca e spese).</translation>
         <translation>Grafici</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="12"/>
+        <location filename="../qml/pages/GraphPage.qml" line="16"/>
         <source>Show</source>
         <translation>Mostra</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="15"/>
-        <location filename="../qml/pages/GraphPage.qml" line="54"/>
+        <location filename="../qml/pages/GraphPage.qml" line="19"/>
+        <location filename="../qml/pages/GraphPage.qml" line="59"/>
         <source>Expenses</source>
         <translation>Spese</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="16"/>
+        <location filename="../qml/pages/GraphPage.qml" line="20"/>
         <source>Expenses vs Bank</source>
         <translation>Spese vs banca</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="53"/>
+        <location filename="../qml/pages/GraphPage.qml" line="58"/>
         <source>Bank</source>
         <translation>Banca</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GraphPage.qml" line="85"/>
+        <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
+        <translation type="unfinished">NOTA Solo conto con la valuta &apos;%1&apos; verrà visualizzato nel grafico e copertina</translation>
     </message>
 </context>
 <context>

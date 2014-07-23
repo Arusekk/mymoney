@@ -5,6 +5,10 @@ Page
     id: page
     onStatusChanged: { if (status == PageStatus.Active) items.load(); }
     PageHeader { id: header; title: qsTr("Graph"); height: Theme.itemSizeSmall; }
+
+    CurrencyModel {
+        id: modelCurrency
+    }
     ComboBox {
         id: combo
         anchors.top: header.bottom
@@ -33,6 +37,7 @@ Page
                     filterAccount(o);
             }
 
+            // always repaint (clear old)
             pie.requestPaint()
         }
         function filterAccount(o)
@@ -73,6 +78,17 @@ Page
         anchors.bottom: parent.bottom
         anchors.leftMargin: Theme.paddingLarge
         anchors.rightMargin: Theme.paddingLarge
+
+        Label {
+            id: labelAttention
+            visible: items.count == 0
+            text: qsTr("Attention! Only accounts with currency '%1' will be shown in graph and cover.").arg(modelCurrency.lookupTitleByLocale(defaultCurrency))
+            height: Theme.itemSizeVeryLarge//+Theme.itemSizeSmall
+            wrapMode: Text.WordWrap
+            width: parent.width-Theme.paddingLarge*2 // wordwrap "hack"
+            color: Theme.highlightColor
+            x: Theme.paddingLarge // wordwrap "hack"
+        }
         Grid {
             id: grid
             rows: 10
@@ -103,6 +119,7 @@ Page
 
         Canvas {
             id: pie
+            visible: items.count
             width: 400
             height: 400
             anchors.horizontalCenter: parent.horizontalCenter
@@ -128,6 +145,7 @@ Page
                 }
             }
         }
+
     }
 
    // Component.onCompleted: combo.currentIndex = 0

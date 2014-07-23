@@ -3,6 +3,8 @@ Version 0.0.4
   * Italian translation thanks to Francesco
   * Possiblility to change transactions
   * Fix currency issues in transaction/account pages
+  * Add notice that only default currency shown in graph/cover
+  * UI fix Graph combobox
 
 Version 0.0.3
 

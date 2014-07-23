@@ -264,25 +264,30 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation>Graf</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="12"/>
+        <location filename="../qml/pages/GraphPage.qml" line="16"/>
         <source>Show</source>
         <translation>Visa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="15"/>
-        <location filename="../qml/pages/GraphPage.qml" line="54"/>
+        <location filename="../qml/pages/GraphPage.qml" line="19"/>
+        <location filename="../qml/pages/GraphPage.qml" line="59"/>
         <source>Expenses</source>
         <translation>Utgifter</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="16"/>
+        <location filename="../qml/pages/GraphPage.qml" line="20"/>
         <source>Expenses vs Bank</source>
         <translation>Utgifter vs Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="53"/>
+        <location filename="../qml/pages/GraphPage.qml" line="58"/>
         <source>Bank</source>
         <translation>Bank</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GraphPage.qml" line="85"/>
+        <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
+        <translation type="unfinished">OBS! Endast konton med valutan &apos;%1&apos; kommer att visas i graf och cover.</translation>
     </message>
 </context>
 <context>
