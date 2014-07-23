@@ -5,6 +5,7 @@ Version 0.0.4
   * Fix currency issues in transaction/account pages
   * Add notice that only default currency shown in graph/cover
   * UI fix Graph combobox
+  * Make sure old type selected when edit account
 
 Version 0.0.3
 

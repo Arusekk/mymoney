@@ -55,27 +55,27 @@
         <translation>Kontotyp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="143"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="150"/>
         <source>Currency</source>
         <translation>Valuta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="175"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="182"/>
         <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
         <translation>OBS! Om du skapar ett konto med annat valuta än standardvaluta (se inställningar), så kommer detta konto inte att visas i graf eller covern.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="187"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="194"/>
         <source>Starting Balance</source>
         <translation>Ingående saldo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="188"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="195"/>
         <source>Enter start saldo</source>
         <translation>Skriv in nuvarande saldo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="196"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="203"/>
         <source>Saldo %1</source>
         <translation>Saldo %1</translation>
     </message>

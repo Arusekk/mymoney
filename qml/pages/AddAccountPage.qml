@@ -135,6 +135,13 @@ Dialog {
                                     MenuItem { text: title; }
                                 }
                             }
+
+            function select(title)
+            {
+                currentIndex = modelCurrentAccountTypes.lookupIndex(title)
+                console.log(currentIndex)
+            }
+
         }
 
         ComboBox {
@@ -205,10 +212,18 @@ Dialog {
         }
     }
 
+    Timer
+    {
+        id: comboTypeHack
+        running: true
+        interval: 50
+        onTriggered: comboAccountType.select(account ? account.type : "")
+    }
+
     Component.onCompleted: {
         comboAccountGroup.currentIndex = account ? modelAccountGroups.lookupIndex(account.group) : -1
-        comboAccountType.currentIndex = account ? modelCurrentAccountTypes.lookupIndex(account.type) : -1
-        comboLocale.currentIndex = account ? comboLocale.select(account.currency) : comboLocale.select(defaultCurrency)
+        //comboAccountType.select(account ? account.type : "")
+        comboLocale.select(account ? account.currency : defaultCurrency)
     }
 
     Timer{

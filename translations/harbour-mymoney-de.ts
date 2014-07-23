@@ -51,27 +51,27 @@
         <translation>Typ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="143"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="150"/>
         <source>Currency</source>
         <translation>Währung</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="175"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="182"/>
         <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
         <translation>HINWEIS Nur Konto mit der ausgewählten Standardwährung wird in der Grafik und Cover angezeigt werden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="187"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="194"/>
         <source>Starting Balance</source>
         <translation>Startguthaben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="188"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="195"/>
         <source>Enter start saldo</source>
         <translation>Startsaldo eingeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="196"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="203"/>
         <source>Saldo %1</source>
         <translation>Saldo %1</translation>
     </message>

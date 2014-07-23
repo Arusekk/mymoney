@@ -5,7 +5,7 @@ BackgroundItem  {
     anchors.left: ListView.left
     anchors.right: ListView.right
     contentHeight: Theme.itemSizeSmall
-    height: menuOpen ? contextMenu.height + Theme.itemSizeSmall : Theme.itemSizeSmall
+    height: menuOpen ? contextMenu.height + Theme.itemSizeSmall + Theme.paddingSmall : Theme.itemSizeSmall
 
     property bool menuOpen: contextMenu != null && contextMenu.parent === background
     property Item contextMenu
