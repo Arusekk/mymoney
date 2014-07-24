@@ -81,47 +81,47 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Add transaction</source>
-        <translation>Aggiungi transazione</translation>
+        <translation type="unfinished">Aggiungi transazione</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Change transaction</source>
-        <translation></translation>
+        <translation type="unfinished">Modifica transazione</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
         <source>Expense</source>
-        <translation>Spese</translation>
+        <translation type="unfinished">Spese</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="101"/>
         <source>Bank</source>
-        <translation>Banca</translation>
+        <translation type="unfinished">Banca</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="102"/>
         <source>Income</source>
-        <translation>Entrate</translation>
+        <translation type="unfinished">Entrate</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
         <source>Amount</source>
-        <translation>Importo</translation>
+        <translation type="unfinished">Importo</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
         <source>Enter amount</source>
-        <translation>Inserisci importo</translation>
+        <translation type="unfinished">Inserisci importo</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
         <source>Enter Description</source>
-        <translation>Inserisci descrizione</translation>
+        <translation type="unfinished">Inserisci descrizione</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
         <source>Description of transaction</source>
-        <translation>Descrizione della transazione</translation>
+        <translation type="unfinished">Descrizione della transazione</translation>
     </message>
 </context>
 <context>

@@ -85,47 +85,47 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Add transaction</source>
-        <translation>Lisää tapahtuma</translation>
+        <translation type="unfinished">Lisää tapahtuma</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Change transaction</source>
-        <translation>Muuta liiketoimi</translation>
+        <translation type="unfinished">Muuta liiketoimi</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
         <source>Expense</source>
-        <translation>Kulu</translation>
+        <translation type="unfinished">Kulu</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="101"/>
         <source>Bank</source>
-        <translation>Pankki</translation>
+        <translation type="unfinished">Pankki</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="102"/>
         <source>Income</source>
-        <translation>Tulo</translation>
+        <translation type="unfinished">Tulo</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
         <source>Amount</source>
-        <translation>Määrä</translation>
+        <translation type="unfinished">Määrä</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
         <source>Enter amount</source>
-        <translation>Anna Määrä</translation>
+        <translation type="unfinished">Anna Määrä</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
         <source>Enter Description</source>
-        <translation>Anna kuvaus</translation>
+        <translation type="unfinished">Anna kuvaus</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
         <source>Description of transaction</source>
-        <translation>Kuvaus</translation>
+        <translation type="unfinished">Kuvaus</translation>
     </message>
 </context>
 <context>

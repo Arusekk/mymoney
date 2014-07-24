@@ -89,27 +89,27 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Add transaction</source>
-        <translation>Ny transaktion</translation>
+        <translation type="unfinished">Ny transaktion</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Change transaction</source>
-        <translation>Ändra transaktion</translation>
+        <translation type="unfinished">Ändra transaktion</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
         <source>Expense</source>
-        <translation>Utgift</translation>
+        <translation type="unfinished">Utgift</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="101"/>
         <source>Bank</source>
-        <translation>Bank</translation>
+        <translation type="unfinished">Bank</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="102"/>
         <source>Income</source>
-        <translation>Inkomst</translation>
+        <translation type="unfinished">Inkomst</translation>
     </message>
     <message>
         <source>From:</source>
@@ -126,22 +126,22 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
         <source>Enter Description</source>
-        <translation>Beskrivning av transaktion</translation>
+        <translation type="unfinished">Beskrivning av transaktion</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
         <source>Description of transaction</source>
-        <translation>Beskrivning av transaktion</translation>
+        <translation type="unfinished">Beskrivning av transaktion</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
         <source>Amount</source>
-        <translation>Belopp</translation>
+        <translation type="unfinished">Belopp</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
         <source>Enter amount</source>
-        <translation>Skriv in belopp</translation>
+        <translation type="unfinished">Skriv in belopp</translation>
     </message>
     <message>
         <source>Saldo %1</source>

@@ -129,7 +129,7 @@ Dialog
         TextField
         {
             id: entrySum
-            text: transaction.sum != 0.0 ? transaction.sum.toLocaleCurrencyString(Qt.locale(selectedCurrency)) : ""
+            text: transaction.sum != 0.0 ? transaction.sum.toString() : "" //LocaleCurrencyString(Qt.locale(selectedCurrency)) : ""
             label: qsTr("Amount")
             placeholderText: qsTr("Enter amount")
             inputMethodHints: Qt.ImhFormattedNumbersOnly
