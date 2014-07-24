@@ -1,5 +1,7 @@
 #include <QCryptographicHash>
 #include <QDateTime>
+#include <QJsonArray>
+#include <QStringList>
 #include <QDebug>
 #include "transactionsmanager.h"
 #include "jsonloader.h"
@@ -11,7 +13,7 @@ TransactionsManager::TransactionsManager(QObject *parent, JsonLoader &_loader) :
 {
 }
 
-bool TransactionsManager::add(QString md5, QString fromaccount, QString toaccount, QString description, double sum, bool _save)
+bool TransactionsManager::add(QString trmd5, QString fromaccount, QString toaccount, QString description, double sum, bool _save)
 {
     bool updatetransaction = true;
     double oldsum = 0.0;
@@ -27,18 +29,19 @@ bool TransactionsManager::add(QString md5, QString fromaccount, QString toaccoun
         return false;
     }
 
-    if (md5 == "")
+    if (trmd5 == "")
     {
         updatetransaction = false;
-        md5 = QString(QCryptographicHash::hash((QDateTime::currentDateTimeUtc().toString(Qt::ISODate).toUtf8()),QCryptographicHash::Md5).toHex());
+        trmd5 = QString(QCryptographicHash::hash((QDateTime::currentDateTimeUtc().toString(Qt::ISODate).toUtf8()),QCryptographicHash::Md5).toHex());
     }
 
     QJsonObject obj = json.object();
     QJsonObject arr = obj.value("transactions").toObject();
     if (updatetransaction)
     {
-        QJsonObject oldtr = arr[md5].toObject();
+        QJsonObject oldtr = arr[trmd5].toObject();
         oldsum = oldtr["sum"].toDouble();
+        n["date"] = oldtr["date"].toString(); // keep old date
         qDebug() << "oldsum " << oldsum;
         loader.updateAccountSaldo(oldtr["from"].toString(), oldsum, false);
         loader.updateAccountSaldo(oldtr["to"].toString(), oldsum * -1, false);
@@ -46,14 +49,13 @@ bool TransactionsManager::add(QString md5, QString fromaccount, QString toaccoun
 
     obj = json.object();
     arr = obj.value("transactions").toObject();
-    arr[md5] = n;  // insert new transaction
+    arr[trmd5] = n;  // insert new transaction
     obj.insert("transactions", arr); // update obj
     json.setObject(obj); // and feed it
 
     loader.updateAccountSaldo(fromaccount, (sum * -1), false);
     loader.updateAccountSaldo(toaccount, sum, false);
 
-    qDebug() << obj;
     qDebug() << json.object();
 
     if (_save)
@@ -63,3 +65,22 @@ bool TransactionsManager::add(QString md5, QString fromaccount, QString toaccoun
 
     return true;
 }
+
+QString TransactionsManager::getFirstTransactionForAccount(QString acmd5)
+{
+    QString balancemd5 = loader.getBalanceAccountMd5();
+    QJsonObject obj = json.object().value("transactions").toObject();
+    foreach(const QString &key, obj.keys())
+    {
+        if (obj[key].toObject().value("to").toString() == acmd5 &&
+            obj[key].toObject().value("from").toString() == balancemd5)
+        {
+            qDebug() << "firsttransaction lookup " << key << " account " << acmd5 << " sum " << obj[key].toObject().value("sum").toDouble();
+            return key;
+        }
+    }
+
+    qWarning() << "lookup First Transaction failed for" << acmd5;
+    return "";
+}
+

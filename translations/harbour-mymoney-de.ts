@@ -83,47 +83,47 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Add transaction</source>
         <translation>Transaktion hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Change transaction</source>
         <translation>Transaktion ändern</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
         <source>Expense</source>
         <translation>Auslage</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="101"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="102"/>
         <source>Income</source>
         <translation>Einkommen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="131"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
         <source>Amount</source>
         <translation>Betrag</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="132"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
         <source>Enter amount</source>
         <translation>Betrag eingeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="147"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
         <source>Enter Description</source>
         <translation>Beschreibung eingeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="148"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
         <source>Description of transaction</source>
         <translation>Beschreibung der Transaktion</translation>
     </message>
@@ -268,7 +268,7 @@ der Gruppen haben
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="85"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
-        <translation type="unfinished">HINWEIS Nur Konto mit der ausgewählten währung &apos;%1&apos; wird in der Grafik und Cover angezeigt werden.</translation>
+        <translation>HINWEIS Nur Konto mit der ausgewählten währung &apos;%1&apos; wird in der Grafik und Cover angezeigt werden.</translation>
     </message>
 </context>
 <context>
@@ -427,7 +427,8 @@ der Gruppen haben
         <translation>Auslage</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="209"/>
+        <location filename="../src/jsonloader.cpp" line="211"/>
+        <location filename="../src/jsonloader.cpp" line="220"/>
         <source>Balance</source>
         <translation>Saldo</translation>
     </message>
@@ -477,6 +478,11 @@ der Gruppen haben
         <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
         <source>Change transaction</source>
         <translation>Transaktion ändern</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <source>Change incoming saldo</source>
+        <translation>Ändern eingehenden gleichgewicht</translation>
     </message>
 </context>
 <context>

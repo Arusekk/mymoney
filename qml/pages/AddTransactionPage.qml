@@ -8,6 +8,8 @@ Dialog
     property bool init: true
     property string to: ""
     property string from: ""
+    property string selectedCurrency: defaultCurrency
+    onSelectedCurrencyChanged: console.log(selectedCurrency)
     canAccept: (entryDescription.text != "" && entrySum.text != "" && to != "" && from != "" && entrySum.asDouble() > 0.0 && to != from)
     onAccepted: {
         modelTransactions.add(transaction.md5, from, to, entryDescription.text, entrySum.asDouble())
@@ -127,7 +129,7 @@ Dialog
         TextField
         {
             id: entrySum
-            text: transaction.sum != 0.0 ? transaction.sum.toLocaleCurrencyString() : ""
+            text: transaction.sum != 0.0 ? transaction.sum.toLocaleCurrencyString(Qt.locale(selectedCurrency)) : ""
             label: qsTr("Amount")
             placeholderText: qsTr("Enter amount")
             inputMethodHints: Qt.ImhFormattedNumbersOnly
@@ -137,7 +139,7 @@ Dialog
             EnterKey.onClicked: { entryDescription.focus = true; }
             function asDouble()
             {
-                return text != "" ? Number.fromLocaleString(Qt.locale(defaultCurrency), text) : 0.0
+                return text != "" ? Number.fromLocaleString(Qt.locale(selectedCurrency), text) : 0.0
             }
         }
 

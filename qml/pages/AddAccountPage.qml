@@ -189,12 +189,12 @@ Dialog {
 
         TextField {
             id: entrySum
-            text: account ? account.sum.toLocaleCurrencyString() : "0"
-            visible: (comboAccountGroup.currentIndex != 1 || account) ? false : true // bank only and not edited
+            text: account ? jsonloader.getIncomingSaldoForAccount(account.md5).toString() : "0"
+            visible: (comboAccountGroup.currentIndex != 1) ? false : true // bank only
             label: qsTr("Starting Balance")
             placeholderText: qsTr("Enter start saldo")
             inputMethodHints: Qt.ImhFormattedNumbersOnly
-            validator: DoubleValidator { decimals: 2; }
+            validator: DoubleValidator { decimals: 2; } //locale: selectedCurrency; }
             width: parent.width
         }
 

@@ -93,7 +93,7 @@ Column {
         id: comboTo
         label: qsTr("To:")
         currentIndex: -1
-        onCurrentIndexChanged: {console.log(parent.objectName+" (to) indexchanged "+currentIndex); if (currentIndex != -1 && comboFrom.currentIndex != -1) entrySum.focus = true; to = getCurrentMd5(); }
+        onCurrentIndexChanged: {console.log(parent.objectName+" (to) indexchanged "+currentIndex); if (currentIndex != -1 && comboFrom.currentIndex != -1) entrySum.focus = true; to = getCurrentMd5(); selectedCurrency = modelAccounts.lookupByMd5(to).currency;}
         menu:ContextMenu{
                             Repeater {
                                 //height: 200

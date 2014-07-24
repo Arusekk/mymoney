@@ -87,27 +87,27 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Add transaction</source>
         <translation>Ny transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Change transaction</source>
         <translation>Ändra transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
         <source>Expense</source>
         <translation>Utgift</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="101"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="102"/>
         <source>Income</source>
         <translation>Inkomst</translation>
     </message>
@@ -124,22 +124,22 @@
         <translation type="obsolete">Till:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="147"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
         <source>Enter Description</source>
         <translation>Beskrivning av transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="148"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
         <source>Description of transaction</source>
         <translation>Beskrivning av transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="131"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
         <source>Amount</source>
         <translation>Belopp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="132"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
         <source>Enter amount</source>
         <translation>Skriv in belopp</translation>
     </message>
@@ -287,7 +287,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="85"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
-        <translation type="unfinished">OBS! Endast konton med valutan &apos;%1&apos; kommer att visas i graf och cover.</translation>
+        <translation>OBS! Endast konton med valutan &apos;%1&apos; kommer att visas i graf och cover.</translation>
     </message>
 </context>
 <context>
@@ -450,7 +450,8 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation>Utgift</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="209"/>
+        <location filename="../src/jsonloader.cpp" line="211"/>
+        <location filename="../src/jsonloader.cpp" line="220"/>
         <source>Balance</source>
         <translation>Ingående saldo</translation>
     </message>
@@ -500,6 +501,11 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
         <source>Change transaction</source>
         <translation>Ändra transaktion</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <source>Change incoming saldo</source>
+        <translation>Ändra ingående saldo</translation>
     </message>
 </context>
 <context>

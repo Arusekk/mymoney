@@ -154,6 +154,8 @@ QString JsonLoader::load()
         save();
     }
 
+    transactions.getFirstTransactionForAccount("060859ecff9dbf61d0c3d47eee9c5886");
+
     return QString(json.toJson());
 }
 
@@ -203,7 +205,7 @@ QString JsonLoader::addAccount(QString name, QString group, QString type, double
         arr[md5] = n;  // insert new account
         obj.insert("accounts", arr); // update obj
         json.setObject(obj); // and feed it
-        if (group != "SB") // are we creating balance account?
+        if (group != "SB") // are we creating balance account? FIXME remove we should not need this check better add new function and make sure created on initialize
         {
             // nope
             transactions.add("", getBalanceAccountMd5(), md5, tr("Balance"), sum, false);
@@ -215,6 +217,7 @@ QString JsonLoader::addAccount(QString name, QString group, QString type, double
         arr[md5] = n;  // insert changed account
         obj.insert("accounts", arr); // update obj
         json.setObject(obj); // and feed it
+        transactions.add(transactions.getFirstTransactionForAccount(md5), getBalanceAccountMd5(), md5, tr("Balance"), sum, false);
     }
 
     qDebug() << json.object();
@@ -237,4 +240,11 @@ void JsonLoader::updateAccountSaldo(QString md5, double saldo, bool _save)
     {
         save();
     }
+}
+
+double JsonLoader::getIncomingSaldoForAccount(QString acmd5)
+{
+    QString trmd5 = transactions.getFirstTransactionForAccount(acmd5);
+    QJsonObject obj = json.object().value("transactions").toObject();
+    return obj[trmd5].toObject().value("sum").toDouble();
 }

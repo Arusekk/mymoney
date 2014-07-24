@@ -83,47 +83,47 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Add transaction</source>
         <translation>Lisää tapahtuma</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Change transaction</source>
         <translation>Muuta liiketoimi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
         <source>Expense</source>
         <translation>Kulu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="101"/>
         <source>Bank</source>
         <translation>Pankki</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="102"/>
         <source>Income</source>
         <translation>Tulo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="131"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
         <source>Amount</source>
         <translation>Määrä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="132"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
         <source>Enter amount</source>
         <translation>Anna Määrä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="147"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
         <source>Enter Description</source>
         <translation>Anna kuvaus</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="148"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
         <source>Description of transaction</source>
         <translation>Kuvaus</translation>
     </message>
@@ -422,7 +422,8 @@ kutakin ryhmä (tulot, pankki ja kulut).</translation>
         <translation>Kulu</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="209"/>
+        <location filename="../src/jsonloader.cpp" line="211"/>
+        <location filename="../src/jsonloader.cpp" line="220"/>
         <source>Balance</source>
         <translation>Aloitussaldo</translation>
     </message>
@@ -472,6 +473,11 @@ kutakin ryhmä (tulot, pankki ja kulut).</translation>
         <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
         <source>Change transaction</source>
         <translation>Muutaa liiketoimet</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <source>Change incoming saldo</source>
+        <translation>Muutaa avaava tase</translation>
     </message>
 </context>
 <context>
