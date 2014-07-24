@@ -357,6 +357,7 @@ ApplicationWindow
                     modelTransactions.transactions = jsonObject.transactions
                     modelAccounts.load(jsonObject.accounts)
                     // no point call accountUpdated here since load will do it...
+                    transactionsUpdated() // tr updated if saldo changed...
                 }
             }
         }

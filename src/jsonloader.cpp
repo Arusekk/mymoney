@@ -213,7 +213,7 @@ QString JsonLoader::addAccount(QString name, QString group, QString type, double
     }
     else
     {
-        n["sum"] = sum; // copy old sum
+        n["sum"] = arr[md5].toObject().value("sum").toDouble(); // copy old sum
         arr[md5] = n;  // insert changed account
         obj.insert("accounts", arr); // update obj
         json.setObject(obj); // and feed it
@@ -231,7 +231,11 @@ void JsonLoader::updateAccountSaldo(QString md5, double saldo, bool _save)
     QJsonObject obj = json.object();
     QJsonObject accounts = obj.value("accounts").toObject(); // get copy of all accounts
     QJsonObject account = accounts.value(md5).toObject(); // get copy of requested obj
-    account["sum"] = account["sum"].toDouble() + saldo; // update saldo
+    double oldsum = account["sum"].toDouble();
+    account["sum"] = oldsum + saldo; // update saldo
+    if (md5!=getBalanceAccountMd5())
+        qDebug() << "sum changed for " << md5 << " oldsum " << oldsum << "newsum " << account["sum"] << " +- " << saldo;
+
     accounts.insert(md5, account); // feed back
     obj.insert("accounts", accounts); // update accounts array with changes
     json.setObject(obj); // and feed it

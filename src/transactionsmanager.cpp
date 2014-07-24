@@ -45,9 +45,10 @@ bool TransactionsManager::add(QString trmd5, QString fromaccount, QString toacco
         qDebug() << "oldsum " << oldsum;
         loader.updateAccountSaldo(oldtr["from"].toString(), oldsum, false);
         loader.updateAccountSaldo(oldtr["to"].toString(), oldsum * -1, false);
+        // loader has changed json..
+        obj = json.object();
     }
 
-    obj = json.object();
     arr = obj.value("transactions").toObject();
     arr[trmd5] = n;  // insert new transaction
     obj.insert("transactions", arr); // update obj
