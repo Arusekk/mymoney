@@ -43,7 +43,7 @@ Page {
         Label {
             width: 360
             font.pixelSize: Theme.fontSizeMedium
-            text: "Copyright 2014 Mike7b4"
+            text: "Copyright 2014 Mikael Hermansson"
             anchors.horizontalCenter: parent.horizontalCenter
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignHCenter
