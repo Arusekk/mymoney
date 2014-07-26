@@ -100,21 +100,6 @@ ApplicationWindow
         }
     }
 
-    Rectangle {
-        id: hot
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        height: Theme.itemSizeLarge
-        color: Theme.highlightColor
-        opacity: 0.0
-        z: 1
-        Label {
-            anchors.centerIn: parent
-            text: errorText
-        }
-    }
-
     Connections
     {
         target: jsonloader
@@ -341,38 +326,56 @@ ApplicationWindow
             {
                 // yes, notice addAcount will add new balancqa transaction...
                 _md5 = jsonloader.addAccount(title, group, typ, sum, currency, "")
-                // insert in model FIXME we better reread json file less risk for bug
-                add(group, title, typ, sum, currency, _md5);
                 // ... as we do it on transactions
                 jsonObject = JSON.parse(jsonloader.dump())
+                // reread transaction table since we have inserted new balance transaction
                 modelTransactions.transactions = jsonObject.transactions
+                // reread accounts...
                 modelAccounts.load(jsonObject.accounts)
             }
             else
             {
+/*
                 // has currency changed
                 if (o.currency == currency) // if currency has not changed no point reload just change model direcly
                 {
                     o.group = group
                     o.title = title
                     o.type = typ
-                    o.currency = currency
                     // but we have to save it in json file to...
                     jsonloader.addAccount(title, group, typ, sum, currency, _md5)
-                    // ...and tell filter model (in FirstPage) we have updated accountModel (eg reread)...
+                    // ...and tell filter model (in FirstPage) we have updated accountModel (eg reread saldos)...
                     accountUpdated()
                 }
                 else // currency has changed we have to reload account model(s) so that totalsaldo gets updated correcly..
+*/
                 {
-                    // store
+                    // store change...
                     jsonloader.addAccount(title, group, typ, sum, currency, _md5)
                     // fully reread json file..
                     jsonObject = JSON.parse(jsonloader.dump())
                     modelTransactions.transactions = jsonObject.transactions
                     modelAccounts.load(jsonObject.accounts)
                     // no point call accountUpdated here since load will do it...
+                    transactionsUpdated() // tr updated if saldo changed...
                 }
             }
+        }
+    }
+
+
+    Rectangle {
+        id: hot
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        height: Theme.itemSizeLarge
+        color: Theme.highlightColor
+        opacity: 0.0
+        z: 1
+        Label {
+            anchors.centerIn: parent
+            text: errorText
         }
     }
 

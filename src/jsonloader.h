@@ -26,6 +26,7 @@ public:
 signals:
     void error(QString error);
 public slots:
+    double getIncomingSaldoForAccount(QString md5);
     QString dump();
     QString load();
     void save();

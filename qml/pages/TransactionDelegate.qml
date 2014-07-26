@@ -32,9 +32,12 @@ BackgroundItem  {
         id: contextMenuComponent
         ContextMenu {
             MenuItem {
-                text: qsTr("Change transaction")
+                text: model.from == jsonloader.getBalanceAccountMd5() ? qsTr("Change incoming saldo") : qsTr("Change transaction")
                 onClicked: {
-                    pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { "transaction": {"md5" : model.md5, "group" : transactionsPage.group, "from" : model.from, "to" : model.to, "description" : model.description, "sum" : Math.abs(model.sum)}})
+                    if (model.from == jsonloader.getBalanceAccountMd5())
+                        pageStack.push(Qt.resolvedUrl("AddAccountPage.qml"), { account : modelAccounts.lookupByMd5(model.to)})
+                    else
+                        pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { "transaction": {"md5" : model.md5, "group" : transactionsPage.group, "from" : model.from, "to" : model.to, "description" : model.description, "sum" : Math.abs(model.sum)}})
                 }
             }
         }

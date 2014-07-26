@@ -79,49 +79,49 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Add transaction</source>
-        <translation>Aggiungi transazione</translation>
+        <translation type="unfinished">Aggiungi transazione</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="90"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Change transaction</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="98"/>
-        <source>Expense</source>
-        <translation>Spese</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="99"/>
-        <source>Bank</source>
-        <translation>Banca</translation>
+        <translation type="unfinished">Modifica transazione</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
+        <source>Expense</source>
+        <translation type="unfinished">Spese</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="101"/>
+        <source>Bank</source>
+        <translation type="unfinished">Banca</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="102"/>
         <source>Income</source>
-        <translation>Entrate</translation>
+        <translation type="unfinished">Entrate</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="131"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
         <source>Amount</source>
-        <translation>Importo</translation>
+        <translation type="unfinished">Importo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="132"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
         <source>Enter amount</source>
-        <translation>Inserisci importo</translation>
+        <translation type="unfinished">Inserisci importo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="147"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
         <source>Enter Description</source>
-        <translation>Inserisci descrizione</translation>
+        <translation type="unfinished">Inserisci descrizione</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="148"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
         <source>Description of transaction</source>
-        <translation>Descrizione della transazione</translation>
+        <translation type="unfinished">Descrizione della transazione</translation>
     </message>
 </context>
 <context>
@@ -260,7 +260,7 @@ gruppo (entrate, banca e spese).</translation>
     <message>
         <location filename="../qml/pages/GraphPage.qml" line="85"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
-        <translation type="unfinished">NOTA Solo conto con la valuta &apos;%1&apos; verrà visualizzato nel grafico e copertina</translation>
+        <translation>NOTA Solo conto con la valuta &apos;%1&apos; verrà visualizzato nel grafico e copertina</translation>
     </message>
 </context>
 <context>
@@ -419,7 +419,8 @@ gruppo (entrate, banca e spese).</translation>
         <translation>Spese</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="209"/>
+        <location filename="../src/jsonloader.cpp" line="211"/>
+        <location filename="../src/jsonloader.cpp" line="220"/>
         <source>Balance</source>
         <translation>Saldo</translation>
     </message>
@@ -465,6 +466,11 @@ gruppo (entrate, banca e spese).</translation>
         <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
         <source>Change transaction</source>
         <translation>Modifica transazione</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <source>Change incoming saldo</source>
+        <translation>Cambiare l&apos;equilibrio in arrivo</translation>
     </message>
 </context>
 <context>
