@@ -1,3 +1,7 @@
+Version 0.0.5
+
+  * Allow edit account incoming saldo
+
 Version 0.0.4
 
   * Italian translation thanks to Francesco
