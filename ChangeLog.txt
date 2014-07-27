@@ -3,6 +3,7 @@ Version 0.0.5
   * Allow edit account incoming saldo
   * Accountpage remove show transactions from remorse popup
   * Accountpage show transactions when click account
+  * Addtransactionppage change vs add fix
 
 Version 0.0.4
 
