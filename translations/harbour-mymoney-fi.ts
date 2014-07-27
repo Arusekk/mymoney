@@ -131,17 +131,16 @@
 <context>
     <name>BankDelegate</name>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="34"/>
+        <location filename="../qml/pages/BankDelegate.qml" line="35"/>
         <source>Add transaction</source>
         <translation>Lisää tapahtuma</translation>
     </message>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="43"/>
         <source>Show transactions</source>
-        <translation>Näytä liiketoimi</translation>
+        <translation type="obsolete">Näytä liiketoimi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="47"/>
+        <location filename="../qml/pages/BankDelegate.qml" line="50"/>
         <source>Edit account</source>
         <translation>Muokkaa tiliä</translation>
     </message>

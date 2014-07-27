@@ -10,6 +10,7 @@ BackgroundItem  {
     property bool menuOpen: contextMenu != null && contextMenu.parent === background
     property Item contextMenu
     onClicked: {
+        pageStack.push(Qt.resolvedUrl("TransactionsPage.qml"), { md5 : model.md5, group : model.group})
     }
 
     function getTitleColor() {
@@ -39,10 +40,12 @@ BackgroundItem  {
                         pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { "transaction": {"group" : model.group, "to" : model.md5, "description" : "", "sum" : 0.0}})
                 }
             }
+            /*
             MenuItem {
                 text: qsTr("Show transactions")
                 onClicked: { console.log(model.group); pageStack.push(Qt.resolvedUrl("TransactionsPage.qml"), { md5 : model.md5, group : model.group}) }
             }
+            */
             MenuItem {
                 text: qsTr("Edit account")
                 onClicked: pageStack.push(Qt.resolvedUrl("AddAccountPage.qml"), { account : modelAccounts.lookupByMd5(model.md5)})

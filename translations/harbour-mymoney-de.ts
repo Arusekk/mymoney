@@ -135,19 +135,18 @@
         <translation type="obsolete">Transaktion hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="34"/>
+        <location filename="../qml/pages/BankDelegate.qml" line="35"/>
         <source>Add transaction</source>
         <translation>Transaktion hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="47"/>
+        <location filename="../qml/pages/BankDelegate.qml" line="50"/>
         <source>Edit account</source>
         <translation>Konto bearbeiten</translation>
     </message>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="43"/>
         <source>Show transactions</source>
-        <translation>Transaktionen anzeigen</translation>
+        <translation type="obsolete">Transaktionen anzeigen</translation>
     </message>
 </context>
 <context>

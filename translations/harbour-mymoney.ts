@@ -123,17 +123,12 @@
 <context>
     <name>BankDelegate</name>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="34"/>
+        <location filename="../qml/pages/BankDelegate.qml" line="35"/>
         <source>Add transaction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="43"/>
-        <source>Show transactions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/BankDelegate.qml" line="47"/>
+        <location filename="../qml/pages/BankDelegate.qml" line="50"/>
         <source>Edit account</source>
         <translation type="unfinished"></translation>
     </message>
