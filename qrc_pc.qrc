@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main_pc.qml</file>
+        <file>qml/pc/ListViewAccounts.qml</file>
+        <file>qml/pc/BankDelegate.qml</file>
+        <file>qml/pc/BackgroundItem.qml</file>
+        <file>qml/pc/GraphPage.qml</file>
+        <file>qml/pc/CurrencyModel.qml</file>
+    </qresource>
+</RCC>

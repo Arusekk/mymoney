@@ -28,13 +28,21 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#ifndef PC
 #include <QtQuick>
 #include <sailfishapp.h>
+#else
+#include <QApplication>
+#include <QQmlContext>
+#include <QQmlApplicationEngine>
+#include "themewrapper_pc.h"
+#endif
 #include "appinfo.h"
 #include "jsonloader.h"
 #include "transactionsmanager.h"
 int main(int argc, char *argv[])
 {
+#ifndef PC
     int exitcode = -1;
     QGuiApplication *app = SailfishApp::application(argc, argv);
     app->setQuitOnLastWindowClosed(true);
@@ -54,5 +62,19 @@ int main(int argc, char *argv[])
     //delete view;
     //delete app;
     return exitcode;
+#else
+    QApplication app(argc, argv);
+    AppInfo appinfo(&app);
+    JsonLoader json(&app, &appinfo);
+    ThemeWrapper_PC theme;
+    QQmlApplicationEngine engine;
+    engine.rootContext()->setContextProperty("jsonloader", &json);
+    engine.rootContext()->setContextProperty("transactionmanager", &json.getTransactionManager());
+    engine.rootContext()->setContextProperty("accounttypesmanager", &json.getAccountTypeManager());
+    engine.rootContext()->setContextProperty("appinfo", &appinfo);
+    engine.rootContext()->setContextProperty("Theme", &theme);
+    engine.load(QUrl(QStringLiteral("qrc:///qml/main_pc.qml")));
+    return app.exec();
+#endif
 }
 
