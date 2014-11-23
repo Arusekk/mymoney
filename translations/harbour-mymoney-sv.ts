@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="sv_SE">
+<TS version="2.1" language="sv_SE">
 <context>
     <name>AboutPage</name>
     <message>
@@ -480,7 +480,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation>Välj standard valuta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
         <translation>OBS! Endast konton med valutan &apos;%1&apos; kommer att visas i graf och cover.</translation>
     </message>
@@ -489,7 +489,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation type="obsolete">OBS! Endast konton med standard valutan kommer att visas i graf och cover.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="64"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
         <source>Hide income</source>
         <translation>Dölj inkomstkonton i huvudvyn</translation>
     </message>

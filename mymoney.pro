@@ -57,6 +57,7 @@ TRANSLATIONS += translations/harbour-mymoney-de.ts
 TRANSLATIONS += translations/harbour-mymoney-fi.ts
 TRANSLATIONS += translations/harbour-mymoney-sv.ts
 TRANSLATIONS += translations/harbour-mymoney-it.ts
+TRANSLATIONS += translations/harbour-mymoney-zh.ts
 
 DEFINES+= VERSION=\\\"$$VERSION\\\"
 HEADERS += \

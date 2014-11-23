@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="it_IT" sourcelanguage="it">
+<TS version="2.1" language="it_IT" sourcelanguage="it">
 <context>
     <name>AboutPage</name>
     <message>
@@ -445,7 +445,7 @@ gruppo (entrate, banca e spese).</translation>
         <translation>Valuta preferita</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
         <translation>NOTA Solo conto con la valuta &apos;%1&apos; verrà visualizzato nel grafico e copertina</translation>
     </message>
@@ -454,7 +454,7 @@ gruppo (entrate, banca e spese).</translation>
         <translation type="obsolete">NOTA Solo conto con la valuta standard selezionato verrà visualizzato nel grafico e copertina</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="64"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
         <source>Hide income</source>
         <translation>Nascondi entrate</translation>
     </message>

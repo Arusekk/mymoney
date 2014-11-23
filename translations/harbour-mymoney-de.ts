@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="de_DE">
+<TS version="2.1" language="de_DE">
 <context>
     <name>AboutPage</name>
     <message>
@@ -457,7 +457,7 @@ der Gruppen haben
         <translation>Standardwährung</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
         <translation>HINWEIS Nur Konto mit der ausgewählten währung &apos;%1&apos; wird in der Grafik und Cover angezeigt werden.</translation>
     </message>
@@ -466,7 +466,7 @@ der Gruppen haben
         <translation type="obsolete">HINWEIS Nur Konto mit der ausgewählten Standardwährung wird in der Grafik und Cover angezeigt werden.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="64"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
         <source>Hide income</source>
         <translation>Erträge aus Kontosicht ausblenden</translation>
     </message>

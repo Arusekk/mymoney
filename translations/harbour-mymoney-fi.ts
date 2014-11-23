@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -452,7 +452,7 @@ kutakin ryhmä (tulot, pankki ja kulut).</translation>
         <translation>Oletusvaluuttaa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
         <translation>HUOM että vain tilit valitun &apos;%1&apos; arvo näkyy kuvaajan ja kansi</translation>
     </message>
@@ -461,7 +461,7 @@ kutakin ryhmä (tulot, pankki ja kulut).</translation>
         <translation type="obsolete">HUOM että vain tilit valitun standardin arvo näkyy kuvaajan ja kansi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="64"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
         <source>Hide income</source>
         <translation>Piilota tuotot tilinäkymässä</translation>
     </message>
