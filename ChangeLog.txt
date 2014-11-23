@@ -1,6 +1,6 @@
 Version 0.0.6
 
-  * Chinese translations
+  * Chinese translations by TylerTemp
 
 Version 0.0.5
 
