@@ -10,4 +10,6 @@ ListModel {
     ListElement { title: "<b>Credits to:</b>" }
     ListElement { title: "Jolla for the cool SailfishOS"}
     ListElement { title: "Jolla, Nemo and Qt community"}
+    ListElement { title: "<b>If you like this app you may send bitcoins to:</b>" }
+    ListElement { title: "1HDFaQPqXCTtRi87wJpo4w2XAwt4DadLCT"; url: "http://www.7b4.se/bitcoins"; titleurl: "1HDFaQPqXCTtRi87wJpo4w2XAwt4DadLCT"; }
 }

@@ -43,7 +43,7 @@ Page {
         Label {
             width: 360
             font.pixelSize: Theme.fontSizeMedium
-            text: "Copyright 2014 Mikael Hermansson"
+            text: "Copyright 2014-2015 Mikael Hermansson"
             anchors.horizontalCenter: parent.horizontalCenter
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignHCenter
@@ -51,6 +51,11 @@ Page {
             //height: Theme.fontSizeMedium * 1 + 20
         }
 
+        Button {
+            text: "License "+appinfo.getLicenseTitle()
+            anchors.horizontalCenter: parent.horizontalCenter
+            onClicked: pageStack.push(Qt.resolvedUrl("LicensePage.qml"))
+        }
         Repeater{
             model: credits
             Item {
@@ -63,12 +68,26 @@ Page {
                     text: title
                     font.pixelSize: Theme.fontSizeSmall
                 }
-                Button  {
+                Label  {
                     id: button
+                    font.bold: pressed
                     visible: titleurl ? true : false
                     anchors.horizontalCenter: parent.horizontalCenter
-                    text: titleurl ? titleurl : ""
-                    onClicked: Qt.openUrlExternally(url+"MyMoney v"+appinfo.getVersion())
+                    text: titleurl ? "<u>"+titleurl+"</u>" : ""
+                    font.pixelSize: Theme.fontSizeSmall
+                    function doAction(url)
+                    {
+                        if (url > "mailto:")
+                            url = url+appinfo.getName()+" v"+appinfo.getVersion()
+                        else
+                            url = url+"?app="+appinfo.getName()+"&version="+appinfo.getVersion()
+
+                        Qt.openUrlExternally(url)
+                    }
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: parent.doAction(url)
+                    }
                 }
             }
         }
@@ -79,29 +98,6 @@ Page {
             }
             height: 3
             width: parent.width - (Theme.paddingLarge * 2)
-        }
-
-        Button {
-            text: "License "+appinfo.getLicenseTitle()
-            anchors.horizontalCenter: parent.horizontalCenter
-            onClicked: pageStack.push(Qt.resolvedUrl("LicensePage.qml"))
-        }
-
-        IconButton {
-            icon.source: "qrc:/images/PayBtn_BgImg.png"
-            anchors.horizontalCenter: parent.horizontalCenter
-            opacity: pressed ? 0.5 : 1.0
-            width: 200
-            height: 80
-            Text {
-                y: 8
-                height: 60
-                width: 80
-                font.pixelSize: Theme.fontSizeSmall
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Donate")
-            }
-            onClicked: Qt.openUrlExternally("https://www.payson.se/SendMoney/?De=My+money+sailfish+app&Se=mike%407b4.se&Cost=0&Currency=SEK&&Sp=1")
         }
 
     }
