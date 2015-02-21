@@ -9,9 +9,8 @@
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="102"/>
         <source>Donate</source>
-        <translation>Spenden</translation>
+        <translation type="vanished">Spenden</translation>
     </message>
 </context>
 <context>
