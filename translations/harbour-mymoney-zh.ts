@@ -69,7 +69,7 @@
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="203"/>
         <source>Saldo %1</source>
-        <translation type="unfinished">资金 %1</translation>
+        <translation>资金 %1</translation>
     </message>
 </context>
 <context>
@@ -425,24 +425,99 @@ group (Income, Bank and Expense).</source>
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="20"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="21"/>
         <source>Settings</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="24"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="25"/>
         <source>Default currency</source>
         <translation>默认货币</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="57"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="58"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
         <translation>注意！只有使用&apos;%1&apos;货币的账号能在图表和封面中显示</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="66"/>
+        <source>Account view</source>
+        <translation>账户</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="70"/>
         <source>Hide income</source>
         <translation>隐藏收入</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="75"/>
+        <source>Transaction view</source>
+        <translation>交易</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="78"/>
+        <source>Show latest: </source>
+        <translation>显示最新的</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
+        <source>month</source>
+        <translation>月份</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="82"/>
+        <source>2 months</source>
+        <translation>2 月份</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <source>3 months</source>
+        <translation>3 月份</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="84"/>
+        <source>4 months</source>
+        <translation>4 月份</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
+        <source>5 months</source>
+        <translation>5 月份</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="86"/>
+        <source>6 months</source>
+        <translation>6 月份</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="87"/>
+        <source>7 months</source>
+        <translation>7 月份</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="88"/>
+        <source>8 months</source>
+        <translation>8 月份</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
+        <source>9 months</source>
+        <translation>9 月份</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="90"/>
+        <source>10 months</source>
+        <translation>10 月份</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="91"/>
+        <source>11 months</source>
+        <translation>11 月份</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="92"/>
+        <source>12 months</source>
+        <translation>12 月份</translation>
     </message>
 </context>
 <context>
@@ -461,7 +536,7 @@ group (Income, Bank and Expense).</source>
 <context>
     <name>TransactionsPage</name>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="105"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="110"/>
         <source>Add transaction</source>
         <translation>添加交易</translation>
     </message>

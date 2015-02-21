@@ -1,3 +1,8 @@
+Version 0.0.7
+
+  * Add option to show only latest X months in transaction view
+  * The new translations in settings is done by me and can be wrong, feel free to contact me for fixes.
+
 Version 0.0.6
 
   * Chinese translations by TylerTemp
