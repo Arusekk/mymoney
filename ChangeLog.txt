@@ -1,7 +1,9 @@
-Version 0.0.7
+Version 0.1.0
 
   * Add option to show only latest X months in transaction view
-  * The new translations in settings is done by me and can be wrong, feel free to contact me for fixes.
+  * Search filter in transaction view (swipe left to show search options)
+  * Make sure all accounts is shown in add transaction dialog
+  * The new translations is done by me and can be wrong, feel free to contact me for fixes.
 
 Version 0.0.6
 

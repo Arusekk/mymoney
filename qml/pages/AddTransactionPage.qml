@@ -87,73 +87,79 @@ Dialog
         }
     }
 
-    Column{
+    SilicaFlickable {
         anchors.fill: parent
-        DialogHeader {  id: header; visible: !entryDescription.focus; title: transaction.md5 =="" ? qsTr("Add transaction") : qsTr("Change transaction"); }
-        width: page.width
-        Grid {
-            width: parent.width
-            visible: !(entryDescription.focus || entrySum.focus)
-            rows: 2
-            columns: 2
-            spacing: 0
-            TextSwitch {id: radioOutgoing; text: qsTr("Expense"); width: parent.width/2;  onClicked: { radioBank.checked = false; radioIncoming.checked = false; comboExpense.clear(); }}
-            TextSwitch {id: radioBank; text: qsTr("Bank"); width: parent.width/2; onClicked: { radioIncoming.checked = false; radioOutgoing.checked = false; comboBank.clear(); } }
-            TextSwitch {id: radioIncoming; text: qsTr("Income"); width: parent.width/2; onClicked: { radioBank.checked = false; radioOutgoing.checked = false; comboIncome.clear();} }
-        }
+        Column{
+            anchors.fill: parent
+            DialogHeader {
+                id: header;
+                visible: !(entryDescription.focus || comboBank.active || comboExpense.active || comboIncome.active)
+                title: transaction.md5 =="" ? qsTr("Add transaction") : qsTr("Change transaction");
+            }
+            width: page.width
+            Grid {
+                width: parent.width
+                visible: !(entryDescription.focus || entrySum.focus)
+                rows: 2
+                columns: 2
+                spacing: 0
+                TextSwitch {id: radioOutgoing; text: qsTr("Expense"); width: parent.width/2;  onClicked: { radioBank.checked = false; radioIncoming.checked = false; comboExpense.clear(); }}
+                TextSwitch {id: radioBank; text: qsTr("Bank"); width: parent.width/2; onClicked: { radioIncoming.checked = false; radioOutgoing.checked = false; comboBank.clear(); } }
+                TextSwitch {id: radioIncoming; text: qsTr("Income"); width: parent.width/2; onClicked: { radioBank.checked = false; radioOutgoing.checked = false; comboIncome.clear();} }
+            }
 
-        ComboAccountToFrom {
-            id: comboBank
-            objectName: "Bank"
-            visible: radioBank.checked
-            modelFrom: modelBank
-            modelTo: modelBank
-        }
+            ComboAccountToFrom {
+                id: comboBank
+                objectName: "Bank"
+                visible: radioBank.checked
+                modelFrom: modelBank
+                modelTo: modelBank
+            }
 
-        ComboAccountToFrom {
-            id: comboIncome
-            objectName: "Income"
-            visible: radioIncoming.checked
-            modelFrom: modelIncome
-            modelTo: modelBank
-        }
+            ComboAccountToFrom {
+                id: comboIncome
+                objectName: "Income"
+                visible: radioIncoming.checked
+                modelFrom: modelIncome
+                modelTo: modelBank
+            }
 
-        ComboAccountToFrom {
-            id: comboExpense
-            objectName: "Expense"
-            visible: radioOutgoing.checked
-            modelFrom: modelBank
-            modelTo: modelExpense
-        }
+            ComboAccountToFrom {
+                id: comboExpense
+                objectName: "Expense"
+                visible: radioOutgoing.checked
+                modelFrom: modelBank
+                modelTo: modelExpense
+            }
 
-        TextField
-        {
-            id: entrySum
-            text: transaction.sum != 0.0 ? transaction.sum.toString() : "" //LocaleCurrencyString(Qt.locale(selectedCurrency)) : ""
-            label: qsTr("Amount")
-            placeholderText: qsTr("Enter amount")
-            inputMethodHints: Qt.ImhFormattedNumbersOnly
-            validator: DoubleValidator { decimals: 2; }
-            width: parent.width
-            EnterKey.enabled: asDouble() > 0
-            EnterKey.onClicked: { entryDescription.focus = true; }
-            function asDouble()
+            TextField
             {
-                return text != "" ? Number.fromLocaleString(Qt.locale(selectedCurrency), text) : 0.0
+                id: entrySum
+                text: transaction.sum != 0.0 ? transaction.sum.toString() : "" //LocaleCurrencyString(Qt.locale(selectedCurrency)) : ""
+                label: qsTr("Amount")
+                placeholderText: qsTr("Enter amount")
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
+                validator: DoubleValidator { decimals: 2; }
+                width: parent.width
+                EnterKey.enabled: asDouble() > 0
+                EnterKey.onClicked: { entryDescription.focus = true; }
+                function asDouble()
+                {
+                    return text != "" ? Number.fromLocaleString(Qt.locale(selectedCurrency), text) : 0.0
+                }
+            }
+
+            TextField {
+                id: entryDescription
+                text: transaction.description
+                placeholderText: qsTr("Enter Description")
+                label: qsTr("Description of transaction")
+                width: parent.width
+                EnterKey.enabled: text != "" > 0
+                EnterKey.onClicked: { focus = false; }
             }
         }
-
-        TextField {
-            id: entryDescription
-            text: transaction.description
-            placeholderText: qsTr("Enter Description")
-            label: qsTr("Description of transaction")
-            width: parent.width
-            EnterKey.enabled: text != "" > 0
-            EnterKey.onClicked: { focus = false; }
-        }
     }
-
     onStatusChanged: if (status == PageStatus.Active && init) setup();
 
     function setup()

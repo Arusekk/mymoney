@@ -9,11 +9,11 @@ Column {
     function clear()
     {
         console.log("clear")
-        toIndex = fromIndex = -1
        // comboFrom.currentIndex = -1;
       //  comboTo.currentIndex = -1;
         to = ""
         from = ""
+//        toIndex = fromIndex = -1
     }
 
     function isToFromEqual()
@@ -66,7 +66,7 @@ Column {
         label: qsTr("From:")
         currentIndex: -1
         onCurrentIndexChanged: { console.log(parent.objectName+" (from) indexchanged "+currentIndex); /* if (currentIndex != -1 && comboTo.currentIndex != -1){ entrySum.focus = true; }*/ from = getCurrentMd5();}
-        menu:ContextMenu{
+        menu:ContextMenu{  id: contextFrom
                             Repeater {
                                 //height: 200
                                 width: parent.width
@@ -95,6 +95,7 @@ Column {
         currentIndex: -1
         onCurrentIndexChanged: {console.log(parent.objectName+" (to) indexchanged "+currentIndex); if (currentIndex != -1 && comboFrom.currentIndex != -1) entrySum.focus = true; to = getCurrentMd5(); selectedCurrency = modelAccounts.lookupByMd5(to).currency;}
         menu:ContextMenu{
+                            id: contextTo
                             Repeater {
                                 //height: 200
                                 width: parent.width

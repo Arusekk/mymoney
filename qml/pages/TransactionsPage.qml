@@ -12,6 +12,8 @@ Page {
         onTransactionsUpdated: modelCurrentTransactions.load()
     }
 
+    onStatusChanged: { if (status == PageStatus.Active) modelCurrentTransactions.load(); }
+
     QtObject{
         // we need to make a copy of every transaction when insert in currentModel since we modify sum
         // this probadly can be done better...
@@ -24,6 +26,13 @@ Page {
         property string from: ""
         property string date: ""
     }
+
+    QtObject {
+        id: filter
+        property double sum: 0.0
+        property string description: ""
+    }
+
     ListModel {
         id: modelCurrentTransactions
         function load()
@@ -32,7 +41,6 @@ Page {
             var isbank = modelAccounts.lookupByMd5(md5).group == "1"
             account = modelAccounts.lookupByMd5(md5)
             var tr = modelTransactions.transactions
-            console.log(tr)
             for (var key in tr)
             {
                 var o = tr[key]
@@ -63,6 +71,14 @@ Page {
 
         function dirtyInsert(key, n, invertsum) // this probadly could be done better...
         {
+            // filter "active" if not 0.0
+            if (filter.sum && n.sum != filter.sum)
+                return
+
+            // description
+            if (filter.description != "" && n.description.search(new RegExp(filter.description, "i")) == -1)
+                return
+
             // we need to make a copy of the original since we modify sum
             item.sum = n.sum
             item.sum2 = 0.0
@@ -81,8 +97,15 @@ Page {
                 // and now the real reason we copy...
                 item.sum = item.sum * -1
             }
+
+            insertSorted(item, nd)
+        }
+
+        function insertSorted(item, nd)
+        {
             for (var i = 0; i < modelCurrentTransactions.count; i++)
             {
+                // this feels akward could we get object direct instead of index?
                 var o = modelCurrentTransactions.get(i)
                 var d = new Date(o.date).getTime()
                 if (nd <= d)
@@ -94,7 +117,6 @@ Page {
             if (i == modelCurrentTransactions.count) {
                 modelCurrentTransactions.append(item)
             }
-
         }
     }
 
@@ -115,6 +137,15 @@ Page {
                         pageStack.push(Qt.resolvedUrl("AddTransactionPage.qml"), { transaction:  {  "to" : md5, "md5" : "", "group" : account.group, "sum" : 0.0, "description" : "" } })
                 }
             }
+            MenuItem {
+                text: qsTr("Clear filter")
+                visible: filter.sum || filter.description != ""
+                onClicked: {
+                    filter.sum = 0.0
+                    filter.description = ""
+                    modelCurrentTransactions.load()
+                }
+            }
         }
 
         clip: true
@@ -123,5 +154,9 @@ Page {
         VerticalScrollDecorator { flickable:listView }
     }
 
-    Component.onCompleted: modelCurrentTransactions.load()
+    Timer{
+        interval: 800
+        running: true
+        onTriggered: pageStack.pushAttached(Qt.resolvedUrl("SearchTransactionPage.qml"), {"currency" : currency, "filter" : filter});
+    }
 }

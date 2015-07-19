@@ -79,9 +79,6 @@ void JsonLoader::addDefaultTypes()
     accounttypes.addOrChange("2", tr("Media"));
     accounttypes.addOrChange("2", tr("Clothes"));
     accounttypes.addOrChange("2", tr("Other expence"));
-
-
-
 }
 
 QString JsonLoader::load()

@@ -147,6 +147,4 @@ Page
         }
 
     }
-
-   // Component.onCompleted: combo.currentIndex = 0
 }

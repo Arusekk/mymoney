@@ -13,6 +13,7 @@ class TransactionsManager : public QObject
 public:
     explicit TransactionsManager(QObject *parent, JsonLoader &loader);
     QString getFirstTransactionForAccount(QString acmd5);
+
 signals:
     void error(QString error);
 public slots:

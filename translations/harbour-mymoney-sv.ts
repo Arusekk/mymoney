@@ -86,27 +86,27 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="97"/>
         <source>Add transaction</source>
         <translation>Ny transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="97"/>
         <source>Change transaction</source>
         <translation>Ändra transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="106"/>
         <source>Expense</source>
         <translation>Utgift</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="101"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="107"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="102"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="108"/>
         <source>Income</source>
         <translation>Inkomst</translation>
     </message>
@@ -123,22 +123,22 @@
         <translation type="obsolete">Till:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="155"/>
         <source>Enter Description</source>
         <translation>Beskrivning av transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="156"/>
         <source>Description of transaction</source>
         <translation>Beskrivning av transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="139"/>
         <source>Amount</source>
         <translation>Belopp</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="140"/>
         <source>Enter amount</source>
         <translation>Skriv in belopp</translation>
     </message>
@@ -181,13 +181,13 @@
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="115"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="116"/>
         <source>To and from must be different</source>
         <translation>Uttag får inte vara samma som till konto</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="115"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="116"/>
         <source>Saldo %1</source>
         <translation>Saldo %1</translation>
     </message>
@@ -420,36 +420,36 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation>Annan utgift</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="115"/>
+        <location filename="../src/jsonloader.cpp" line="112"/>
         <source>Starting balance</source>
         <translation>Ingående saldo</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="115"/>
+        <location filename="../src/jsonloader.cpp" line="112"/>
         <source>Balance account</source>
         <translation>Balanskonto</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="118"/>
-        <location filename="../src/jsonloader.cpp" line="149"/>
+        <location filename="../src/jsonloader.cpp" line="115"/>
+        <location filename="../src/jsonloader.cpp" line="146"/>
         <source>Income</source>
         <translation>Inkomst</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="119"/>
-        <location filename="../src/jsonloader.cpp" line="150"/>
+        <location filename="../src/jsonloader.cpp" line="116"/>
+        <location filename="../src/jsonloader.cpp" line="147"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="120"/>
-        <location filename="../src/jsonloader.cpp" line="151"/>
+        <location filename="../src/jsonloader.cpp" line="117"/>
+        <location filename="../src/jsonloader.cpp" line="148"/>
         <source>Expense</source>
         <translation>Utgift</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="211"/>
-        <location filename="../src/jsonloader.cpp" line="220"/>
+        <location filename="../src/jsonloader.cpp" line="208"/>
+        <location filename="../src/jsonloader.cpp" line="217"/>
         <source>Balance</source>
         <translation>Ingående saldo</translation>
     </message>
@@ -460,6 +460,34 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <location filename="../qml/pages/LicensePage.qml" line="7"/>
         <source>License</source>
         <translation>Licens</translation>
+    </message>
+</context>
+<context>
+    <name>SearchTransactionPage</name>
+    <message>
+        <location filename="../qml/pages/SearchTransactionPage.qml" line="15"/>
+        <source>Search filter</source>
+        <translation>Sökfilter</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SearchTransactionPage.qml" line="21"/>
+        <source>Amount</source>
+        <translation>Belopp</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SearchTransactionPage.qml" line="22"/>
+        <source>Enter amount</source>
+        <translation>Skriv in belopp</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SearchTransactionPage.qml" line="38"/>
+        <source>Description</source>
+        <translation>Beskrivning</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SearchTransactionPage.qml" line="40"/>
+        <source>Enter description to search for</source>
+        <translation>Skriv in beskrivning</translation>
     </message>
 </context>
 <context>
@@ -588,9 +616,14 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation type="obsolete">%1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="110"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="132"/>
         <source>Add transaction</source>
         <translation>Ny transaktion</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TransactionsPage.qml" line="141"/>
+        <source>Clear filter</source>
+        <translation>Ta bort filtrering</translation>
     </message>
 </context>
 </TS>

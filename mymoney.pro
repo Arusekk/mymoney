@@ -48,7 +48,8 @@ OTHER_FILES += qml/mymoney.qml \
     qml/pages/ComboAccountToFrom.qml \
     qml/pages/SettingsPage.qml \
     qml/pages/CurrencyModel.qml \
-    translations/harbour-mymoney-it.ts
+    translations/harbour-mymoney-it.ts \
+    qml/pages/SearchTransactionPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

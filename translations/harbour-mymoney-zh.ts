@@ -74,47 +74,47 @@
 <context>
     <name>AddTransactionPage</name>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="97"/>
         <source>Add transaction</source>
         <translation>添加交易</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="97"/>
         <source>Change transaction</source>
         <translation>更改交易</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="106"/>
         <source>Expense</source>
         <translation>消费</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="101"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="107"/>
         <source>Bank</source>
         <translation>存储</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="102"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="108"/>
         <source>Income</source>
         <translation>收入</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="139"/>
         <source>Amount</source>
         <translation>数量</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="140"/>
         <source>Enter amount</source>
         <translation>输入数量</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="155"/>
         <source>Enter Description</source>
         <translation>输入描述</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
+        <location filename="../qml/pages/AddTransactionPage.qml" line="156"/>
         <source>Description of transaction</source>
         <translation>交易描述</translation>
     </message>
@@ -149,13 +149,13 @@
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="115"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="116"/>
         <source>To and from must be different</source>
         <translation>流入流出账户不能相同</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
-        <location filename="../qml/pages/ComboAccountToFrom.qml" line="115"/>
+        <location filename="../qml/pages/ComboAccountToFrom.qml" line="116"/>
         <source>Saldo %1</source>
         <translation>资金 %1</translation>
     </message>
@@ -379,36 +379,36 @@ group (Income, Bank and Expense).</source>
         <translation>其它消费</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="115"/>
+        <location filename="../src/jsonloader.cpp" line="112"/>
         <source>Starting balance</source>
         <translation>建立账户</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="115"/>
+        <location filename="../src/jsonloader.cpp" line="112"/>
         <source>Balance account</source>
         <translation>平衡账户</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="118"/>
-        <location filename="../src/jsonloader.cpp" line="149"/>
+        <location filename="../src/jsonloader.cpp" line="115"/>
+        <location filename="../src/jsonloader.cpp" line="146"/>
         <source>Income</source>
         <translation>收入</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="119"/>
-        <location filename="../src/jsonloader.cpp" line="150"/>
+        <location filename="../src/jsonloader.cpp" line="116"/>
+        <location filename="../src/jsonloader.cpp" line="147"/>
         <source>Bank</source>
         <translation>存储</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="120"/>
-        <location filename="../src/jsonloader.cpp" line="151"/>
+        <location filename="../src/jsonloader.cpp" line="117"/>
+        <location filename="../src/jsonloader.cpp" line="148"/>
         <source>Expense</source>
         <translation>消费</translation>
     </message>
     <message>
-        <location filename="../src/jsonloader.cpp" line="211"/>
-        <location filename="../src/jsonloader.cpp" line="220"/>
+        <location filename="../src/jsonloader.cpp" line="208"/>
+        <location filename="../src/jsonloader.cpp" line="217"/>
         <source>Balance</source>
         <translation>平衡</translation>
     </message>
@@ -419,6 +419,34 @@ group (Income, Bank and Expense).</source>
         <location filename="../qml/pages/LicensePage.qml" line="7"/>
         <source>License</source>
         <translation>许可协议</translation>
+    </message>
+</context>
+<context>
+    <name>SearchTransactionPage</name>
+    <message>
+        <location filename="../qml/pages/SearchTransactionPage.qml" line="15"/>
+        <source>Search filter</source>
+        <translation>搜索过滤器</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SearchTransactionPage.qml" line="21"/>
+        <source>Amount</source>
+        <translation>数量</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SearchTransactionPage.qml" line="22"/>
+        <source>Enter amount</source>
+        <translation>输入数量</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SearchTransactionPage.qml" line="38"/>
+        <source>Description</source>
+        <translation>描述</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SearchTransactionPage.qml" line="40"/>
+        <source>Enter description to search for</source>
+        <translation>输入描述</translation>
     </message>
 </context>
 <context>
@@ -535,9 +563,14 @@ group (Income, Bank and Expense).</source>
 <context>
     <name>TransactionsPage</name>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="110"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="132"/>
         <source>Add transaction</source>
         <translation>添加交易</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TransactionsPage.qml" line="141"/>
+        <source>Clear filter</source>
+        <translation>清除过滤器</translation>
     </message>
 </context>
 </TS>
