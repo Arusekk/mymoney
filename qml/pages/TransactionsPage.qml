@@ -71,6 +71,12 @@ Page {
             item.from = n.from
             item.date = n.date
             item.md5 = key
+            var nd = new Date(n.date).getTime()
+            var td = new Date()
+            td.setMonth(td.getMonth()-latestMonths)
+            if (nd < td)
+                return ;
+
             if (invertsum){
                 // and now the real reason we copy...
                 item.sum = item.sum * -1
@@ -78,9 +84,8 @@ Page {
             for (var i = 0; i < modelCurrentTransactions.count; i++)
             {
                 var o = modelCurrentTransactions.get(i)
-                var d1 = new Date(n.date).getTime()
-                var d2 = new Date(o.date).getTime()
-                if (d1 <= d2)
+                var d = new Date(o.date).getTime()
+                if (nd <= d)
                 {
                     modelCurrentTransactions.insert(i, item)
                     break;
@@ -98,7 +103,7 @@ Page {
         anchors.fill: parent
         anchors.leftMargin: Theme.paddingSmall
         anchors.rightMargin: Theme.paddingSmall
-        header: PageHeader { id: header; title: modelAccounts.lookupByMd5(md5).title }
+        header: PageHeader { id: header; title: modelAccounts.lookupByMd5(md5).title+": "+modelAccounts.getAccountSaldoAsString(md5) }
 
         PullDownMenu {
             MenuItem {

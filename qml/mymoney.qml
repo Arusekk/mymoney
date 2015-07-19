@@ -17,6 +17,7 @@ ApplicationWindow
     signal transactionsUpdated
 
     property bool hideIncome: false
+    property int latestMonths: 3
     property string defaultCurrency: Qt.locale().name
     property string errorText: ""
     onErrorTextChanged: { timerHot.start(); hot.opacity = 1.0; }
@@ -52,14 +53,14 @@ ApplicationWindow
                 _db.transaction(
                             function(tx) {
                                 // Create the database if it doesn't already exist
-                                tx.executeSql('DROP TABLE Settings;');
+                                tx.executeSql('DROP TABLE IF EXISTS Settings;');
                             }
                         )
 
             _db.transaction(
                         function(tx) {
                             // Create the database if it doesn't already exist
-                            tx.executeSql('CREATE TABLE IF NOT EXISTS Settings(defaultCurrency TEXT, hideIncome BOOLEAN)');
+                            tx.executeSql('CREATE TABLE IF NOT EXISTS Map(key TEXT, value TEXT)');
                         }
                     )
         }
@@ -76,6 +77,30 @@ ApplicationWindow
                         hideIncome = rs.rows.item(0).hideIncome
                     }
                 });
+                _db.transaction(function(tx)
+                {
+                    var rs = tx.executeSql('SELECT value FROM Map WHERE key="transactionsLatestMonths";');
+                    if(rs.rows.length)
+                    {
+                        latestMonths = rs.rows.item(0).value
+                    }
+                });
+                _db.transaction(function(tx)
+                {
+                    var rs = tx.executeSql('SELECT value FROM Map WHERE key="hideIncome";');
+                    if(rs.rows.length)
+                    {
+                        hideIncome = rs.rows.item(0).value
+                    }
+                });
+                _db.transaction(function(tx)
+                {
+                    var rs = tx.executeSql('SELECT value FROM Map WHERE key="defaultCurrency";');
+                    if(rs.rows.length)
+                    {
+                        defaultCurrency = rs.rows.item(0).value
+                    }
+                });
             }
             catch (e)
             {
@@ -90,8 +115,10 @@ ApplicationWindow
         {
             _db.transaction(function(tx)
             {
-                tx.executeSql('DELETE FROM Settings;')
-                tx.executeSql('INSERT OR REPLACE INTO Settings VALUES (?,?);',[defaultCurrency, hideIncome])
+                tx.executeSql('DELETE FROM Map;') // FIXME REPLACE INTO SEEMS NOT WORK
+                tx.executeSql('INSERT OR REPLACE INTO Map VALUES (?,?);',["transactionsLatestMonths", latestMonths])
+                tx.executeSql('INSERT OR REPLACE INTO Map VALUES (?,?);',["defaultCurrency", defaultCurrency])
+                tx.executeSql('INSERT OR REPLACE INTO Map VALUES (?,?);',["hideIncome", hideIncome])
             });
 
             // special case jsonloader has no access to QML atm...

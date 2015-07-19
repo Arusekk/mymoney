@@ -9,9 +9,8 @@
         <translation>Om</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="102"/>
         <source>Donate</source>
-        <translation>Donate</translation>
+        <translation type="vanished">Donate</translation>
     </message>
 </context>
 <context>
@@ -89,27 +88,27 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Add transaction</source>
-        <translation type="unfinished">Ny transaktion</translation>
+        <translation>Ny transaktion</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="92"/>
         <source>Change transaction</source>
-        <translation type="unfinished">Ändra transaktion</translation>
+        <translation>Ändra transaktion</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="100"/>
         <source>Expense</source>
-        <translation type="unfinished">Utgift</translation>
+        <translation>Utgift</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="101"/>
         <source>Bank</source>
-        <translation type="unfinished">Bank</translation>
+        <translation>Bank</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="102"/>
         <source>Income</source>
-        <translation type="unfinished">Inkomst</translation>
+        <translation>Inkomst</translation>
     </message>
     <message>
         <source>From:</source>
@@ -126,22 +125,22 @@
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="149"/>
         <source>Enter Description</source>
-        <translation type="unfinished">Beskrivning av transaktion</translation>
+        <translation>Beskrivning av transaktion</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="150"/>
         <source>Description of transaction</source>
-        <translation type="unfinished">Beskrivning av transaktion</translation>
+        <translation>Beskrivning av transaktion</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="133"/>
         <source>Amount</source>
-        <translation type="unfinished">Belopp</translation>
+        <translation>Belopp</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="134"/>
         <source>Enter amount</source>
-        <translation type="unfinished">Skriv in belopp</translation>
+        <translation>Skriv in belopp</translation>
     </message>
     <message>
         <source>Saldo %1</source>
@@ -470,26 +469,101 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation type="obsolete">Inställningar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="20"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="21"/>
         <source>Settings</source>
         <translation>Inställningar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="24"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="25"/>
         <source>Default currency</source>
         <translation>Välj standard valuta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="57"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="58"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
         <translation>OBS! Endast konton med valutan &apos;%1&apos; kommer att visas i graf och cover.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="66"/>
+        <source>Account view</source>
+        <translation>Kontovyn</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="75"/>
+        <source>Transaction view</source>
+        <translation>Transaktionsvyn</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="78"/>
+        <source>Show latest: </source>
+        <translation>Visa senaste:</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
+        <source>month</source>
+        <translation>månaden</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="82"/>
+        <source>2 months</source>
+        <translation>2 månader</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <source>3 months</source>
+        <translation>3 månader</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="84"/>
+        <source>4 months</source>
+        <translation>4 månader</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
+        <source>5 months</source>
+        <translation>5 månader</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="86"/>
+        <source>6 months</source>
+        <translation>6 månader</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="87"/>
+        <source>7 months</source>
+        <translation>7 månader</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="88"/>
+        <source>8 months</source>
+        <translation>8 månader</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
+        <source>9 months</source>
+        <translation>9 månader</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="90"/>
+        <source>10 months</source>
+        <translation>10 månader</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="91"/>
+        <source>11 months</source>
+        <translation>11 månader</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="92"/>
+        <source>12 months</source>
+        <translation>12 månader</translation>
     </message>
     <message>
         <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
         <translation type="obsolete">OBS! Endast konton med standard valutan kommer att visas i graf och cover.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="70"/>
         <source>Hide income</source>
         <translation>Dölj inkomstkonton i huvudvyn</translation>
     </message>
@@ -514,7 +588,7 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation type="obsolete">%1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionsPage.qml" line="105"/>
+        <location filename="../qml/pages/TransactionsPage.qml" line="110"/>
         <source>Add transaction</source>
         <translation>Ny transaktion</translation>
     </message>
