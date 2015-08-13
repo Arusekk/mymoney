@@ -34,6 +34,9 @@ Dialog {
                 local = local.split(".")[0]
                 switch(local)
                 {
+                    case "en_GB":
+                        currentIndex = 5
+                        break;
                     case "zh":
                         currentIndex = 4
                         break;

@@ -472,82 +472,82 @@ gruppo (entrate, banca e spese).</translation>
         <translation>Valuta preferita</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="58"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="61"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
         <translation>NOTA Solo conto con la valuta &apos;%1&apos; verrà visualizzato nel grafico e copertina</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="66"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="69"/>
         <source>Account view</source>
         <translation>vista account</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="75"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="78"/>
         <source>Transaction view</source>
         <translation>transazioni</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="78"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
         <source>Show latest: </source>
         <translation>mostra ultimi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="84"/>
         <source>month</source>
         <translation>mese</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="82"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
         <source>2 months</source>
         <translation>2 mesi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="86"/>
         <source>3 months</source>
         <translation>3 mesi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="84"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="87"/>
         <source>4 months</source>
         <translation>4 mesi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="88"/>
         <source>5 months</source>
         <translation>5 mesi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="86"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
         <source>6 months</source>
         <translation>6 mesi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="87"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="90"/>
         <source>7 months</source>
         <translation>7 mesi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="88"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="91"/>
         <source>8 months</source>
         <translation>8 mesi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="92"/>
         <source>9 months</source>
         <translation>9 mesi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="90"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="93"/>
         <source>10 months</source>
         <translation>10 mesi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="91"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="94"/>
         <source>11 months</source>
         <translation>11 mesi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="92"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="95"/>
         <source>12 months</source>
         <translation>12 mesi</translation>
     </message>
@@ -556,7 +556,7 @@ gruppo (entrate, banca e spese).</translation>
         <translation type="obsolete">NOTA Solo conto con la valuta standard selezionato verrà visualizzato nel grafico e copertina</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="70"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="73"/>
         <source>Hide income</source>
         <translation>Nascondi entrate</translation>
     </message>
