@@ -16,17 +16,17 @@
 <context>
     <name>AddAccountPage</name>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="93"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="95"/>
         <source>Name</source>
         <translation>类型名</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="94"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="96"/>
         <source>Type name here</source>
         <translation>类型名</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="71"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="73"/>
         <source>Group</source>
         <translation>组</translation>
     </message>
@@ -36,39 +36,48 @@
         <translation>账户</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="103"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="105"/>
         <source>Enter new type or press enter key</source>
         <translation>输入新类型或按回车</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="130"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="107"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="133"/>
         <source>Type</source>
         <translation>类型</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="150"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="153"/>
         <source>Currency</source>
         <translation>货币</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="182"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="185"/>
         <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
         <translation>注意！如果当前账户货币类型与设置中的默认类型不一致，该账户将不能在图标和封面中显示</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="194"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="197"/>
         <source>Starting Balance</source>
         <translation>建立账户</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="195"/>
-        <source>Enter start saldo</source>
+        <location filename="../qml/pages/AddAccountPage.qml" line="198"/>
+        <source>Enter start balance</source>
         <translation>输入建立账户资金</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="203"/>
-        <source>Saldo %1</source>
+        <location filename="../qml/pages/AddAccountPage.qml" line="206"/>
+        <source>Balance %1</source>
         <translation>资金 %1</translation>
+    </message>
+    <message>
+        <source>Enter start saldo</source>
+        <translation type="vanished">输入建立账户资金</translation>
+    </message>
+    <message>
+        <source>Saldo %1</source>
+        <translation type="vanished">资金 %1</translation>
     </message>
 </context>
 <context>
@@ -155,6 +164,10 @@
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
+        <source>Balance %1</source>
+        <translation>资金 %1</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="116"/>
         <source>Saldo %1</source>
         <translation>资金 %1</translation>

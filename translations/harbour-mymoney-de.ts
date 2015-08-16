@@ -20,17 +20,17 @@
         <translation type="obsolete">%1 Konto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="93"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="95"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="94"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="96"/>
         <source>Type name here</source>
         <translation>Name eingeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="71"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="73"/>
         <source>Group</source>
         <translation>Gruppe</translation>
     </message>
@@ -40,39 +40,48 @@
         <translation>Konto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="103"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="105"/>
         <source>Enter new type or press enter key</source>
         <translation>Neuen Typ angeben oder Entertaste drücken</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="130"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="107"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="133"/>
         <source>Type</source>
         <translation>Typ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="150"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="153"/>
         <source>Currency</source>
         <translation>Währung</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="182"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="185"/>
         <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
         <translation>HINWEIS Nur Konto mit der ausgewählten Standardwährung wird in der Grafik und Cover angezeigt werden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="194"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="197"/>
         <source>Starting Balance</source>
         <translation>Startguthaben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="195"/>
-        <source>Enter start saldo</source>
+        <location filename="../qml/pages/AddAccountPage.qml" line="198"/>
+        <source>Enter start balance</source>
         <translation>Startsaldo eingeben</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="203"/>
-        <source>Saldo %1</source>
+        <location filename="../qml/pages/AddAccountPage.qml" line="206"/>
+        <source>Balance %1</source>
         <translation>Saldo %1</translation>
+    </message>
+    <message>
+        <source>Enter start saldo</source>
+        <translation type="vanished">Startsaldo eingeben</translation>
+    </message>
+    <message>
+        <source>Saldo %1</source>
+        <translation type="vanished">Saldo %1</translation>
     </message>
     <message>
         <source>Default currency</source>
@@ -171,6 +180,10 @@
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
+        <source>Balance %1</source>
+        <translation>Saldo %1</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="116"/>
         <source>Saldo %1</source>
         <translation>Saldo %1</translation>

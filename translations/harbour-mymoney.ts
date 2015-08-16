@@ -12,17 +12,17 @@
 <context>
     <name>AddAccountPage</name>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="93"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="95"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="94"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="96"/>
         <source>Type name here</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="71"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="73"/>
         <source>Group</source>
         <translation type="unfinished"></translation>
     </message>
@@ -32,39 +32,48 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="103"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="105"/>
         <source>Enter new type or press enter key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="130"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="107"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="133"/>
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="150"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="153"/>
         <source>Currency</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="182"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="185"/>
         <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="194"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="197"/>
         <source>Starting Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="195"/>
-        <source>Enter start saldo</source>
+        <location filename="../qml/pages/AddAccountPage.qml" line="198"/>
+        <source>Enter start balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="203"/>
-        <source>Saldo %1</source>
+        <location filename="../qml/pages/AddAccountPage.qml" line="206"/>
+        <source>Balance %1</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter start saldo</source>
+        <translation type="vanished">Enter start balance</translation>
+    </message>
+    <message>
+        <source>Saldo %1</source>
+        <translation type="vanished">Balance %1</translation>
     </message>
 </context>
 <context>
@@ -151,9 +160,13 @@
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
+        <source>Balance %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="116"/>
         <source>Saldo %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Balance %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="94"/>
@@ -553,7 +566,7 @@ group (Income, Bank and Expense).</source>
     <message>
         <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
         <source>Change incoming saldo</source>
-        <translation type="unfinished"></translation>
+        <translation>Change incoming balance</translation>
     </message>
 </context>
 <context>

@@ -20,17 +20,17 @@
         <translation type="obsolete">Tili</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="93"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="95"/>
         <source>Name</source>
         <translation>Nimi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="94"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="96"/>
         <source>Type name here</source>
         <translation>Anna nimi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="71"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="73"/>
         <source>Group</source>
         <translation>Syötä tilin nimi</translation>
     </message>
@@ -40,39 +40,48 @@
         <translation>Tili</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="103"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="105"/>
         <source>Enter new type or press enter key</source>
         <translation>Kirjoita uusi tyyppi-tai paina Enter</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="130"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="107"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="133"/>
         <source>Type</source>
         <translation>Tilin tyyppi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="150"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="153"/>
         <source>Currency</source>
         <translation>Valuutta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="182"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="185"/>
         <source>Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.</source>
         <translation>HUOM että vain tilit valitun standardin arvo näkyy kuvaajan ja kansi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="194"/>
+        <location filename="../qml/pages/AddAccountPage.qml" line="197"/>
         <source>Starting Balance</source>
         <translation>Aloita tasapaino</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="195"/>
-        <source>Enter start saldo</source>
+        <location filename="../qml/pages/AddAccountPage.qml" line="198"/>
+        <source>Enter start balance</source>
         <translation>Anna nykyinen Balance</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddAccountPage.qml" line="203"/>
-        <source>Saldo %1</source>
+        <location filename="../qml/pages/AddAccountPage.qml" line="206"/>
+        <source>Balance %1</source>
         <translation>Tasapaino %1</translation>
+    </message>
+    <message>
+        <source>Enter start saldo</source>
+        <translation type="vanished">Anna nykyinen Balance</translation>
+    </message>
+    <message>
+        <source>Saldo %1</source>
+        <translation type="vanished">Tasapaino %1</translation>
     </message>
     <message>
         <source>Default currency</source>
@@ -167,6 +176,10 @@
     </message>
     <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="88"/>
+        <source>Balance %1</source>
+        <translation>Tasapaino %1</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/ComboAccountToFrom.qml" line="116"/>
         <source>Saldo %1</source>
         <translation>Tasapaino %1</translation>
@@ -501,62 +514,62 @@ kutakin ryhmä (tulot, pankki ja kulut).</translation>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="84"/>
         <source>month</source>
-        <translation type="unfinished"></translation>
+        <translation>kuukausi</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="85"/>
         <source>2 months</source>
-        <translation type="unfinished"></translation>
+        <translation>2 kuukautta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="86"/>
         <source>3 months</source>
-        <translation type="unfinished"></translation>
+        <translation>3 kuukautta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="87"/>
         <source>4 months</source>
-        <translation type="unfinished"></translation>
+        <translation>4 kuukautta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="88"/>
         <source>5 months</source>
-        <translation type="unfinished"></translation>
+        <translation>5 kuukautta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="89"/>
         <source>6 months</source>
-        <translation type="unfinished"></translation>
+        <translation>6 kuukautta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>
         <source>7 months</source>
-        <translation type="unfinished"></translation>
+        <translation>7 kuukautta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="91"/>
         <source>8 months</source>
-        <translation type="unfinished"></translation>
+        <translation>8 kuukautta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="92"/>
         <source>9 months</source>
-        <translation type="unfinished"></translation>
+        <translation>9 kuukautta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="93"/>
         <source>10 months</source>
-        <translation type="unfinished"></translation>
+        <translation>10 kuukautta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="94"/>
         <source>11 months</source>
-        <translation type="unfinished"></translation>
+        <translation>11 kuukautta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="95"/>
         <source>12 months</source>
-        <translation type="unfinished"></translation>
+        <translation>12 kuukautta</translation>
     </message>
     <message>
         <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
@@ -595,7 +608,7 @@ kutakin ryhmä (tulot, pankki ja kulut).</translation>
     <message>
         <location filename="../qml/pages/TransactionsPage.qml" line="141"/>
         <source>Clear filter</source>
-        <translation type="unfinished"></translation>
+        <translation>poista suodatin</translation>
     </message>
 </context>
 </TS>

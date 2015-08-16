@@ -85,7 +85,7 @@ Column {
     Label {
         opacity: comboFrom.currentIndex != -1 ? 1.0 : 0.0
         color: isToFromEqual() ? Theme.highlightColor : Theme.primaryColor
-        text: isToFromEqual() ? qsTr("To and from must be different") :  qsTr("Saldo %1").arg(getAccountSaldoAsString(comboFrom.getCurrentMd5(), entrySum.asDouble() * -1))
+        text: isToFromEqual() ? qsTr("To and from must be different") :  qsTr("Balance %1").arg(getAccountSaldoAsString(comboFrom.getCurrentMd5(), entrySum.asDouble() * -1))
         anchors.horizontalCenter: parent.horizontalCenter
     }
 

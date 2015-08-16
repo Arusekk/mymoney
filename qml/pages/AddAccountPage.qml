@@ -59,155 +59,159 @@ Dialog {
         }
     }
 
-    Column{
+    SilicaFlickable {
         anchors.top: header.bottom
         anchors.bottom: page.bottom
         anchors.left: parent.left
         anchors.right: parent.right
 
-        ComboBox
-        {
-            id: comboAccountGroup
-            label: qsTr("Group")
-            currentIndex: -1
-            enabled: entrySum.text == "0"
-            focus: true
-            menu:ContextMenu{
-                                Repeater {
-                                    model: modelAccountGroups;
-                                    MenuItem {
-                                        text: title;
+        Column {
+            anchors.fill: parent
+            ComboBox
+            {
+                id: comboAccountGroup
+                label: qsTr("Group")
+                currentIndex: -1
+                enabled: entrySum.text == "0"
+                focus: true
+                menu:ContextMenu{
+                                    Repeater {
+                                        model: modelAccountGroups;
+                                        MenuItem {
+                                            text: title;
+                                        }
                                     }
                                 }
+                onCurrentIndexChanged: {
+                        comboAccountType.currentIndex = -1
+                        modelCurrentAccountTypes.load(modelAccountGroups.get(currentIndex).id);
+                        entryTitle.focus = true
+                    }
+            }
+
+            TextField {
+                id: entryTitle
+                text: account ? account.title : ""
+                label: qsTr("Name")
+                placeholderText: qsTr("Type name here")
+                width: parent.width
+                Keys.onReturnPressed: typeEntry.focus = text.length > 0
+            }
+
+            TextField {
+                id: typeEntry
+                visible: comboAccountType.currentIndex == -1
+                enabled: comboAccountGroup.currentIndex != -1
+                placeholderText: qsTr("Enter new type or press enter key")
+                width: parent.width
+                label: qsTr("Type")
+                EnterKey.iconSource: "image://theme/icon-m-enter-accept"
+                onPressAndHold: { if (typeEntry.text.length == 0)
+                                    { focus = false;  comboAccountType.clicked(undefined); }
                             }
-            onCurrentIndexChanged: {
-                    comboAccountType.currentIndex = -1
-                    modelCurrentAccountTypes.load(modelAccountGroups.get(currentIndex).id);
-                    entryTitle.focus = true
-                }
-        }
-
-        TextField {
-            id: entryTitle
-            text: account ? account.title : ""
-            label: qsTr("Name")
-            placeholderText: qsTr("Type name here")
-            width: parent.width
-            Keys.onReturnPressed: typeEntry.focus = text.length > 0
-        }
-
-        TextField {
-            id: typeEntry
-            visible: comboAccountType.currentIndex == -1
-            enabled: comboAccountGroup.currentIndex != -1
-            placeholderText: qsTr("Enter new type or press enter key")
-            width: parent.width
-            EnterKey.iconSource: "image://theme/icon-m-enter-accept"
-            onPressAndHold: { if (typeEntry.text.length == 0)
-                                { focus = false;  comboAccountType.clicked(undefined); }
-                        }
-            Keys.onReturnPressed: {
-                if (typeEntry.text.length)
-                {
-                    var ind = modelCurrentAccountTypes.add({"title" : typeEntry.text, "group" : modelAccountGroups.get(comboAccountGroup.currentIndex).id});
-                    comboAccountType.currentIndex = ind
-                    typeEntry.text = ""
-                    typeEntry.focus = false
-                    comboAccountType.menu.show(comboAccountType)
-                    comboAccountType.menu.hide()
-                }
-                else
-                {
-                    focus = false;
-                    comboAccountType.clicked(comboAccountType)
+                Keys.onReturnPressed: {
+                    if (typeEntry.text.length)
+                    {
+                        var ind = modelCurrentAccountTypes.add({"title" : typeEntry.text, "group" : modelAccountGroups.get(comboAccountGroup.currentIndex).id});
+                        comboAccountType.currentIndex = ind
+                        typeEntry.text = ""
+                        typeEntry.focus = false
+                        comboAccountType.menu.show(comboAccountType)
+                        comboAccountType.menu.hide()
+                    }
+                    else
+                    {
+                        focus = false;
+                        comboAccountType.clicked(comboAccountType)
+                    }
                 }
             }
-        }
-        ComboBox
-        {
-            id: comboAccountType
-            visible: comboAccountGroup.currentIndex != -1
-            label: qsTr("Type")
-            currentIndex: -1
-            menu:ContextMenu{
-                                Repeater {
-                                    model: modelCurrentAccountTypes;
-                                    MenuItem { text: title; }
+            ComboBox
+            {
+                id: comboAccountType
+                visible: comboAccountGroup.currentIndex != -1
+                label: qsTr("Type")
+                currentIndex: -1
+                menu:ContextMenu{
+                                    Repeater {
+                                        model: modelCurrentAccountTypes;
+                                        MenuItem { text: title; }
+                                    }
                                 }
-                            }
 
-            function select(title)
-            {
-                currentIndex = modelCurrentAccountTypes.lookupIndex(title)
-                console.log(currentIndex)
-            }
-
-        }
-
-        ComboBox {
-            id: comboLocale
-            currentIndex: -1
-            label: qsTr("Currency")
-            menu: ContextMenu {
-                Repeater {
-                    model: modelLanguages
-                    MenuItem {text: model.title;}
-                }
-            }
-            function select(local)
-            {
-                local = local.split(".")[0]
-                switch(local)
+                function select(title)
                 {
-                    case "sv_SE":
-                    case "no_NO":
-                    case "da":
-                        currentIndex = 3
-                        break;
-                    case "de-ch":
-                        currentIndex = 2
-                        break
-                    case "en_US":
-                        currentIndex = 1
-                        break
-                    default:
-                        currentIndex = 0
-                        break
+                    currentIndex = modelCurrentAccountTypes.lookupIndex(title)
+                    console.log(currentIndex)
+                }
+
+            }
+
+            ComboBox {
+                id: comboLocale
+                currentIndex: -1
+                label: qsTr("Currency")
+                menu: ContextMenu {
+                    Repeater {
+                        model: modelLanguages
+                        MenuItem {text: model.title;}
+                    }
+                }
+                function select(local)
+                {
+                    local = local.split(".")[0]
+                    switch(local)
+                    {
+                        case "sv_SE":
+                        case "no_NO":
+                        case "da":
+                            currentIndex = 3
+                            break;
+                        case "de-ch":
+                            currentIndex = 2
+                            break
+                        case "en_US":
+                            currentIndex = 1
+                            break
+                        default:
+                            currentIndex = 0
+                            break
+                    }
                 }
             }
-        }
 
-        Label {
-            visible: defaultCurrency != modelLanguages.get(comboLocale.currentIndex).locale
-            text: qsTr("Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.")
-            height: Theme.itemSizeVeryLarge//+Theme.itemSizeSmall
-            wrapMode: Text.WordWrap
-            width: parent.width-Theme.paddingLarge*2 // wordwrap "hack"
-            color: Theme.secondaryHighlightColor
-            x: Theme.paddingLarge // wordwrap "hack"
-        }
+            Label {
+                visible: defaultCurrency != modelLanguages.get(comboLocale.currentIndex).locale
+                text: qsTr("Attention! If you set up an account to currencies other than the default currency in settings, then this account does not appear in the chart or cover.")
+                height: Theme.itemSizeVeryLarge//+Theme.itemSizeSmall
+                wrapMode: Text.WordWrap
+                width: parent.width-Theme.paddingLarge*2 // wordwrap "hack"
+                color: Theme.secondaryHighlightColor
+                x: Theme.paddingLarge // wordwrap "hack"
+            }
 
-        TextField {
-            id: entrySum
-            text: account ? jsonloader.getIncomingSaldoForAccount(account.md5).toString() : "0"
-            visible: (comboAccountGroup.currentIndex != 1) ? false : true // bank only
-            label: qsTr("Starting Balance")
-            placeholderText: qsTr("Enter start saldo")
-            inputMethodHints: Qt.ImhFormattedNumbersOnly
-            validator: DoubleValidator { decimals: 2; } //locale: selectedCurrency; }
-            width: parent.width
-        }
+            TextField {
+                id: entrySum
+                text: account ? jsonloader.getIncomingSaldoForAccount(account.md5).toString() : "0"
+                visible: (comboAccountGroup.currentIndex != 1) ? false : true // bank only
+                label: qsTr("Starting Balance")
+                placeholderText: qsTr("Enter start balance")
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
+                validator: DoubleValidator { decimals: 2; }
+                width: parent.width
+            }
 
-        Label {
-            opacity: (comboAccountGroup.currentIndex != 1 || (account && account.sum != 0)) ? 1.0 : 0.0 // bank only and not edited
-            text: qsTr("Saldo %1").arg(getSaldo())
-            anchors.horizontalCenter: parent.horizontalCenter
-            function getSaldo()
-            {
-                if (account)
-                    return account.group == "0" ? (account.sum * -1).toLocaleCurrencyString(Qt.locale(selectedCurrency)) : account.sum.toLocaleCurrencyString(Qt.locale(selectedCurrency))
+            Label {
+                opacity: (comboAccountGroup.currentIndex != 1 || (account && account.sum != 0)) ? 1.0 : 0.0 // bank only and not edited
+                text: qsTr("Balance %1").arg(getSaldo())
+                anchors.horizontalCenter: parent.horizontalCenter
+                function getSaldo()
+                {
+                    if (account)
+                        return account.group == "0" ? (account.sum * -1).toLocaleCurrencyString(Qt.locale(selectedCurrency)) : account.sum.toLocaleCurrencyString(Qt.locale(selectedCurrency))
 
-                return Number(0.0).toLocaleCurrencyString(Qt.locale(selectedCurrency))
+                    return Number(0.0).toLocaleCurrencyString(Qt.locale(selectedCurrency))
+                }
             }
         }
     }
