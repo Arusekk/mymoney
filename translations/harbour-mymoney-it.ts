@@ -8,17 +8,9 @@
         <source>About</source>
         <translation>Info su</translation>
     </message>
-    <message>
-        <source>Donate</source>
-        <translation type="vanished">Donazione</translation>
-    </message>
 </context>
 <context>
     <name>AddAccountPage</name>
-    <message>
-        <source>%1 account</source>
-        <translation type="obsolete">%1 conto</translation>
-    </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="10"/>
         <source>Account</source>
@@ -75,14 +67,6 @@
         <source>Balance %1</source>
         <translation>Saldo %1</translation>
     </message>
-    <message>
-        <source>Enter start saldo</source>
-        <translation type="vanished">Inserisci saldo iniziale</translation>
-    </message>
-    <message>
-        <source>Saldo %1</source>
-        <translation type="vanished">Saldo %1</translation>
-    </message>
 </context>
 <context>
     <name>AddTransactionPage</name>
@@ -138,10 +122,6 @@
         <location filename="../qml/pages/BankDelegate.qml" line="35"/>
         <source>Add transaction</source>
         <translation>Aggiungi transazione</translation>
-    </message>
-    <message>
-        <source>Show transactions</source>
-        <translation type="obsolete">Visualizza transazioni</translation>
     </message>
     <message>
         <location filename="../qml/pages/BankDelegate.qml" line="50"/>
@@ -248,28 +228,28 @@ gruppo (entrate, banca e spese).</translation>
         <translation>Grafici</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="16"/>
+        <location filename="../qml/pages/GraphPage.qml" line="22"/>
         <source>Show</source>
         <translation>Mostra</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="19"/>
-        <location filename="../qml/pages/GraphPage.qml" line="59"/>
+        <location filename="../qml/pages/GraphPage.qml" line="25"/>
+        <location filename="../qml/pages/GraphPage.qml" line="65"/>
         <source>Expenses</source>
         <translation>Spese</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="20"/>
+        <location filename="../qml/pages/GraphPage.qml" line="26"/>
         <source>Expenses vs Bank</source>
         <translation>Spese vs banca</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="58"/>
+        <location filename="../qml/pages/GraphPage.qml" line="64"/>
         <source>Bank</source>
         <translation>Banca</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="85"/>
+        <location filename="../qml/pages/GraphPage.qml" line="91"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
         <translation>NOTA Solo conto con la valuta &apos;%1&apos; verrà visualizzato nel grafico e copertina</translation>
     </message>
@@ -565,10 +545,6 @@ gruppo (entrate, banca e spese).</translation>
         <translation>12 mesi</translation>
     </message>
     <message>
-        <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
-        <translation type="obsolete">NOTA Solo conto con la valuta standard selezionato verrà visualizzato nel grafico e copertina</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="73"/>
         <source>Hide income</source>
         <translation>Nascondi entrate</translation>
@@ -577,22 +553,18 @@ gruppo (entrate, banca e spese).</translation>
 <context>
     <name>TransactionDelegate</name>
     <message>
-        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="36"/>
         <source>Change transaction</source>
         <translation>Modifica transazione</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="36"/>
         <source>Change incoming saldo</source>
         <translation>Cambiare l&apos;equilibrio in arrivo</translation>
     </message>
 </context>
 <context>
     <name>TransactionsPage</name>
-    <message>
-        <source>Transactions %1</source>
-        <translation type="obsolete">Transazioni %1</translation>
-    </message>
     <message>
         <location filename="../qml/pages/TransactionsPage.qml" line="132"/>
         <source>Add transaction</source>

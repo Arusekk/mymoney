@@ -2,10 +2,11 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 BackgroundItem  {
     id: background
+    property int calc_h: Theme.fontSizeSmall*4
     anchors.left: ListView.left
     anchors.right: ListView.right
-    contentHeight: Theme.itemSizeSmall+Theme.itemSizeSmall
-    height: menuOpen ? contextMenu.height + Theme.itemSizeSmall * 2 : Theme.itemSizeSmall * 2
+    contentHeight: calc_h
+    height: menuOpen ? contextMenu.height + calc_h : calc_h
 
     property bool menuOpen: contextMenu != null && contextMenu.parent === background
     property Item contextMenu
@@ -48,37 +49,31 @@ BackgroundItem  {
         anchors.fill: parent
         anchors.leftMargin: Theme.paddingSmall
         anchors.rightMargin: Theme.paddingSmall
+        spacing: 2
         Row {
+            width: parent.width
+            height: Theme.fontSizeSmall
             Label {
                 id: labelDate
                 font.pixelSize: Theme.fontSizeSmall
-                //color: getTitleColor()
-                //font.bold: model.title
                 text: date
-            }
-            Item {
-                id: fillRectangel
-//                color: "transparent"
-                width: background.width - labelDate.width - timesRectangle.width
-                height: 40
+                width: parent.width*0.72
+                height: Theme.fontSizeSmall
             }
 
-            // Created and updated time strings
-            Rectangle {
-                id: timesRectangle
-                color: "transparent"
-                width: 160
-                height: 40
-                Label {
-                    font.pixelSize: Theme.fontSizeSmall
-                    anchors.fill: parent
-                    text: Number(sum).toLocaleCurrencyString(Qt.locale(currency))
-                }
+            Label {
+                id: dateValue
+                height: Theme.itemSizeSmall
+                width: parent.width*0.28
+                font.pixelSize: Theme.fontSizeSmall
+                text: Number(sum).toLocaleCurrencyString(Qt.locale(currency))
             }
         }
 
         Label {
             id: labelTitle
+            width: parent.width
+            height: Theme.fontSizeSmall
             text: getAccountTitle()
             function getAccountTitle()
             {
@@ -102,29 +97,29 @@ BackgroundItem  {
         }
 
         Row {
+            width: parent.width
+            height: Theme.itemSizeSmall
             Label {
                 id: labelType
                 font.pixelSize: Theme.fontSizeSmall
                 font.italic: true
                 color: Theme.secondaryColor
                 text: description
+                width: parent.width*0.72
             }
 
-            Item {
-                id: fillRectangel2
-                width: background.width - labelType.width - labelSum2.width
-                height: 40
-            }
-
-            // Created and updated time strings
             Label {
                 id: labelSum2
-                width: 160
-                height: 40
+                height: Theme.itemSizeSmall
                 font.pixelSize: Theme.fontSizeSmall
-               // anchors.fill: parent
+                width: parent.width*0.28
                 text: Number(sum2).toLocaleCurrencyString(Qt.locale(currency))
             }
         }
+    }
+
+    Item {
+        height: Theme.fontSizeSmall
+        width: parent.width
     }
 }

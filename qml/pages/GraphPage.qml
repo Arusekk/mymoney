@@ -3,8 +3,14 @@ import Sailfish.Silica 1.0
 Page
 {
     id: page
-    onStatusChanged: { if (status == PageStatus.Active) items.load(); }
+    onStatusChanged: {  if (status == PageStatus.Active) items.load(); }
     PageHeader { id: header; title: qsTr("Graph"); height: Theme.itemSizeSmall; }
+    Timer {
+        id: wrapUpdate
+        repeat: false
+        interval: 100
+        onTriggered: pie.requestPaint()
+    }
 
     CurrencyModel {
         id: modelCurrency
@@ -38,7 +44,7 @@ Page
             }
 
             // always repaint (clear old)
-            pie.requestPaint()
+            wrapUpdate.start()
         }
         function filterAccount(o)
         {
@@ -94,22 +100,26 @@ Page
             rows: 10
             columns: 2
             spacing: 2
-            height: Math.round(items.count/2) * 40 + 40
+            height: (Math.round(items.count/2) + 2) *  Theme.fontSizeSmall
             width: parent.width
             Repeater {
                 model: items
-                Item
+                Row
                 {
-                    height: 40
+                    property int rec_size: Theme.fontSizeSmall*0.90
+                    height: Theme.fontSizeSmall
                     width: grid.width/grid.columns
+                    spacing: 3
                     Rectangle {
                         id: rect
-                        width: 32
-                        height: 32
+                        width: rec_size
+                        height: Theme.fontSizeSmall*0.90
                         color: model.color
                     }
+
                     Label {
-                        x: 40
+                        //.x: 40
+                        width: parent.width-rec_size
                         font.pixelSize: Theme.fontSizeSmall
                         text: title+" "+((sum/items.total)*100).toFixed(1)+"%"
                     }
@@ -120,12 +130,12 @@ Page
         Canvas {
             id: pie
             visible: items.count
-            width: 400
-            height: 400
+            width: parent.width*0.75
+            height: width
             anchors.horizontalCenter: parent.horizontalCenter
             property int centerX: height/2
             property int centerY: height/2
-            property int radius: 200
+            property int radius: width/2
             onPaint: {
                 var percent = 0.0
                 var segment = 0.0
@@ -147,4 +157,5 @@ Page
         }
 
     }
+
 }

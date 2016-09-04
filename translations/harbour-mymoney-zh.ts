@@ -8,10 +8,6 @@
         <source>About</source>
         <translation>关于</translation>
     </message>
-    <message>
-        <source>Donate</source>
-        <translation type="vanished">捐助</translation>
-    </message>
 </context>
 <context>
     <name>AddAccountPage</name>
@@ -70,14 +66,6 @@
         <location filename="../qml/pages/AddAccountPage.qml" line="206"/>
         <source>Balance %1</source>
         <translation>资金 %1</translation>
-    </message>
-    <message>
-        <source>Enter start saldo</source>
-        <translation type="vanished">输入建立账户资金</translation>
-    </message>
-    <message>
-        <source>Saldo %1</source>
-        <translation type="vanished">资金 %1</translation>
     </message>
 </context>
 <context>
@@ -238,28 +226,28 @@ group (Income, Bank and Expense).</source>
         <translation>图表</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="16"/>
+        <location filename="../qml/pages/GraphPage.qml" line="22"/>
         <source>Show</source>
         <translation>显示</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="19"/>
-        <location filename="../qml/pages/GraphPage.qml" line="59"/>
+        <location filename="../qml/pages/GraphPage.qml" line="25"/>
+        <location filename="../qml/pages/GraphPage.qml" line="65"/>
         <source>Expenses</source>
         <translation>消费</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="20"/>
+        <location filename="../qml/pages/GraphPage.qml" line="26"/>
         <source>Expenses vs Bank</source>
         <translation>消费与存储</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="58"/>
+        <location filename="../qml/pages/GraphPage.qml" line="64"/>
         <source>Bank</source>
         <translation>存储</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="85"/>
+        <location filename="../qml/pages/GraphPage.qml" line="91"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
         <translation>注意！只有使用&apos;%1&apos;货币的账号能在图表和封面中显示</translation>
     </message>
@@ -563,12 +551,12 @@ group (Income, Bank and Expense).</source>
 <context>
     <name>TransactionDelegate</name>
     <message>
-        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="36"/>
         <source>Change transaction</source>
         <translation>修改交易</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="36"/>
         <source>Change incoming saldo</source>
         <translation>修改收入资金</translation>
     </message>

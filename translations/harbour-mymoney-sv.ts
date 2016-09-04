@@ -8,17 +8,9 @@
         <source>About</source>
         <translation>Om</translation>
     </message>
-    <message>
-        <source>Donate</source>
-        <translation type="vanished">Donate</translation>
-    </message>
 </context>
 <context>
     <name>AddAccountPage</name>
-    <message>
-        <source>%1 account</source>
-        <translation type="obsolete">%1 konto</translation>
-    </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="95"/>
         <source>Name</source>
@@ -33,10 +25,6 @@
         <location filename="../qml/pages/AddAccountPage.qml" line="73"/>
         <source>Group</source>
         <translation>Kontogrupp</translation>
-    </message>
-    <message>
-        <source>%1 Account</source>
-        <translation type="obsolete">Account</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="10"/>
@@ -79,18 +67,6 @@
         <source>Balance %1</source>
         <translation>Saldo %1</translation>
     </message>
-    <message>
-        <source>Enter start saldo</source>
-        <translation type="vanished">Skriv in nuvarande saldo</translation>
-    </message>
-    <message>
-        <source>Saldo %1</source>
-        <translation type="vanished">Saldo %1</translation>
-    </message>
-    <message>
-        <source>Default currency</source>
-        <translation type="obsolete">Välj valuta</translation>
-    </message>
 </context>
 <context>
     <name>AddTransactionPage</name>
@@ -120,18 +96,6 @@
         <translation>Inkomst</translation>
     </message>
     <message>
-        <source>From:</source>
-        <translation type="obsolete">Uttags konto</translation>
-    </message>
-    <message>
-        <source>To and from must be different</source>
-        <translation type="obsolete">Uttag får inte vara samma som till konto</translation>
-    </message>
-    <message>
-        <source>To:</source>
-        <translation type="obsolete">Till:</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/AddTransactionPage.qml" line="155"/>
         <source>Enter Description</source>
         <translation>Beskrivning av transaktion</translation>
@@ -151,10 +115,6 @@
         <source>Enter amount</source>
         <translation>Skriv in belopp</translation>
     </message>
-    <message>
-        <source>Saldo %1</source>
-        <translation type="obsolete">Saldo %1</translation>
-    </message>
 </context>
 <context>
     <name>BankDelegate</name>
@@ -162,10 +122,6 @@
         <location filename="../qml/pages/BankDelegate.qml" line="35"/>
         <source>Add transaction</source>
         <translation>Ny transaktion</translation>
-    </message>
-    <message>
-        <source>Show transactions</source>
-        <translation type="obsolete">Visa transaktioner</translation>
     </message>
     <message>
         <location filename="../qml/pages/BankDelegate.qml" line="50"/>
@@ -236,10 +192,6 @@
         <translation>Om %1</translation>
     </message>
     <message>
-        <source>Expense graph</source>
-        <translation type="obsolete">Visa graf</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/FirstPage.qml" line="83"/>
         <source>Settings</source>
         <translation>Inställningar</translation>
@@ -275,28 +227,28 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation>Graf</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="16"/>
+        <location filename="../qml/pages/GraphPage.qml" line="22"/>
         <source>Show</source>
         <translation>Visa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="19"/>
-        <location filename="../qml/pages/GraphPage.qml" line="59"/>
+        <location filename="../qml/pages/GraphPage.qml" line="25"/>
+        <location filename="../qml/pages/GraphPage.qml" line="65"/>
         <source>Expenses</source>
         <translation>Utgifter</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="20"/>
+        <location filename="../qml/pages/GraphPage.qml" line="26"/>
         <source>Expenses vs Bank</source>
         <translation>Utgifter vs Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="58"/>
+        <location filename="../qml/pages/GraphPage.qml" line="64"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="85"/>
+        <location filename="../qml/pages/GraphPage.qml" line="91"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
         <translation>OBS! Endast konton med valutan &apos;%1&apos; kommer att visas i graf och cover.</translation>
     </message>
@@ -357,10 +309,6 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <location filename="../src/jsonloader.cpp" line="67"/>
         <source>Other card</source>
         <translation>Annat kort</translation>
-    </message>
-    <message>
-        <source>Online payment</source>
-        <translation type="obsolete">Online kort</translation>
     </message>
     <message>
         <location filename="../src/jsonloader.cpp" line="68"/>
@@ -506,10 +454,6 @@ grupp (Inkomst, Bank och Utgift)</translation>
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Settings BETA</source>
-        <translation type="obsolete">Inställningar</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="21"/>
         <source>Settings</source>
         <translation>Inställningar</translation>
@@ -600,10 +544,6 @@ grupp (Inkomst, Bank och Utgift)</translation>
         <translation>12 månader</translation>
     </message>
     <message>
-        <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
-        <translation type="obsolete">OBS! Endast konton med standard valutan kommer att visas i graf och cover.</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="73"/>
         <source>Hide income</source>
         <translation>Dölj inkomstkonton i huvudvyn</translation>
@@ -612,22 +552,18 @@ grupp (Inkomst, Bank och Utgift)</translation>
 <context>
     <name>TransactionDelegate</name>
     <message>
-        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="36"/>
         <source>Change transaction</source>
         <translation>Ändra transaktion</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="36"/>
         <source>Change incoming saldo</source>
         <translation>Ändra ingående saldo</translation>
     </message>
 </context>
 <context>
     <name>TransactionsPage</name>
-    <message>
-        <source>Transactions %1</source>
-        <translation type="obsolete">%1</translation>
-    </message>
     <message>
         <location filename="../qml/pages/TransactionsPage.qml" line="132"/>
         <source>Add transaction</source>

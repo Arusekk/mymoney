@@ -59,44 +59,33 @@ BackgroundItem  {
         anchors.leftMargin: Theme.paddingSmall
         anchors.rightMargin: Theme.paddingSmall
         Row {
+            width: parent.width
+            height: Theme.fontSizeSmall
             Label {
                 id: labelTitle
                 font.pixelSize: Theme.fontSizeSmall
                 text: title
-            }
-            Item {
-                id: fillRectangel
-//                color: "transparent"
-                width: background.width - labelTitle.width - timesRectangle.width
-                height: 40
+                width: parent.width*0.72
+                height: Theme.fontSizeSmall
             }
 
-            // Created and updated time strings
-            Rectangle {
-                id: timesRectangle
-                color: "transparent"
-                width: 160
-                height: 40
-                Label {
-                    font.pixelSize: Theme.fontSizeSmall
-                    anchors.fill: parent
-                    text: Number(group != "0" ? sum : (sum * -1)).toLocaleCurrencyString(Qt.locale(currency))
-                }
+            Label {
+                width: parent.width*0.28
+                height: Theme.fontSizeSmall
+                font.pixelSize: Theme.fontSizeSmall
+                text: Number(group != "0" ? sum : (sum * -1)).toLocaleCurrencyString(Qt.locale(currency))
             }
         }
         Row {
-            Label {
+            width: parent.width
+            height: Theme.fontSizeSmall
+             Label {
                 id: labelType
                 font.pixelSize: Theme.fontSizeSmall
                 font.italic: true
                 color: Theme.secondaryColor
                 text: type
             }
-
-            // Fill some space before statics rectangles
-
-
-
         }
     }
 }

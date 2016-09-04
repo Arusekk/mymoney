@@ -11,7 +11,6 @@ class AccountTypeManager : public QObject
 public:
     explicit AccountTypeManager(QObject *parent, JsonLoader &loader);
 
-
 signals:
 
 public slots:

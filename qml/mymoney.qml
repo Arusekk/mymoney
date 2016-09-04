@@ -47,36 +47,25 @@ ApplicationWindow
         function createdb(force)
         {
             if (_db == undefined)
-                _db = LocalStorage.openDatabaseSync("MyMoneyDB", "1.0", "Settings", 1000);
+                _db = LocalStorage.openDatabaseSync("MyMoneyDB", "1.0", "Settings for MyMoney", 1000);
 
-            if (force)
-                _db.transaction(
+            _db.transaction(
                             function(tx) {
-                                // Create the database if it doesn't already exist
                                 tx.executeSql('DROP TABLE IF EXISTS Settings;');
                             }
                         )
 
             _db.transaction(
                         function(tx) {
-                            // Create the database if it doesn't already exist
                             tx.executeSql('CREATE TABLE IF NOT EXISTS Map(key TEXT, value TEXT)');
                         }
                     )
         }
 
+
         function load()
         {
             try {
-                _db.transaction(function(tx)
-                {
-                    var rs = tx.executeSql('SELECT defaultCurrency, hideIncome FROM Settings;');
-                    if(rs.rows.length)
-                    {
-                        defaultCurrency = rs.rows.item(0).defaultCurrency // FIXME remove ASAP duplicate
-                        hideIncome = rs.rows.item(0).hideIncome
-                    }
-                });
                 _db.transaction(function(tx)
                 {
                     var rs = tx.executeSql('SELECT value FROM Map WHERE key="transactionsLatestMonths";');
@@ -104,6 +93,7 @@ ApplicationWindow
             }
             catch (e)
             {
+                console.log(e)
                 jsonloader.defaultCurrency = defaultCurrency
                 return false
             }
@@ -310,7 +300,6 @@ ApplicationWindow
             if (currency == defaultCurrency)
                 updateTotal(group, sum)
             var o = {"md5" : md, "group": group, "type" : typ, "title" : title, "sum" : sum, "currency" : currency}
-            console.log(o.md5)
             for (var i = 0; i < modelAccounts.count; i++)
             {
                 if (modelAccounts.get(i).group.localeCompare(group) >= 0)
@@ -409,7 +398,6 @@ ApplicationWindow
     Component.onCompleted: {
         db.setup()
         var txt = jsonloader.load()
-        console.log(txt)
         console.log(defaultCurrency)
         var jsonObject = JSON.parse(txt)
         modelAccountGroups.load(jsonObject.accountgroups)

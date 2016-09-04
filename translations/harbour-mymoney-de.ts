@@ -8,17 +8,9 @@
         <source>About</source>
         <translation>Über</translation>
     </message>
-    <message>
-        <source>Donate</source>
-        <translation type="vanished">Spenden</translation>
-    </message>
 </context>
 <context>
     <name>AddAccountPage</name>
-    <message>
-        <source>%1 account</source>
-        <translation type="obsolete">%1 Konto</translation>
-    </message>
     <message>
         <location filename="../qml/pages/AddAccountPage.qml" line="95"/>
         <source>Name</source>
@@ -75,18 +67,6 @@
         <source>Balance %1</source>
         <translation>Saldo %1</translation>
     </message>
-    <message>
-        <source>Enter start saldo</source>
-        <translation type="vanished">Startsaldo eingeben</translation>
-    </message>
-    <message>
-        <source>Saldo %1</source>
-        <translation type="vanished">Saldo %1</translation>
-    </message>
-    <message>
-        <source>Default currency</source>
-        <translation type="obsolete">Standardwährung</translation>
-    </message>
 </context>
 <context>
     <name>AddTransactionPage</name>
@@ -139,10 +119,6 @@
 <context>
     <name>BankDelegate</name>
     <message>
-        <source>Add transactions</source>
-        <translation type="obsolete">Transaktion hinzufügen</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/BankDelegate.qml" line="35"/>
         <source>Add transaction</source>
         <translation>Transaktion hinzufügen</translation>
@@ -151,10 +127,6 @@
         <location filename="../qml/pages/BankDelegate.qml" line="50"/>
         <source>Edit account</source>
         <translation>Konto bearbeiten</translation>
-    </message>
-    <message>
-        <source>Show transactions</source>
-        <translation type="obsolete">Transaktionen anzeigen</translation>
     </message>
 </context>
 <context>
@@ -256,28 +228,28 @@ der Gruppen haben
         <translation>Diagramm</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="16"/>
+        <location filename="../qml/pages/GraphPage.qml" line="22"/>
         <source>Show</source>
         <translation>Zeige</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="19"/>
-        <location filename="../qml/pages/GraphPage.qml" line="59"/>
+        <location filename="../qml/pages/GraphPage.qml" line="25"/>
+        <location filename="../qml/pages/GraphPage.qml" line="65"/>
         <source>Expenses</source>
         <translation>Auslagen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="20"/>
+        <location filename="../qml/pages/GraphPage.qml" line="26"/>
         <source>Expenses vs Bank</source>
         <translation>Auslagen vs Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="58"/>
+        <location filename="../qml/pages/GraphPage.qml" line="64"/>
         <source>Bank</source>
         <translation>Bank</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GraphPage.qml" line="85"/>
+        <location filename="../qml/pages/GraphPage.qml" line="91"/>
         <source>Attention! Only accounts with currency &apos;%1&apos; will be shown in graph and cover.</source>
         <translation>HINWEIS Nur Konto mit der ausgewählten währung &apos;%1&apos; wird in der Grafik und Cover angezeigt werden.</translation>
     </message>
@@ -483,10 +455,6 @@ der Gruppen haben
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Settings BETA</source>
-        <translation type="obsolete">Einstellungen</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="21"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
@@ -577,10 +545,6 @@ der Gruppen haben
         <translation>12 Monate</translation>
     </message>
     <message>
-        <source>Attention! Only accounts with default currency will be shown in graph and cover.</source>
-        <translation type="obsolete">HINWEIS Nur Konto mit der ausgewählten Standardwährung wird in der Grafik und Cover angezeigt werden.</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="73"/>
         <source>Hide income</source>
         <translation>Erträge aus Kontosicht ausblenden</translation>
@@ -589,22 +553,18 @@ der Gruppen haben
 <context>
     <name>TransactionDelegate</name>
     <message>
-        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="36"/>
         <source>Change transaction</source>
         <translation>Transaktion ändern</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TransactionDelegate.qml" line="35"/>
+        <location filename="../qml/pages/TransactionDelegate.qml" line="36"/>
         <source>Change incoming saldo</source>
         <translation>Ändern eingehenden gleichgewicht</translation>
     </message>
 </context>
 <context>
     <name>TransactionsPage</name>
-    <message>
-        <source>Transactions %1</source>
-        <translation type="obsolete">Transaktionen %1</translation>
-    </message>
     <message>
         <location filename="../qml/pages/TransactionsPage.qml" line="132"/>
         <source>Add transaction</source>

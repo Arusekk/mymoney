@@ -20,8 +20,8 @@ Page {
         spacing: Theme.paddingMedium
         Image{
             source: appinfo.getIcon()
-            height: 106
-            width: 106
+            height: parent.width/3
+            width: parent.height/3
             fillMode: Image.PreserveAspectFit
             anchors {
                 horizontalCenter: parent.horizontalCenter
@@ -43,12 +43,10 @@ Page {
         Label {
             width: 360
             font.pixelSize: Theme.fontSizeMedium
-            text: "Copyright 2014-2015 Mikael Hermansson"
+            text: "Copyright 2014-2016 Mikael Hermansson"
             anchors.horizontalCenter: parent.horizontalCenter
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignHCenter
-            //wrapMode: Text.WordWrap
-            //height: Theme.fontSizeMedium * 1 + 20
         }
 
         Button {
@@ -59,7 +57,7 @@ Page {
         Repeater{
             model: credits
             Item {
-                height: url ? button.height : label.height
+                height: label.height
                 width: parent.width
                 Label  {
                     id: label
