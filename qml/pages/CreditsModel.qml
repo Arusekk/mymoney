@@ -8,5 +8,5 @@ ListModel {
     ListElement { title: "Fransesco (Italian translation)"}
     ListElement { title: "TylerTemp (Chinese translation)"}
     ListElement { title: "<b>I accept bitcoins :)</b>" }
-    ListElement { title: "1HDFaQPqXCTtRi87wJpo4w2XAwt4DadLCT" }
+    ListElement { title: "1B5BJUzNDLs1YcFxPDFbhW9oSzDdHVJSwW" }
 }
