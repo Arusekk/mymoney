@@ -7,6 +7,7 @@ ListModel {
     ListElement { title: "Krona"; locale : "sv_SE"}
     ListElement { title: "Yuan"; locale : "zh"}
     ListElement { title: "British Pound"; locale : "en_GB"}
+    ListElement { title: "Romanian Leu"; locale : "ro_RO"}
 
     function lookupTitleByLocale(locale)
     {
