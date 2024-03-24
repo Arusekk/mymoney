@@ -1,0 +1,67 @@
+Version 0.1.3
+
+ * Make sure settings is saved on exit
+ * Fix layout to look better on Intex/Fairphone 2
+
+Version 0.1.2
+
+  * Fix bug in add account page. Dialog is now using SilicaFlickable to be sure it shows all currencys.
+  * Translate change Saldo to Balance in english
+
+Version 0.1.1
+
+  * Add British pound
+
+Version 0.1.0
+
+  * Add option to show only latest X months in transaction view
+  * Search filter in transaction view (swipe left to show search options)
+  * Make sure all accounts is shown in add transaction dialog
+  * The new translations is done by me and can be wrong, feel free to contact me for fixes.
+
+Version 0.0.6
+
+  * Chinese translations by TylerTemp
+
+Version 0.0.5
+
+  * Allow edit account incoming saldo
+  * Accountpage remove show transactions from remorse popup
+  * Accountpage show transactions when click account
+  * Addtransactionppage change vs add fix
+
+Version 0.0.4
+
+  * Italian translation thanks to Francesco
+  * Possiblility to change transactions
+  * Fix currency issues in transaction/account pages
+  * Add notice that only default currency shown in graph/cover
+  * UI fix Graph combobox
+  * Make sure old type selected when edit account
+
+Version 0.0.3
+
+  * Add Currency per account
+  * Cover/Graph only sum default currency
+  * Setting add possibility to hide income accounts in main page
+  * Transaction, preselect account if selected from show transaction page
+  * German translations thanks to Lechindianer
+
+Version 0.0.2
+
+  * Possibility to add more account types
+  * Add Transaction UI improve
+  * Graph
+  * Flickable bugfixes
+  * Transaction sort fix
+  * Transaction saldo fix
+  * global currency setting
+  * Finish translations
+  * German translations
+  * Open email app when user clicks maintainer in about page
+  * Donate button
+  * (Notice! there probadly is awkward translations, send me an email if you see any)
+
+Version 0.0.1
+
+  * First release

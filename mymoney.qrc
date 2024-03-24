@@ -1,0 +1,7 @@
+<RCC>
+	<qresource prefix="/">
+		<file alias="harbour-mymoney.png">images/mymoney.png</file>
+		<file>images/mymoney.png</file>
+		<file>images/PayBtn_BgImg.png</file>
+	</qresource>
+</RCC>

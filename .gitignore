@@ -1,0 +1,7 @@
+*.o
+*.qm
+qrc_*.cpp
+moc_*.cpp
+moc_predefs.h
+.qmake.stash
+Makefile
