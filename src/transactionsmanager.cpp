@@ -23,7 +23,7 @@ bool TransactionsManager::add(QString md5, QString fromaccount, QString toaccoun
 	obj["sum"] = sum;
 	obj["date"] = QDateTime::currentDateTime().toString();
 
-	if (sum == 0.0 && fromaccount == m_jsonloader->getBalanceAccountMd5())
+	if (sum == 0.0 && fromaccount != m_jsonloader->getBalanceAccountMd5())
 		return false;
 
 	bool modify;
@@ -46,8 +46,10 @@ bool TransactionsManager::add(QString md5, QString fromaccount, QString toaccoun
 		qDebug() << "oldsum " << oldsum;
 		m_jsonloader->updateAccountSaldo(transaction["from"].toString(), oldsum, false);
 		m_jsonloader->updateAccountSaldo(transaction["to"].toString(), -oldsum, false);
+		jdoc = m_jdoc->object();
 	}
 
+	transactions = jdoc.value("transactions").toObject();
 	transactions[md5] = obj;
 	jdoc.insert("transactions", transactions);
 	m_jdoc->setObject(jdoc);
@@ -55,18 +57,19 @@ bool TransactionsManager::add(QString md5, QString fromaccount, QString toaccoun
 	m_jsonloader->updateAccountSaldo(fromaccount, -sum, false);
 	m_jsonloader->updateAccountSaldo(toaccount, sum, false);
 
-	qDebug() << obj;
+	qDebug() << m_jdoc->object();
 	if (save) m_jsonloader->save();
 	return true;
 }
 
 QString TransactionsManager::getFirstTransactionForAccount(QString md5)
 {
+	QString balmd5 = m_jsonloader->getBalanceAccountMd5();
 	QJsonObject jdoc = m_jdoc->object();
 	QJsonObject transactions = jdoc["transactions"].toObject();
 	for (QString key : transactions.keys()) {
 		if (   transactions[key].toObject().value("to")   == md5
-		    || transactions[key].toObject().value("from") == md5) {
+		    && transactions[key].toObject().value("from") == balmd5) {
 			qDebug() << "firsttransaction lookup " << key
 				 << " account " << md5
 				 << " sum " << transactions[key].toObject().value("sum").toDouble();
